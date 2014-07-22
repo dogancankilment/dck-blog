@@ -12,8 +12,10 @@ from models import *
 def index(request):# blog_id
 
     blog_list = Post.objects.all()
+    comment_list = Comments.objects.all()
     return render_to_response("index/blog_index.html",
                               {"blogs": blog_list,
+                               "comments": comment_list,
                                "request": request})
 
 def my_custom_404(request, template_name='404.html'):
