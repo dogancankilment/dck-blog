@@ -31,7 +31,7 @@
           <a class="blog-nav-item" href="#">Press</a>
           <a class="blog-nav-item" href="#">New hires</a>
           <a class="blog-nav-item" href="#">About</a>
-          <a class="blog-nav-item" href="/blog/logout">Logout</a>
+          <a class="blog-nav-item" href="/user/logout">Logout</a>
           <a class="blog-nav-item" href="#">
               {% if request.user.is_authenticated %}
                     <tr>{{request.user}}</tr>
@@ -87,34 +87,34 @@
             {% else %}
               <h2>We couldn't find any blog post</h2>
             {% endif %}
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  Post Tablosu
-                  <th>#</th>
-                  <th>Kullanıcı</th>
-                  <th>Comment İcerigi</th>
-                  <th>Which_Post</th>
-                  <!--<th>Edit</th>-->
-                  <!--<th>Delete</th>-->
-                </tr>
-              </thead>
-              <tbody>
-              {% if comments %}
-                {% for c in comments %}
-                  <tr>
-                    <th>{{ c.id }}</th>
-                    <!--<th>{{ c.which_user.id }}</th>-->
-                    <th>{{ c.which_user }}</th>
-                    <th>{{ c.content }}</th>
-                    <th>{{ c.which_post.id }}.posta aittir</th>
-                  </tr>
-                {% endfor %}
-              {% else %}
-              <h2>We couldn't find any comment</h2>
-              {% endif %}
-              </tbody>
-            </table>
+            <!--<table class="table table-striped">-->
+              <!--<thead>-->
+                <!--<tr>-->
+                  <!--Post Tablosu-->
+                  <!--<th>#</th>-->
+                  <!--<th>Kullanıcı</th>-->
+                  <!--<th>Comment İcerigi</th>-->
+                  <!--<th>Which_Post</th>-->
+                  <!--&lt;!&ndash;<th>Edit</th>&ndash;&gt;-->
+                  <!--&lt;!&ndash;<th>Delete</th>&ndash;&gt;-->
+                <!--</tr>-->
+              <!--</thead>-->
+              <!--<tbody>-->
+              <!--{% if comments %}-->
+                <!--{% for c in comments %}-->
+                  <!--<tr>-->
+                    <!--<th>{{ c.id }}</th>-->
+                    <!--&lt;!&ndash;<th>{{ c.which_user.id }}</th>&ndash;&gt;-->
+                    <!--<th>{{ c.which_user }}</th>-->
+                    <!--<th>{{ c.content }}</th>-->
+                    <!--<th>{{ c.which_post.id }}.posta aittir</th>-->
+                  <!--</tr>-->
+                <!--{% endfor %}-->
+              <!--{% else %}-->
+              <!--<h2>We couldn't find any comment</h2>-->
+              <!--{% endif %}-->
+              <!--</tbody>-->
+            <!--</table>-->
         </div>
        </div>
       </div>

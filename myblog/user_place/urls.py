@@ -3,7 +3,20 @@ from django.conf.urls import patterns, include, url
 
 urlpatterns = patterns('',
 
-    url(r'^test_view/$', 'user_place.views.test_view', name='test_view'),
+    url(r'^test_view$',
+        'user_place.views.test_view',
+        name='test_view'),
 
+    url(r'^login$',
+        'user_place.views.login',
+        name='login'),
+
+    url(r'^signup$',
+        'user_place.views.signup',
+        name='signup'),
+
+    url(r'^logout$',
+        'user_place.views.logout',
+        name='logout'),
 
 )
