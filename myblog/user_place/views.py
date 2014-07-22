@@ -14,11 +14,18 @@ def test_view(request):
 def login(request):
     form = LoginForm(request.POST or None)
     if request.POST and form.is_valid():
-        user = form.login(request)
+
+        data = form.clean()  # data is cleaned_data,
+        # data's return type is dict
+
+        user = authenticate(username=data['username'],
+                            password=data['password'])
         if user:
             auth.login(request, user)
             return HttpResponseRedirect("/blog/index")  # Redirect to a success page
-    return render(request, 'Authentication/login.html', {'login_form': form})
+
+    return render(request, 'Authentication/login.html',
+                  {'login_form': form})
 
 # geri gelinecek kullanici girisi kismina
 def signup(request):
