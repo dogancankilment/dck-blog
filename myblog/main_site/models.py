@@ -1,12 +1,15 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-# Create your models here.
+class UserProfile(models.Model):
+    user = models.OneToOneField(User)
 
 class Post(models.Model):
     title = models.CharField(max_length=100)
-    content = models.CharField(max_length=100)
+    content = models.CharField(max_length=200)
     which_user = models.ForeignKey(User)
 
-class UserProfile(models.Model):
-    user = models.OneToOneField(User)
+class Comments(models.Model):
+    content = models.CharField(max_length=200)
+    which_user = models.ForeignKey(User)
+    which_post = models.ForeignKey(Post)
