@@ -5,11 +5,11 @@ from django.http import HttpResponse, HttpRequest, HttpResponseRedirect
 from models import *
 # from django.core.context_processors import csrf
 # from django.http import HttpResponse, HttpRequest, HttpResponseRedirect
-
 # from forms import *
 
+
 @login_required(login_url='/user/login')
-def index(request):# blog_id
+def index(request):  # blog_id
 
     blog_list = Post.objects.all()
     comment_list = Comments.objects.all()
@@ -18,16 +18,16 @@ def index(request):# blog_id
                                "comments": comment_list,
                                "request": request})
 
+
 def my_custom_404(request, template_name='404.html'):
 
     #404 error handler. Templates: `404.html' Context: None
     return render_to_response(template_name,
-        context_instance = RequestContext(request)
-    )
+                              context_instance=RequestContext(request))
+
 
 def my_custom_500(request, template_name='500.html'):
 
     #500 error handler. Templates: `500.html' Context: None
     return render_to_response(template_name,
-        context_instance = RequestContext(request)
-    )
+                              context_instance=RequestContext(request))
