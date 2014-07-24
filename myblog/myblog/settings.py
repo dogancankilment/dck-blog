@@ -12,6 +12,7 @@ ADMINS = (
 )
 
 MANAGERS = ADMINS
+# APPEND_SLASH=False
 
 DATABASES = {
     'default': {

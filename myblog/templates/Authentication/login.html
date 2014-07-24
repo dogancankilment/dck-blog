@@ -37,10 +37,10 @@
         {% endfor %}
         <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}" />
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-        {% if login_form.non_field_errors %}
-            <ul class='form-errors'>
-                {% for error in login_form.non_field_errors %}
-                    <li>{{ error }}</li>
+        {% if messages %}
+            <ul>
+                {% for m in messages %}
+                    <li>{{ m }}</li>
                 {% endfor %}
             </ul>
         {% endif %}
