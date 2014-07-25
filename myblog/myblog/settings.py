@@ -1,5 +1,6 @@
 # Django settings for myblog project.
 import os
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 PROJECT_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__),os.pardir))
 # project path: for static_dirs and template_dirs
@@ -85,7 +86,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'na-msknnbm3wf82^m4%)utwm#f0+)qq*^iy0*!-5mc(1jqaf97'
+MY_SECRET_KEY = os.getenv("My_SECRET_KEY")
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
