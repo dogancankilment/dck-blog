@@ -6,9 +6,11 @@ from models import *
 # from django.core.context_processors import csrf
 # from django.http import HttpResponse, HttpRequest, HttpResponseRedirect
 # from forms import *
+from django.core.urlresolvers import reverse
 
 
 @login_required(login_url='/user/login')
+# @login_required(reverse(login))
 def index(request):  # blog_id
 
     blog_list = Post.objects.all()

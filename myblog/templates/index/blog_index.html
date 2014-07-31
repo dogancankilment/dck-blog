@@ -31,7 +31,7 @@
           <a class="blog-nav-item" href="#">Press</a>
           <a class="blog-nav-item" href="#">New hires</a>
           <a class="blog-nav-item" href="#">About</a>
-          <a class="blog-nav-item" href="/user/logout">Logout</a>
+          <a class="blog-nav-item" href="{% url logout %}">Logout</a>
           <a class="blog-nav-item" href="#">
               {% if request.user.is_authenticated %}
                     <tr>{{request.user}}</tr>
@@ -78,8 +78,7 @@
                     <th>{{ b.title }}</th>
                     <th>{{ b.content }}</th>
                     <<th>{{ b.created_at }}</th>
-                    <!---<th><a href="/admin/edit_blog/{{blog.id}}" class="btn btn-default">Edit Blog</a></th>-->
-                    <!---<th><a href="/admin/delete_blog/{{blog.id}}" class="btn btn-default">Delete Blog</a></th> -->
+
                   </tr>
                 {% endfor %}
               </tbody>

@@ -29,7 +29,7 @@
   <body>
 
     <div class="container">
-        <form method="POST" action="/user/login" class="form-signin" role="form">
+        <form method="POST" action="{% url login %}" class="form-signin" role="form">
 
         <h2 class="form-signin-heading">Please sign in</h2>
         {% for field in login_form %}
@@ -45,7 +45,7 @@
             </ul>
         {% endif %}
         <!--https://docs.djangoproject.com/en/dev/ref/contrib/messages/ hata mesajı buradan alındı-->
-        <h4><a href="/user/signup">Signup For Beginning</a></h4>
+        <h4><a href="{% url signup %}">Signup For Beginning</a></h4>
         </form>
 
     </div> <!-- /container -->

@@ -7,6 +7,8 @@ from django.core.context_processors import csrf
 from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib import auth
 from django.contrib import messages
+from django.core.urlresolvers import reverse
+from main_site.views import *
 # from collections import Counter
 
 
@@ -25,7 +27,7 @@ def login(request):
         if user and user.is_active:
             auth.login(request, user)
 
-            return HttpResponseRedirect("/blog/index")  # Redirect to a success page
+            return HttpResponseRedirect(reverse(index))  # Redirect to a success page
 
         else:
             message = messages.error(request, 'Hatali yerler var')
@@ -48,10 +50,10 @@ def signup(request):
         if form.is_valid():
             form.save()
 
-        return redirect('/blog/index')
+        return redirect(reverse(index))
 
 
 @login_required(login_url='/user/login')
 def logout(request):
     auth.logout(request)
-    return redirect('/user/login')
+    return redirect(reverse(login))
