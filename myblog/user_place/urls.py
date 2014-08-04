@@ -19,4 +19,8 @@ urlpatterns = patterns('',
         'user_place.views.logout',
         name='logout'),
 
+    url(r'^sendmail$',
+        'user_place.views.mail_sender_test',
+        name='sendmail'),
+
 )

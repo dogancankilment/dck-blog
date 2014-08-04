@@ -1,20 +1,38 @@
 from django.shortcuts import render, redirect, render_to_response, get_object_or_404
 from django.http import HttpResponse, HttpRequest, HttpResponseRedirect
-# from models import *
-from forms import *
-# from django.template import RequestContext
-from django.core.context_processors import csrf
+from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required, permission_required
+from forms import *
+from django.core.context_processors import csrf
 from django.contrib import auth
 from django.contrib import messages
-from django.core.urlresolvers import reverse
+from django.utils.translation import ugettext as _
 from main_site.views import *
-# from collections import Counter
+
+import smtplib
+import os
 
 
 @login_required(login_url='/user/login')
 def test_view(request):
-    return HttpResponse("hello_world")
+    output = _("Welcome to my site.")
+    return HttpResponse(output)
+    # return HttpResponse("hello_world")
+
+
+def mail_sender_test(request):
+    server = smtplib.SMTP("smtp.gmail.com", 587)
+    server.starttls()
+
+    # take password variable from .bashrc file
+    mail_pass = str(os.getenv("MAIL_PASS"))
+    server.login('surveydck@gmail.com', mail_pass)
+
+    server.sendmail('surveydck@gmail.com',
+                    'dogancankilment@gmail.com',
+                    'my mail content is DCK was here')
+
+    return HttpResponse("Mailiniz gonderildi")
 
 
 def login(request):
@@ -30,7 +48,7 @@ def login(request):
             return HttpResponseRedirect(reverse(index))  # Redirect to a success page
 
         else:
-            message = messages.error(request, 'Hatali yerler var')
+            messages.error(request, 'Hatali yerler var')
 
     return render(request, 'Authentication/login.html',
                   {'login_form': form})
