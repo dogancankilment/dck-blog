@@ -1,80 +1,52 @@
-<!DOCTYPE html>
-
 {% extends "base.html" %}
 
-<html>
-<head lang="en">
-    {% block title %}
-        <title>Blog List</title>
-    {% endblock title %}
-</head>
-<body>
-    {% block show_user%}
-        {% if request.user.is_authenticated %}
-            <tr>{{request.user}}</tr>
-        {% else %}
-            <tr>Anonim</tr>
-        {% endif %}
-    {% endblock show_user %}
+{% block title %}
+    <title>Blog List</title>
+{% endblock title %}
 
-    {% block content %}
+<!-- showing user_name in menu bar -->
+{% block show_user%}
+{% if request.user.is_authenticated %}
+    <tr>{{request.user}}</tr>
+{% else %}
+    <tr>Anonim</tr>
+{% endif %}
+{% endblock show_user %}
 
-        {% if blogs %}
-                <table class="table table-striped">
-                  <thead>
-                    <tr>
-                      Post Tablosu
-                      <th>#</th>
-                      <th>Kullanıcı</th>
-                      <th>Blog Basligi</th>
-                      <th>Blog İcerigi</th>
-                      <th>Tarih</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {% for b in blogs %}
-                      <tr>
-                        <th>{{ b.id }}</th>
-                        <th>{{ b.which_user }}</th>
-                        <th>{{ b.title }}</th>
-                        <th>{{ b.content }}</th>
-                        <<th>{{ b.created_at }}</th>
+<!-- showing posts -->
+{% block post_content %}
 
-                      </tr>
-                    {% endfor %}
-                  </tbody>
-                </table>
-                {% else %}
-                  <h2>We couldn't find any blog post</h2>
-                {% endif %}
-                <table class="table table-striped">
-                  <thead>
-                    <tr>
-                      Post Tablosu
-                      <th>#</th>
-                      <th>Kullanıcı</th>
-                      <th>Comment İcerigi</th>
-                      <th>Which_Post</th>
-                      <!--<th>Edit</th>-->
-                      <!--<th>Delete</th>-->
-                    </tr>
-                  </thead>
-                  <tbody>
-                  {% if comments %}
-                    {% for c in comments %}
-                      <tr>
-                        <th>{{ c.id }}</th>
-                        <!--<th>{{ c.which_user.id }}</th>-->
-                        <th>{{ c.which_user }}</th>
-                        <th>{{ c.content }}</th>
-                        <th>{{ c.which_post.id }}.posta aittir</th>
-                      </tr>
-                    {% endfor %}
-                  {% else %}
-                    <h2>We couldn't find any comment</h2>
-                  {% endif %}
-                  </tbody>
-                </table>
-    {% endblock content %}
-    </body>
-</html>
+{% if blogs %}
+    {% for b in blogs %}
+        <tr>
+            <th>{{ b.id }}</th>
+            <th>{{ b.which_user }}</th>
+            <th>{{ b.title }}</th>
+            <th>{{ b.content }}</th>
+            <<th>{{ b.created_at }}</th>
+        </tr>
+    {% endfor %}
+{% else %}
+    <h2>We couldn't find any blog post</h2>
+{% endif %}
+
+{% endblock post_content %}
+
+<!-- showing comments -->
+{% block comment_content %}
+
+{% if comments %}
+    {% for c in comments %}
+        <tr>
+            <th>{{ c.id }}</th>
+            <!--<th>{{ c.which_user.id }}</th>-->
+            <th>{{ c.which_user }}</th>
+            <th>{{ c.content }}</th>
+            <th>{{ c.which_post.id }}.posta aittir</th>
+        </tr>
+    {% endfor %}
+{% else %}
+    <h2>We couldn't find any comment</h2>
+{% endif %}
+
+{% endblock comment_content %}
