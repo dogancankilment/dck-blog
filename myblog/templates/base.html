@@ -34,11 +34,13 @@
           <a class="blog-nav-item" href="#">About</a>
           <a class="blog-nav-item" href="{% url logout %}">Logout</a>
           <a class="blog-nav-item" href="#">
+
               {% block show_user %}{% endblock show_user %}
+
           </a>
         </nav>
       </div>
-    </div>
+  </div>
 
     <div class="container">
 
@@ -55,10 +57,12 @@
             <h2 class="blog-post-title">Example Blog Post</h2>
             <p class="blog-post-meta">July 1, 2014 by <a href="#">Intern DCK</a></p>
             <div class="starter-template">
-            {% block content %}{% endblock content %}
+
+                {% block content %}{% endblock content %}
+
+            </div>
+          </div>
         </div>
-       </div>
-      </div>
 
       <div>
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
@@ -95,7 +99,8 @@
         <a href="#">Back to top</a>
       </p>
     </div>
-
+    </div>
+    </div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
