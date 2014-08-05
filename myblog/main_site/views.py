@@ -23,13 +23,13 @@ def index(request):  # blog_id
 
 def my_custom_404(request, template_name='404.html'):
 
-    #404 error handler. Templates: `404.html' Context: None
+    #  404 error handler. Templates: `404.html' Context: None
     return render_to_response(template_name,
                               context_instance=RequestContext(request))
 
 
 def my_custom_500(request, template_name='500.html'):
 
-    #500 error handler. Templates: `500.html' Context: None
+    #  500 error handler. Templates: `500.html' Context: None
     return render_to_response(template_name,
                               context_instance=RequestContext(request))

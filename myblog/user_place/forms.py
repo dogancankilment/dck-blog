@@ -24,6 +24,8 @@ class SignUpForm(forms.Form):
         username = self.cleaned_data['username']
         password = self.cleaned_data['password']
         password2 = self.cleaned_data['password2']
+
         if password != password2:
-          raise forms.ValidationError("Passwords do not match.")
+          raise forms.ValidationError("Passwords doesn't match.")
+
         return self.cleaned_data
