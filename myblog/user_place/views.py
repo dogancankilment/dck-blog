@@ -2,6 +2,10 @@ from django.shortcuts import render, redirect, render_to_response, get_object_or
 from django.http import HttpResponse, HttpRequest, HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required, permission_required
+from django.core.mail import EmailMultiAlternatives
+from django.template.loader import get_template
+from django.template import Context
+from django.template.loader import render_to_string
 from forms import *
 from django.core.context_processors import csrf
 from django.contrib import auth
@@ -18,6 +22,26 @@ def test_view(request):
     output = _("Welcome to my site.")
     return HttpResponse(output)
     # return HttpResponse("hello_world")
+
+
+def mail_sender(request):
+        plaintext = get_template('email/email_content.html')
+        subject, from_email, to = 'hello',\
+                                  'surveydck@gmail.com',\
+                                  'dogancankilment@gmail.com'
+
+        hash_key_example = "123"
+        transmitted_key = Context({'hash_key': hash_key_example})
+
+        # text_content = plaintext.render(d)
+        text_content = render_to_string('email/email_content.html', transmitted_key)
+
+        msg = EmailMultiAlternatives(subject,
+                                     text_content,
+                                     from_email,
+                                     [to])
+        msg.send()
+        return HttpResponse("mailiniz gonderildi")
 
 
 def mail_sender_test(request):
