@@ -24,41 +24,6 @@ def test_view(request):
     # return HttpResponse("hello_world")
 
 
-def mail_sender(request):
-        plaintext = get_template('email/email_content.html')
-        subject, from_email, to = 'hello',\
-                                  'surveydck@gmail.com',\
-                                  'dogancankilment@gmail.com'
-
-        hash_key_example = "123"
-        transmitted_key = Context({'hash_key': hash_key_example})
-
-        # text_content = plaintext.render(d)
-        text_content = render_to_string('email/email_content.html', transmitted_key)
-
-        msg = EmailMultiAlternatives(subject,
-                                     text_content,
-                                     from_email,
-                                     [to])
-        msg.send()
-        return HttpResponse("mailiniz gonderildi")
-
-
-def mail_sender_test(request):
-    server = smtplib.SMTP("smtp.gmail.com", 587)
-    server.starttls()
-
-    # take password variable from .bashrc file
-    mail_pass = str(os.getenv("MAIL_PASS"))
-    server.login('surveydck@gmail.com', mail_pass)
-
-    server.sendmail('surveydck@gmail.com',
-                    'dogancankilment@gmail.com',
-                    'my mail content is DCK was here')
-
-    return HttpResponse("Mailiniz gonderildi")
-
-
 def login(request):
     form = LoginForm(request.POST or None)
 
@@ -93,6 +58,8 @@ def signup(request):
             form.save()
 
         return redirect(reverse(index))
+
+
 
 
 @login_required(login_url='/user/login')
