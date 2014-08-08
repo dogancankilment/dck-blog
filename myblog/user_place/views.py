@@ -11,10 +11,12 @@ from django.core.context_processors import csrf
 from django.contrib import auth
 from django.contrib import messages
 from django.utils.translation import ugettext as _
-from main_site.views import *
+from main_site.views import index
 
-import smtplib
-import os
+import hashlib
+import random
+# import smtplib
+# import os
 
 
 @login_required(login_url='/user/login')
@@ -60,6 +62,15 @@ def signup(request):
         return redirect(reverse(index))
 
 
+def activation_key_generator(user_mail):
+    salt = hashlib.sha1(str(random.random())).hexdigest()[:10]
+    email = "dogancankilment@gmail.com"
+
+    if isinstance(email, unicode):
+        email = email.encode('utf-8')
+    activation_key = hashlib.sha1(salt+email).hexdigest()
+
+    return activation_key
 
 
 @login_required(login_url='/user/login')
