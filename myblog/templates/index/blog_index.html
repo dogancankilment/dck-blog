@@ -8,8 +8,6 @@
 {% block show_user%}
 {% if request.user.is_authenticated %}
     <tr>Welcome {{request.user}}</tr>
-{% else %}
-    <tr>Anonim</tr>
 {% endif %}
 {% endblock show_user %}
 
