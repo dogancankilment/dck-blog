@@ -12,11 +12,35 @@ from django.contrib import auth
 from django.contrib import messages
 from django.utils.translation import ugettext as _
 from main_site.views import index
+from user_place.utils import *
 
 import hashlib
 import random
 # import smtplib
 # import os
+import base64
+from base64 import urlsafe_b64encode, urlsafe_b64decode
+import datetime
+
+
+def mail_sender(request):
+        plaintext = get_template('email/email_content.html')
+        subject, from_email, to = 'hello',\
+                                  'surveydck@gmail.com',\
+                                  'dogancankilment@gmail.com'
+
+        hash_key_example = activation_key_generator(to)
+        transmitted_key = Context({'hash_key': hash_key_example})
+
+        # text_content = plaintext.render(d)
+        text_content = render_to_string('email/email_content.html', transmitted_key)
+
+        msg = EmailMultiAlternatives(subject,
+                                     text_content,
+                                     from_email,
+                                     [to])
+        msg.send()
+        return HttpResponse("mailiniz gonderildi")
 
 
 @login_required(login_url='/user/login')
@@ -62,15 +86,28 @@ def signup(request):
         return redirect(reverse(index))
 
 
-def activation_key_generator(user_mail):
-    salt = hashlib.sha1(str(random.random())).hexdigest()[:10]
-    email = "dogancankilment@gmail.com"
+def activation(request, token_id):
+    if token_id:
+        email_in_token = tokens_email(token_id)
+        result = User.objects.filter(email=email_in_token).exists()
 
-    if isinstance(email, unicode):
-        email = email.encode('utf-8')
-    activation_key = hashlib.sha1(salt+email).hexdigest()
+        if result:
+            expire_date_in_token = tokens_expire_date(token_id)
 
-    return activation_key
+            if expire_date_in_token < datetime.datetime.today():
+                return HttpResponse(_("hesabiniz basariili bir sekilde aktif edildi."))
+
+            else:
+                activation_key_generator(email_in_token)
+
+                return HttpResponse(_("Eski aktivasyon mailinin suresi bitmistir,"
+                                    "yeni bir email yolladik,"
+                                    "lutfen posta kutunuzu ziyaret ediniz."))
+
+        else:
+            return HttpResponse(_("Boyle bir token yoktur"))
+    else:
+        return HttpResponse("Come ON..! :)")
 
 
 @login_required(login_url='/user/login')

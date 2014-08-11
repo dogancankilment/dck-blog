@@ -19,4 +19,11 @@ urlpatterns = patterns('',
         'user_place.views.logout',
         name='logout'),
 
+    url(r'^mail_sender$',
+        'user_place.views.mail_sender',
+        name='mail_sender'),
+
+    url(r'^activation/(?P<token_id>)',
+        'user_place.views.activation',
+        name='activation'),
 )
