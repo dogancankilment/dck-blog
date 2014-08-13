@@ -13,12 +13,15 @@ def activation_key_generator(email):
 
 
 def tokens_email(token_id):
-    email = base64.b64decode(token_id.split('=')[1] + '==')
+    if "=" in token_id:
+        email = token_id.split('=')[1] + '=='
+        email = base64.b64decode(email)
 
-    return email
+        return email
 
 
 def tokens_expire_date(token_id):
-    expire_date = token_id.split('=')[0]
+    expire_date_in = token_id.split('=')[0] + '='
+    expire_date = base64.b64decode(expire_date_in)
 
     return expire_date
