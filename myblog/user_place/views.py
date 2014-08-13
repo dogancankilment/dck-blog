@@ -37,11 +37,11 @@ def mail_sender(request, email):
                                          from_email,
                                          [to])
             msg.send()
-            return HttpResponse("mailiniz gonderildi")
+            return HttpResponse(_("mailiniz gonderildi"))
 
         else:
-            return HttpResponse("Gondereceginiz kisinin"
-                                "email adresi belli olmalidir.")
+            return HttpResponse(_("Gondereceginiz kisinin"
+                                "email adresi belli olmalidir."))
 
 
 @login_required(login_url='/user/login')
@@ -95,20 +95,20 @@ def activation(request, token_id):
             expire_date_in_token = tokens_expire_date(token_id)
 
             if str(expire_date_in_token) > str(datetime.datetime.today()):
-                return HttpResponse("Basarili bir sekilde aktif ettiniz")
+                return HttpResponse(_("Basarili bir sekilde aktif ettiniz"))
 
             else:
                 mail_sender(email_in_token)
 
-                return HttpResponse("Eski aktivasyon mailinin suresi bitmistir,"
+                return HttpResponse(_("Eski aktivasyon mailinin suresi bitmistir,"
                                     "yeni bir email yolladik,"
-                                    "lutfen posta kutunuzu ziyaret ediniz.")
+                                    "lutfen posta kutunuzu ziyaret ediniz."))
 
         else:
-            return HttpResponse("Eslesen email bulunamadi")
+            return HttpResponse(_("Eslesen email bulunamadi"))
     else:
 
-        return HttpResponse("Boyle bir token yoktur")
+        return HttpResponse(_("Boyle bir token yoktur"))
 
 
 @login_required(login_url='/user/login')
