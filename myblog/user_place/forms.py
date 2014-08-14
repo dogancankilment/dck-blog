@@ -1,32 +1,38 @@
+from wsgiref import validate
 from django import forms
+from django.contrib.admin import validation
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import *
 from django.conf import settings
+from models import *
 
-#class LoginForm():
 
 class LoginForm(forms.Form):
     username = forms.CharField(max_length=100, required=True)
     password = forms.CharField(widget=forms.PasswordInput, required=True)
 
-    def clean(self):
+    def clean_form(self):
         username = self.cleaned_data.get('username')
         password = self.cleaned_data.get('password')
 
         return self.cleaned_data
 
 
-class SignUpForm(forms.Form):
-    username = forms.CharField(max_length=100, required=True)
-    password = forms.CharField(widget=forms.PasswordInput, required=True)
+class UserCreateForm(UserCreationForm):
+    email = forms.EmailField(required=True)
 
-    def clean(self):
-        username = self.cleaned_data['username']
-        password = self.cleaned_data['password']
-        password2 = self.cleaned_data['password2']
+    class Meta:
+        model = User
+        fields = ("username", "email", "password1", "password2")
 
-        if password != password2:
-            raise forms.ValidationError("Passwords doesn't match.")
+    def save(self, commit=True):
+        import ipdb
+        ipdb.set_trace()
+        user = super(UserCreateForm, self).save(commit=False)
+        user.email = self.cleaned_data["email"]
 
-        return self.cleaned_data
+        if commit:
+            user.save()
+        return user
