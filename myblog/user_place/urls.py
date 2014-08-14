@@ -8,8 +8,8 @@ urlpatterns = patterns('',
         name='test_view'),
 
     url(r'^login$',
-        'user_place.views.login',
-        name='login'),
+        'user_place.views.my_login',
+        name='my_login'),
 
     url(r'^signup$',
         'user_place.views.signup',
@@ -26,4 +26,5 @@ urlpatterns = patterns('',
     url(r'^activation/(?P<token_id>.*)',
         'user_place.views.activation',
         name='activation'),
+
 )
