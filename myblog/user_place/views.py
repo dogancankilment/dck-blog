@@ -3,6 +3,7 @@ from django.http import HttpResponse, HttpRequest, HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required, permission_required
 from forms import *
+from models import *
 from django.core.context_processors import csrf
 from django.contrib import auth
 from django.contrib import messages
@@ -10,6 +11,11 @@ from django.utils.translation import ugettext as _
 from main_site.views import index
 from user_place.mail_sender import mail_sender
 from token_generator import *
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import authenticate, login
+from user_place.forms import *
+from django.template import RequestContext
+
 
 import datetime
 
@@ -37,23 +43,6 @@ def login(request):
 
     return render(request, 'Authentication/login.html',
                   {'login_form': form})
-
-
-def signup(request):
-
-    if request.method != "POST":
-        c = {}
-        c.update(csrf(request))
-
-        return render_to_response('Authentication/signup.html',c)
-
-    else:
-        form = SignUpForm(request.POST or None)
-
-        if form.is_valid():
-            form.save()
-
-        return redirect(reverse(index))
 
 
 def activation(request, token_id):
@@ -85,3 +74,16 @@ def activation(request, token_id):
 def logout(request):
     auth.logout(request)
     return redirect(reverse(login))
+
+
+def signup(request, template_name="Authentication/signup.html"):
+    form = UserCreateForm(request.POST or None)
+    import ipdb
+    ipdb.set_trace()
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect(reverse("login"))
+
+    return render_to_response(template_name,
+                              {"form": form},
+                              context_instance=RequestContext(request))
