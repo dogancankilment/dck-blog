@@ -26,14 +26,14 @@ def test_view(request):
     return HttpResponse(output)
 
 
-def login(request):
+def my_login(request):
     form = LoginForm(request.POST or None)
 
-    if request.POST and form.is_valid():
+    if form.is_valid():
         user = authenticate(username=form.cleaned_data['username'],
                             password=form.cleaned_data['password'])
 
-        if user and user.is_active:
+        if user:
             auth.login(request, user)
 
             return HttpResponseRedirect(reverse(index))  # Redirect to a success page
@@ -43,6 +43,18 @@ def login(request):
 
     return render(request, 'Authentication/login.html',
                   {'login_form': form})
+
+
+def signup(request, template_name="Authentication/signup.html"):
+    form = UserCreateForm(request.POST or None)
+
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect(reverse(my_login))
+
+    return render_to_response(template_name,
+                              {"form": form},
+                              context_instance=RequestContext(request))
 
 
 def activation(request, token_id):
@@ -73,16 +85,4 @@ def activation(request, token_id):
 @login_required(login_url='/user/login')
 def logout(request):
     auth.logout(request)
-    return redirect(reverse(login))
-
-
-def signup(request, template_name="Authentication/signup.html"):
-    form = UserCreateForm(request.POST or None)
-
-    if form.is_valid():
-        form.save()
-        return HttpResponseRedirect(reverse("login"))
-
-    return render_to_response(template_name,
-                              {"form": form},
-                              context_instance=RequestContext(request))
+    return redirect(reverse(my_login))
