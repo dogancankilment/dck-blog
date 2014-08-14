@@ -5,6 +5,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 PROJECT_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__),os.pardir))
 # project path: for static_dirs and template_dirs
 
+AUTHENTICATION_BACKENDS = ('user_place.backends.EmailOrUsernameModelBackend',)
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -25,6 +27,16 @@ DATABASES = {
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
+
+MAIL_PASSWD = os.getenv("MAIL_PASS")
+
+# Email setup
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'surveydck@gmail.com'
+EMAIL_HOST_PASSWORD = MAIL_PASSWD
+EMAIL_PORT = 587
+
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.4/ref/settings/#allowed-hosts
@@ -86,7 +98,6 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-# MY_SECRET_KEY = os.getenv("My_SECRET_KEY")
 SECRET_KEY = 'na-msknnbm3wf82^m4%)utwm#f0+)qq*^iy0*!-5mc(1jqaf97'
 
 # List of callables that know how to import templates from various sources.
