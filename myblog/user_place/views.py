@@ -78,8 +78,7 @@ def logout(request):
 
 def signup(request, template_name="Authentication/signup.html"):
     form = UserCreateForm(request.POST or None)
-    import ipdb
-    ipdb.set_trace()
+
     if form.is_valid():
         form.save()
         return HttpResponseRedirect(reverse("login"))

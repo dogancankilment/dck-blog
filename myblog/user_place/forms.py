@@ -28,8 +28,6 @@ class UserCreateForm(UserCreationForm):
         fields = ("username", "email", "password1", "password2")
 
     def save(self, commit=True):
-        import ipdb
-        ipdb.set_trace()
         user = super(UserCreateForm, self).save(commit=False)
         user.email = self.cleaned_data["email"]
 
