@@ -1,11 +1,48 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
-
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-08-14 00:34-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
+"MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#:
+#: user_place/mail_sender.py:30
+msgid "mailiniz gonderildi"
+msgstr ""
+
+#: user_place/mail_sender.py:33
+msgid "Gondereceginiz kisininemail adresi belli olmalidir."
+msgstr ""
+
+#: user_place/views.py:21
+msgid "Welcome to my site."
+msgstr ""
+
+#: user_place/views.py:80
+msgid "Basarili bir sekilde aktif ettiniz"
+msgstr ""
+
+#: user_place/views.py:85
 msgid ""
+"Eski aktivasyon mailinin suresi bitmistir,yeni bir email yolladik,lutfen "
+"posta kutunuzu ziyaret ediniz."
+msgstr ""
+
+#: user_place/views.py:90
+msgid "Eslesen email bulunamadi"
+msgstr ""
+
+#: user_place/views.py:93
+msgid "Boyle bir token yoktur"
 msgstr ""
