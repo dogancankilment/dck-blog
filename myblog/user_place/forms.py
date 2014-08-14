@@ -10,13 +10,10 @@ from models import *
 
 
 class LoginForm(forms.Form):
-    username = forms.CharField(max_length=100, required=True)
+    username = forms.CharField(required=True, label="email")
     password = forms.CharField(widget=forms.PasswordInput, required=True)
 
     def clean_form(self):
-        username = self.cleaned_data.get('username')
-        password = self.cleaned_data.get('password')
-
         return self.cleaned_data
 
 
@@ -34,3 +31,4 @@ class UserCreateForm(UserCreationForm):
         if commit:
             user.save()
         return user
+
