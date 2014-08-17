@@ -11,7 +11,8 @@ New Commer Request Django Blog
 * *Cache Backend is Redis*
 * *Django 1.3 User-Userprofile Relation*
 * *PIL For Profile Image*
-* *Celery Task*
+* *Celery*
+* *RabbitMQ to Queue Tasks*
 * *Ugettext Function For Internationalization*
 * *Django Messages Framework*
 * *Reverse Function For Links and Urls*
