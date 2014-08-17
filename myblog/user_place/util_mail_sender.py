@@ -2,7 +2,7 @@ from django.core.mail import EmailMultiAlternatives
 from django.template.loader import get_template
 from django.template import Context
 from django.template.loader import render_to_string
-from user_place.token_generator import *
+from user_place.util_token_generator import *
 from django.http import HttpResponse
 from django.utils.translation import ugettext as _
 
