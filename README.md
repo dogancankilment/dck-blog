@@ -17,8 +17,9 @@ New Commer Request Django Blog
 * *Django Messages Framework*
 * *Reverse Function For Links and Urls*
 * *Template Tags*
-* *Initial_Data*
 * *Django 1.4.8*
 * *Django_Extensions*
 * *VirtualEnv*
+
+* *Initial_Data for code review*
 
