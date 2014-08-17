@@ -9,8 +9,8 @@ from django.contrib import auth
 from django.contrib import messages
 from django.utils.translation import ugettext as _
 from main_site.views import index
-from user_place.mail_sender import mail_sender
-from token_generator import *
+from user_place.util_mail_sender import mail_sender
+from util_token_generator import *
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 from user_place.forms import *
