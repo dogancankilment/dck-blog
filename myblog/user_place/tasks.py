@@ -1,14 +1,14 @@
+from __future__ import absolute_import
 from celery import Celery
+from celery import shared_task
 
-app = Celery('tasks', backend='amqp', broker='amqp://')
 
-
-@app.task
+@shared_task
 def print_hello():
     print 'hello there'
 
 
-@app.task
+@shared_task
 def gen_prime(x):
     multiples = []
     results = []
@@ -18,8 +18,3 @@ def gen_prime(x):
             for j in xrange(i*i, x+1, i):
                 multiples.append(j)
     return results
-
-if __name__ == '__main__':
-    primes = gen_prime.delay(5000)
-    print primes.get()
-    print primes.ready()

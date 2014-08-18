@@ -15,7 +15,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 from user_place.forms import *
 from django.template import RequestContext
-
+from .tasks import print_hello
 
 import datetime
 
@@ -23,6 +23,7 @@ import datetime
 @login_required(login_url='/user/login')
 def test_view(request):
     output = _("Welcome to my site.")
+    print_hello.delay()  # trying tasks.py
     return HttpResponse(output)
 
 
