@@ -1,8 +1,9 @@
 # Django settings for myblog project.
+import djcelery
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-PROJECT_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__),os.pardir))
+PROJECT_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
 # project path: for static_dirs and template_dirs
 
 AUTHENTICATION_BACKENDS = ('user_place.backends.EmailOrUsernameModelBackend',)
@@ -138,7 +139,10 @@ INSTALLED_APPS = (
     'user_place',
     'main_site',
     'django_extensions',
+    'djcelery',
 )
+
+djcelery.setup_loader()
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
