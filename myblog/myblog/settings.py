@@ -142,7 +142,9 @@ INSTALLED_APPS = (
     'djcelery',
 )
 
+# celery
 djcelery.setup_loader()
+CELERY_IMPORTS = ("user_place.util_mail_sender", "user_place.tasks")
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
