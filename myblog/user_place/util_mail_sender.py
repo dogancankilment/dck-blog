@@ -5,8 +5,11 @@ from django.template.loader import render_to_string
 from user_place.util_token_generator import *
 from django.http import HttpResponse
 from django.utils.translation import ugettext as _
+from celery import shared_task, task
+from celery import Celery
 
 
+@shared_task
 def mail_sender(email):
         plaintext = get_template('email/email_content.html')
         subject, from_email = 'hello',\
