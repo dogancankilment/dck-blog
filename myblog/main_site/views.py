@@ -1,9 +1,12 @@
 from django.shortcuts import render, redirect, render_to_response, get_object_or_404
-# from django.contrib.auth.decorators import login_required, permission_required
 from django.template import RequestContext
-# from django.http import HttpResponse, HttpRequest, HttpResponseRedirect
 from models import *
-# from django.core.context_processors import csrf
+from .forms import *
+from django.core.urlresolvers import reverse
+from django.core.context_processors import csrf
+from django.contrib.auth.decorators import login_required, permission_required
+from django.http import HttpResponse, HttpRequest, HttpResponseRedirect
+from django.core.context_processors import csrf
 # from django.http import HttpResponse, HttpRequest, HttpResponseRedirect
 # from forms import *
 # from django.core.urlresolvers import reverse
@@ -17,6 +20,27 @@ def index(request):  # blog_id
                               {"blogs": blog_list,
                                "comments": comment_list,
                                "request": request})
+
+@login_required(login_url='/user/login')
+def new_post(request):
+    # which_user = User.objects.filter(email=request.POST['username'])
+    form = New_Post()
+    if request.POST:
+        form = New_Post(request.POST)
+
+        if form.is_valid():
+            post = Post(title=form.cleaned_data.get('title'),
+                        content=form.cleaned_data.get('content'),
+                        which_user=request.user)
+            post.save()
+            return HttpResponse("Basarili")
+        else:
+            return HttpResponse("Amk")
+
+    c = {"form": form}
+    c.update(csrf(request))
+    return render_to_response("post/new_post.html",
+                              c)
 
 
 def my_custom_404(request, template_name='404.html'):
