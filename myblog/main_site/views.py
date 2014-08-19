@@ -7,6 +7,7 @@ from django.core.context_processors import csrf
 from django.contrib.auth.decorators import login_required, permission_required
 from django.http import HttpResponse, HttpRequest, HttpResponseRedirect
 from django.core.context_processors import csrf
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # from django.http import HttpResponse, HttpRequest, HttpResponseRedirect
 # from forms import *
 # from django.core.urlresolvers import reverse
@@ -15,10 +16,22 @@ from django.core.context_processors import csrf
 def index(request):  # blog_id
     blog_list = Post.objects.all()
     comment_list = Comments.objects.all()
+    paginator = Paginator(blog_list, 3)
+    page = request.GET.get('page')
+    try:
+        post_count = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        post_count = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        post_count = paginator.page(paginator.num_pages)
+
     return render_to_response("index/blog_index.html",
                               {"blogs": blog_list,
                                "comments": comment_list,
-                               "request": request})
+                               "request": request,
+                               "post_count": post_count})
 
 
 def single_post(request, id):
@@ -45,10 +58,6 @@ def edit_post(request, id):
     c = {"form": form, "id": post.id}
     c.update(csrf(request))
     return render_to_response('post/edit_post.html',c)
-
-
-def delete_post(request, id):
-    pass
 
 
 @login_required(login_url='/user/login')
