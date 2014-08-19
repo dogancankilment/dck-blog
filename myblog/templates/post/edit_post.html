@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block post_content %}
+    <div class="container">
+        <form method="POST" action=" " class="form-signin" role="form">
+
+        <h2 class="form-signin-heading">POST</h2>
+            {% for fields in form %}
+                {{ fields.label_tag }}
+                {{ fields }}
+                <br>
+            {% endfor %}
+        {% csrf_token %}
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Save</button>
+        {% if messages %}
+            <ul>
+                {% for m in messages %}
+                    <li>{{ m }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <!--https://docs.djangoproject.com/en/dev/ref/contrib/messages/ hata mesajı buradan alındı-->
+        <!--<h4><a href="">LİNK</a></h4>-->
+        <!--<h5><a href="">LİNK</a></h5>-->
+        </form>
+    </div> <!-- /container -->
+{% endblock post_content %}
