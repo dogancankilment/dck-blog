@@ -13,13 +13,43 @@ from django.core.context_processors import csrf
 
 
 def index(request):  # blog_id
-
     blog_list = Post.objects.all()
     comment_list = Comments.objects.all()
     return render_to_response("index/blog_index.html",
                               {"blogs": blog_list,
                                "comments": comment_list,
                                "request": request})
+
+
+def single_post(request, id):
+    post = Post.objects.get(id=id)
+    return render_to_response("post/single_post.html",
+                              {"post": post,
+                               "request": request})
+
+
+def edit_post(request, id):
+    post = Post.objects.get(id=id)
+    if request.POST:
+        form = New_Post(request.POST)
+        if form.is_valid():
+            post.title = form.cleaned_data.get('title')
+            post.content = form.cleaned_data.get('content')
+            post.which_user = request.user
+            post.save()
+            return redirect(reverse(index))
+    else:
+        form = New_Post(initial={'title': post.title,
+                                 'content': post.content,
+                                 'which_user': post.which_user})
+    c = {"form": form, "id": post.id}
+    c.update(csrf(request))
+    return render_to_response('post/edit_post.html',c)
+
+
+def delete_post(request, id):
+    pass
+
 
 @login_required(login_url='/user/login')
 def new_post(request):
@@ -35,12 +65,16 @@ def new_post(request):
             post.save()
             return HttpResponse("Basarili")
         else:
-            return HttpResponse("Amk")
+            return HttpResponse("Hata")
 
     c = {"form": form}
     c.update(csrf(request))
     return render_to_response("post/new_post.html",
                               c)
+
+
+# def new_comment(request):
+#
 
 
 def my_custom_404(request, template_name='404.html'):
