@@ -21,7 +21,7 @@
                 <p>{{ b.content|truncatechars:300 }} </p>
                 <p>{{ b.which_user }} {{ b.created_at }} {{ b.id }}</p>
 
-                <a href="/single_post/1" >Read More</a>
+                <a href="{% url single_post b.id %}" >Read More</a>
             </div>
 
              <!-- showing comments -->
