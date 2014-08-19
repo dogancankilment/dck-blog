@@ -13,34 +13,30 @@
 
 <!-- showing posts -->
 {% block post_content %}
-
     {% if blogs %}
-        {% for b in blogs %}
-            <div class="well">
-                <p>{{ b.title }} <br>----------</p>
-                <p>{{ b.content|truncatechars:300 }} </p>
-                <p>{{ b.which_user }} {{ b.created_at }} {{ b.id }}</p>
+            {% for b in post_count %}
+                <div class="well">
+                    <p>{{ b.title }} <br>----------</p>
+                    <p>{{ b.content|truncatechars:300 }} </p>
+                    <p>{{ b.which_user }} {{ b.created_at }} {{ b.id }}</p>
 
-                <a href="{% url single_post b.id %}" >Read More</a>
+                    <a href="{% url single_post b.id %}" >Read More</a>
+                </div>
+            {% endfor %}
+
+            <div class="pagination">
+                <span class="step-links">
+                    {% if post_count.has_previous %}
+                        <a href="?page={{ blogs.previous_page_number }}">previous</a>
+                    {% endif %}
+                    <span class="current">
+                        Page {{ post_count.number }} of {{ post_count.paginator.num_pages }}.
+                    </span>
+                    {% if post_count.has_next %}
+                        <a href="?page={{ post_count.next_page_number }}">next</a>
+                    {% endif %}
+                </span>
             </div>
-
-             <!-- showing comments -->
-            {% block comment_content %}
-                {% if comments %}
-                    {% for c in comments %}
-                    <tr>
-                        <th>{{ c.id }}</th>
-                        <!--<th>{{ c.which_user.id }}</th>-->
-                        <th>{{ c.which_user }}</th>
-                        <th>{{ c.content }}</th>
-                        <th>{{ c.which_post.id }}.posta aittir</th>
-                    </tr>
-                {% endfor %}
-                {% else %}
-                    <h2>We couldn't find any comment</h2>
-                {% endif %}
-            {% endblock comment_content %}
-        {% endfor %}
     {% endif %}
 {% endblock post_content %}
 
