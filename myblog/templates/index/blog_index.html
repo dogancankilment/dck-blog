@@ -14,37 +14,36 @@
 <!-- showing posts -->
 {% block post_content %}
 
-{% if blogs %}
-    {% for b in blogs %}
-        <tr>
-            <th>{{ b.id }}</th>
-            <th>{{ b.which_user }}</th>
-            <th>{{ b.title }}</th>
-            <th>{{ b.content }}</th>
-            <<th>{{ b.created_at }}</th>
-        </tr>
-    {% endfor %}
-{% else %}
-    <h2>We couldn't find any blog post</h2>
-{% endif %}
+    {% if blogs %}
+        {% for b in blogs %}
+            <div class="well">
+                <p>{{ b.title }} <br>----------</p>
+                <p>{{ b.content|truncatechars:300 }} </p>
+                <p>{{ b.which_user }} {{ b.created_at }} {{ b.id }}</p>
 
+                <a href="/single_post/1" >Read More</a>
+            </div>
+
+             <!-- showing comments -->
+            {% block comment_content %}
+                {% if comments %}
+                    {% for c in comments %}
+                    <tr>
+                        <th>{{ c.id }}</th>
+                        <!--<th>{{ c.which_user.id }}</th>-->
+                        <th>{{ c.which_user }}</th>
+                        <th>{{ c.content }}</th>
+                        <th>{{ c.which_post.id }}.posta aittir</th>
+                    </tr>
+                {% endfor %}
+                {% else %}
+                    <h2>We couldn't find any comment</h2>
+                {% endif %}
+            {% endblock comment_content %}
+        {% endfor %}
+    {% endif %}
 {% endblock post_content %}
 
-<!-- showing comments -->
-{% block comment_content %}
 
-{% if comments %}
-    {% for c in comments %}
-        <tr>
-            <th>{{ c.id }}</th>
-            <!--<th>{{ c.which_user.id }}</th>-->
-            <th>{{ c.which_user }}</th>
-            <th>{{ c.content }}</th>
-            <th>{{ c.which_post.id }}.posta aittir</th>
-        </tr>
-    {% endfor %}
-{% else %}
-    <h2>We couldn't find any comment</h2>
-{% endif %}
 
-{% endblock comment_content %}
+
