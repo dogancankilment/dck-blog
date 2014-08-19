@@ -7,4 +7,6 @@ urlpatterns = patterns('',
         'main_site.views.index',
         name='main_site.index'),
 
+    url(r'^new_post$',
+        'main_site.views.new_post'),
 )
