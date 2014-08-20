@@ -52,7 +52,7 @@ def edit_post(request, id):
         if form.is_valid():
             post.title = form.cleaned_data.get('title')
             post.content = form.cleaned_data.get('content')
-            post.which_user = request.user
+            post.which_user = post.which_user
             post.save()
 
             return redirect(reverse(index))
@@ -67,13 +67,13 @@ def edit_post(request, id):
     return render_to_response('post/edit_post.html',c)
 
 
-@login_required(login_url='/user/login')
+@login_required()
 def new_post(request):
     if request.POST:
         form = New_Post(request.POST, request.FILES)
 
         if form.is_valid():
-            form.save()
+            form.save(request.user)
             return HttpResponse("Success")
 
         else:
@@ -81,7 +81,7 @@ def new_post(request):
 
     else:
         form = New_Post()
-        c = {"form": form}
+        c = {"form": form, "request": request}
         c.update(csrf(request))
 
         return render_to_response("post/new_post.html",
