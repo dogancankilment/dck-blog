@@ -8,7 +8,8 @@ class Post(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
     which_user = models.ForeignKey(User)
-    # image = models.ImageField()
+    image = models.FileField(upload_to="static/images/blog_post/",
+                              null=True)
 
     comments = GenericRelation('Comments')
 
