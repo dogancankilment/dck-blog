@@ -15,6 +15,9 @@ class Post(models.Model):
 
     comments = GenericRelation('Comments')
 
+    class Meta:
+        ordering = ['-updated_at']
+
 
 class Comments(models.Model):
     which_user = models.ForeignKey(User)
