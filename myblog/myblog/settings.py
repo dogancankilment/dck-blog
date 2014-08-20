@@ -11,6 +11,8 @@ AUTHENTICATION_BACKENDS = ('user_place.backends.EmailOrUsernameModelBackend',)
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
+LOGIN_URL = '/user/login'
+
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
