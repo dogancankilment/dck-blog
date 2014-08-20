@@ -7,6 +7,4 @@ from .models import Post
 class New_Post(forms.Form):
     title = forms.CharField(max_length=100)
     content = forms.CharField(widget=forms.Textarea)
-    # class Meta:
-    #     model = Post
-    #     # fields= ('title', 'content', 'whi')
+    image = forms.FileField()
