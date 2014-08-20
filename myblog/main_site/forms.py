@@ -4,7 +4,6 @@ from django.forms import ModelForm
 from .models import Post
 
 
-class New_Post(forms.Form):
-    title = forms.CharField(max_length=100)
-    content = forms.CharField(widget=forms.Textarea)
-    image = forms.ImageField(required=None)
+class New_Post(ModelForm):
+    class Meta:
+        model = Post
