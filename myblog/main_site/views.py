@@ -66,11 +66,7 @@ def new_post(request):
         form = New_Post(request.POST, request.FILES)
 
         if form.is_valid():
-            post = Post(title=form.cleaned_data.get('title'),
-                        content=form.cleaned_data.get('content'),
-                        image=form.cleaned_data.get('image'),
-                        which_user=request.user)
-            post.save()
+            form.save()
             return HttpResponse("Success")
 
         else:
