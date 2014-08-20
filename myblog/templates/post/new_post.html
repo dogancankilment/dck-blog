@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block post_content %}
     <div class="container">
-        <form method="POST" action=" " class="form-signin" role="form">
+        <form method="POST" action=" " class="form-signin" enctype="multipart/form-data" role="form">
 
         <h2 class="form-signin-heading">POST</h2>
             {% for fields in form%}
