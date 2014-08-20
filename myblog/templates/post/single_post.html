@@ -1,4 +1,12 @@
 {% extends "base.html" %}
+
+<!-- showing user_name in menu bar -->
+{% block show_user%}
+{% if request.user.is_authenticated %}
+    <tr>Welcome {{request.user}}</tr>
+{% endif %}
+{% endblock show_user %}
+
 {% block post_content %}
             <div class="well">
                 <p>{{ post.title }} <br>----------</p>
