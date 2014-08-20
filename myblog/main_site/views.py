@@ -62,28 +62,28 @@ def edit_post(request, id):
 
 @login_required(login_url='/user/login')
 def new_post(request):
-    # which_user = User.objects.filter(email=request.POST['username'])
-    form = New_Post()
     if request.POST:
-        form = New_Post(request.POST)
+        form = New_Post(request.POST, request.FILES)
 
         if form.is_valid():
             post = Post(title=form.cleaned_data.get('title'),
                         content=form.cleaned_data.get('content'),
+                        image=form.cleaned_data.get('image'),
                         which_user=request.user)
             post.save()
-            return HttpResponse("Basarili")
+            return HttpResponse("Success")
+
         else:
-            return HttpResponse("Hata")
+            return HttpResponse("form is not valid")
 
-    c = {"form": form}
-    c.update(csrf(request))
-    return render_to_response("post/new_post.html",
-                              c)
+    else:
+        form = New_Post()
 
+        c = {"form": form}
+        c.update(csrf(request))
 
-# def new_comment(request):
-#
+        return render_to_response("post/new_post.html",
+                                  c)
 
 
 def my_custom_404(request, template_name='404.html'):
