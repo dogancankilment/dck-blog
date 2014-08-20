@@ -8,6 +8,8 @@ class Post(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
     which_user = models.ForeignKey(User)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     image = models.ImageField(upload_to='static/images/blog_posts/',
                               default='static/images/blog_posts/default_image.jpg')
 
@@ -17,6 +19,7 @@ class Post(models.Model):
 class Comments(models.Model):
     which_user = models.ForeignKey(User)
     content = models.CharField(max_length=200)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     content_type = models.ForeignKey(ContentType)
     object_id = models.PositiveIntegerField()
