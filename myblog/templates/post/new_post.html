@@ -1,4 +1,14 @@
 {% extends "base.html" %}
+
+<!-- showing user_name in menu bar -->
+{% block show_user%}
+
+{% if request.user.is_authenticated %}
+    <tr>Welcome {{request.user}}</tr>
+{% else %}
+
+{% endblock show_user %}
+
 {% block post_content %}
     <div class="container">
         <form method="POST" action=" " class="form-signin" enctype="multipart/form-data" role="form">
