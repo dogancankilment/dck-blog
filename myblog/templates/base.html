@@ -34,7 +34,12 @@
           <a class="blog-nav-item" href="#">About</a>
           <a class="blog-nav-item" href="#">
 
-              {% block show_user %}{% endblock show_user %}
+              <!-- showing user_name in menu bar -->
+            {% block show_user%}
+                {% if request.user.is_authenticated %}
+                    <tr>Welcome {{request.user}}</tr>
+                {% endif %}
+            {% endblock show_user %}
 
           </a>
         </nav>
