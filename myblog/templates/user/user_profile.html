@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block post_content %}
+  <div>
+      <div>
+          <div>
+          <h2 class="sub-header">My Profile</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1,001</td>
+                  <td>Lorem</td>
+                  <td>ipsum</td>
+                  <td>dolor</td>
+                  <td>sit</td>
+                </tr>
+                <tr>
+                  <td>1,002</td>
+                  <td>amet</td>
+                  <td>consectetur</td>
+                  <td>adipiscing</td>
+                  <td>elit</td>
+                </tr>
+                <tr>
+                    <td>{{ user_profile.username }}</td>
+                    <td>{{ user_profile.email }}</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="bs-example">
+              <ul class="media-list">
+
+                  <li class="media">
+                    <a class="pull-left" href="#">
+                      <img class="media-object" data-src="" alt="image">
+                    </a>
+                    <div class="media-body">
+                      <h4 class="media-heading">Media heading</h4>
+                      <p>Cras sit amet nibh libero, in gravida nulla. </p>
+                      <!-- Nested media object -->
+                      <div class="media">
+                        <a class="pull-left" href="#">
+                          <img class="media-object" data-src="holder.js/64x64" alt="image">
+                        </a>
+                        <div class="media-body">
+                          <h4 class="media-heading">Nested media heading</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+{% endblock post_content %}
