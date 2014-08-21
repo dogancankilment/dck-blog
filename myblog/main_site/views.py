@@ -1,16 +1,13 @@
-from django.shortcuts import render, redirect, render_to_response, get_object_or_404
+from django.shortcuts import redirect, render_to_response
 from django.template import RequestContext
 from models import *
 from .forms import *
 from django.core.urlresolvers import reverse
-from django.core.context_processors import csrf
-from django.contrib.auth.decorators import login_required, permission_required
-from django.http import HttpResponse, HttpRequest, HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
 from django.core.context_processors import csrf
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-# from django.http import HttpResponse, HttpRequest, HttpResponseRedirect
-# from forms import *
-# from django.core.urlresolvers import reverse
+
 
 
 def index(request):  # blog_id
