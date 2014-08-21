@@ -1,26 +1,22 @@
-from django.shortcuts import render, redirect, render_to_response, get_object_or_404
-from django.http import HttpResponse, HttpRequest, HttpResponseRedirect
+from django.shortcuts import render, redirect, render_to_response
+from django.http import HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
-from django.contrib.auth.decorators import login_required, permission_required
-from forms import *
-from models import *
-from django.core.context_processors import csrf
+from django.contrib.auth.decorators import login_required
 from django.contrib import auth
 from django.contrib import messages
 from django.utils.translation import ugettext as _
 from main_site.views import index
 from user_place.util_mail_sender import mail_sender
-from util_token_generator import *
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import authenticate, login
-from user_place.forms import *
+from util_token_generator import tokens_email, tokens_expire_date
+from django.contrib.auth import authenticate
+from user_place.forms import LoginForm, UserCreateForm, User
 from django.template import RequestContext
 from .tasks import print_hello
 
 import datetime
 
 
-@login_required(login_url='/user/login')
+@login_required()
 def test_view(request):
     output = _("Welcome to my site.")
     print_hello.delay()  # trying tasks.py
@@ -83,7 +79,7 @@ def activation(request, token_id):
         return HttpResponse(_("Boyle bir token yoktur"))
 
 
-@login_required(login_url='/user/login')
+@login_required()
 def logout(request):
     auth.logout(request)
     return redirect(reverse(my_login))
