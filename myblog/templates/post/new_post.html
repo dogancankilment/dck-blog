@@ -6,7 +6,8 @@
 {% if request.user.is_authenticated %}
     <tr>Welcome {{request.user}}</tr>
 {% else %}
-
+    <tr>Anonim User</tr>
+{% endif %}
 {% endblock show_user %}
 
 {% block post_content %}
