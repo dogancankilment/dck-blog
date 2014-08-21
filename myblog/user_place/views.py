@@ -9,9 +9,10 @@ from main_site.views import index
 from user_place.util_mail_sender import mail_sender
 from util_token_generator import tokens_email, tokens_expire_date
 from django.contrib.auth import authenticate
-from user_place.forms import LoginForm, UserCreateForm, User
+from user_place.forms import LoginForm, UserCreateForm, UserProfileForm
 from django.template import RequestContext
 from .tasks import print_hello
+from .models import User
 
 import datetime
 
@@ -21,6 +22,17 @@ def test_view(request):
     output = _("Welcome to my site.")
     print_hello.delay()  # trying tasks.py
     return HttpResponse(output)
+
+
+@login_required()
+def show_profile(request, template_name="user/user_profile.html"):
+    user_profile = User.objects.get(id=request.user.id)
+    form = UserProfileForm(initial={'username': user_profile.username,
+                                    'email': user_profile.email})
+
+    return render_to_response(template_name,
+                              {"form": form},
+                              context_instance=RequestContext(request))
 
 
 def my_login(request):
