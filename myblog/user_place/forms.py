@@ -1,12 +1,6 @@
-from wsgiref import validate
 from django import forms
-from django.contrib.admin import validation
-from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.forms import *
-from django.conf import settings
-from models import *
 
 
 class LoginForm(forms.Form):
@@ -31,4 +25,3 @@ class UserCreateForm(UserCreationForm):
         if commit:
             user.save()
         return user
-
