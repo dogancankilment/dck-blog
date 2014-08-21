@@ -1,39 +1,42 @@
 {% extends "base.html" %}
+
 {% load staticfiles %}
 
 {% block title %}
     <title>Blog List</title>
 {% endblock title %}
 
-
 <!-- showing posts -->
 {% block post_content %}
-    {% if blogs %}
-            {% for b in post_count %}
-                <div class="well">
-                    <p><image src="/{{ b.image }}"></image></p>
-                    <p>{{ b.title }} <br>----------</p>
-                    <p>{{ b.content|truncatechars:300 }} </p>
-                    <p>{{ b.which_user }} {{ b.created_at }} {{ b.id }}</p>
 
-                    <a href="{% url single_post b.id %}" >Read More</a>
-                </div>
-            {% endfor %}
+{% if blogs %}
+    {% for b in post_count %}
+        <div class="well">
+            <p><image src="/{{ b.image }}"></image></p>
+            <p>{{ b.title }} <br>----------</p>
+            <p>{{ b.content|truncatechars:300 }} </p>
+            <p>{{ b.which_user }} {{ b.created_at }} {{ b.id }}</p>
+            <a href="{% url single_post b.id %}" >Read More</a>
+        </div>
+    {% endfor %}
 
-            <div class="pagination">
-                <span class="step-links">
-                    {% if post_count.has_previous %}
-                        <a href="?page={{ blogs.previous_page_number }}">previous</a>
-                    {% endif %}
-                    <span class="current">
-                        Page {{ post_count.number }} of {{ post_count.paginator.num_pages }}.
-                    </span>
-                    {% if post_count.has_next %}
-                        <a href="?page={{ post_count.next_page_number }}">next</a>
-                    {% endif %}
-                </span>
-            </div>
-    {% endif %}
+    <div class="pagination">
+        <span class="step-links">
+
+            {% if post_count.has_previous %}
+            <a href="?page={{ blogs.previous_page_number }}">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ post_count.number }} of {{ post_count.paginator.num_pages }}.
+            </span>
+
+            {% if post_count.has_next %}
+            <a href="?page={{ post_count.next_page_number }}">next</a>
+            {% endif %}
+        </span>
+    </div>
+{% endif %}
 {% endblock post_content %}
 
 
