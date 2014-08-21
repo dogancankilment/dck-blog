@@ -1,12 +1,5 @@
 {% extends "base.html" %}
 
-<!-- showing user_name in menu bar -->
-{% block show_user%}
-{% if request.user.is_authenticated %}
-    <tr>Welcome {{request.user}}</tr>
-{% endif %}
-{% endblock show_user %}
-
 {% block post_content %}
             <div class="well">
                 <p>{{ post.title }} <br>----------</p>
@@ -30,7 +23,7 @@
                     <h2>We couldn't find any comment</h2>
                 {% endif %}
             {% endblock comment_content %}
-{% block edit %}
+    {% block edit %}
         <a href="{% url edit_post post.id %}"  class="btn btn-sm btn-success">Edit</a>
-{% endblock edit %}
+    {% endblock edit %}
 {% endblock post_content %}

@@ -1,15 +1,10 @@
 {% extends "base.html" %}
 {% load staticfiles %}
+
 {% block title %}
     <title>Blog List</title>
 {% endblock title %}
 
-<!-- showing user_name in menu bar -->
-{% block show_user%}
-{% if request.user.is_authenticated %}
-    <tr>Welcome {{request.user}}</tr>
-{% endif %}
-{% endblock show_user %}
 
 <!-- showing posts -->
 {% block post_content %}
