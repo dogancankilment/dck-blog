@@ -58,7 +58,7 @@ def edit_post(request, id):
                                  'content': post.content,
                                  'which_user': post.which_user})
 
-    c = {"form": form, "id": post.id}
+    c = {"form": form, "id": post.id, "request": request}
     c.update(csrf(request))
     return render_to_response('post/edit_post.html',c)
 
