@@ -1,13 +1,12 @@
 from django.shortcuts import redirect, render_to_response
 from django.template import RequestContext
-from models import *
-from .forms import *
+from .models import Post, Comments
+from .forms import New_Post
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.core.context_processors import csrf
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-
 
 
 def index(request):  # blog_id
