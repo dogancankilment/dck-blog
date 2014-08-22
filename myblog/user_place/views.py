@@ -27,12 +27,16 @@ def test_view(request):
 @login_required()
 def show_profile(request, template_name="user/user_profile.html"):
     user_profile = User.objects.get(id=request.user.id)
-    form = UserProfileForm(initial={'username': user_profile.username,
-                                    'email': user_profile.email})
 
     return render_to_response(template_name,
-                              {"form": form},
+                              {"user_profile": user_profile,
+                               "request": request},
                               context_instance=RequestContext(request))
+
+
+@login_required()
+def edit_profile(request):
+    return render(request, 'user/edit_profile.html')
 
 
 def my_login(request):
