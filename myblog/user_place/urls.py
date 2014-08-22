@@ -22,6 +22,10 @@ urlpatterns = patterns('',
                            'user_place.views.show_profile',
                            name='show_profile'),
 
+                       url(r'^edit_profile$',
+                           'user_place.views.edit_profile',
+                           name='edit_profile'),
+
                        url(r'^activation/(?P<token_id>.*)',
                            'user_place.views.activation',
                            name='activation'),
