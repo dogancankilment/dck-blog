@@ -20,6 +20,5 @@ New Commer Request Django Blog
 * *Django 1.4.8*
 * *Django_Extensions*
 * *VirtualEnv*
-
 * *Initial_Data for code review*
-
+* *Bootstrap 3*
