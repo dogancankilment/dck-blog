@@ -1,7 +1,9 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 
 {% block post_content %}
             <div class="well">
+                <p><image src="/{{ post.image }}"></image></p>
                 <p>{{ post.title }} <br>----------</p>
                 <p>{{ post.content }} </p>
                 <p>{{ post.which_user }} {{ post.created_at }} {{ post.id }}</p>
