@@ -40,6 +40,7 @@ def single_post(request, id):
                                "request": request})
 
 
+@login_required()
 def edit_post(request, id):
     post = Post.objects.get(id=id)
     if request.POST:
