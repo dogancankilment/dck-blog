@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.forms.models import ModelForm
 
+from .util_mail_sender import mail_sender
+
 
 class LoginForm(forms.Form):
     username = forms.CharField(required=True, label="email")
@@ -22,6 +24,8 @@ class UserCreateForm(UserCreationForm):
     def save(self, commit=True):
         user = super(UserCreateForm, self).save(commit=False)
         user.email = self.cleaned_data["email"]
+        mail_sender.delay(user.email)
+        user.is_active = False
 
         if commit:
             user.save()
