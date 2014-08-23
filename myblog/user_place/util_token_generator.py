@@ -17,10 +17,13 @@ def activation_key_generator(email):
 @shared_task
 def tokens_email(token_id):
     if "=" in token_id:
-        email = token_id.split('=')[1] + '=='
-        email = base64.b64decode(email)
+        # if len(str(token_id)) == 70:
+        # this line controlled in views
+        # with try except block
+            email = token_id.split('=')[1] + '=='
+            email = base64.b64decode(email)
 
-        return email
+            return email
 
 
 @shared_task
