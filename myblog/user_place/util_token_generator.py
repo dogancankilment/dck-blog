@@ -20,10 +20,10 @@ def tokens_email(token_id):
         # if len(str(token_id)) == 70:
         # this line controlled in views
         # with try except block
-            email = token_id.split('=')[1] + '=='
-            email = base64.b64decode(email)
+        email = token_id.split('=')[1] + '=='
+        email = base64.b64decode(email)
 
-            return email
+        return email
 
 
 @shared_task
