@@ -146,7 +146,9 @@ INSTALLED_APPS = (
 
 # celery
 djcelery.setup_loader()
-CELERY_IMPORTS = ("user_place.util_mail_sender", "user_place.tasks")
+CELERY_IMPORTS = ("user_place.util_mail_sender",
+                  "user_place.tasks",
+                  "user_place.util_image_resizer")
 
 # caching with redis
 CACHES = {
