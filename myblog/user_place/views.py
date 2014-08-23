@@ -50,8 +50,6 @@ def my_login(request):
                             password=form.cleaned_data['password'])
 
         if user:
-            import ipdb
-            ipdb.set_trace()
             if user.is_active:
                 auth.login(request, user)
 
