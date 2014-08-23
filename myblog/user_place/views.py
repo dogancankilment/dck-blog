@@ -48,14 +48,20 @@ def my_login(request):
     if form.is_valid():
         user = authenticate(username=form.cleaned_data['username'],
                             password=form.cleaned_data['password'])
+        if user.is_verified:
+            if user:
+                auth.login(request, user)
 
-        if user:
-            auth.login(request, user)
-
-            return HttpResponseRedirect(reverse(index))  # Redirect to a success page
-
+                return HttpResponseRedirect(reverse(index))  # Redirect to a success page
+            else:
+                messages.error(request,
+                               'Boyle bir kullanici sistemde kayitli degil')
         else:
-            messages.error(request, 'Hatali yerler var')
+            messages.error(request,
+                           'Lutfen hesabinizi aktif ediniz')
+    else:
+        messages.error(request,
+                       'Hatali yerler var')
 
     return render(request, 'Authentication/login.html',
                   {'login_form': form})
@@ -73,29 +79,42 @@ def signup(request, template_name="Authentication/signup.html"):
                               context_instance=RequestContext(request))
 
 
-def activation(request, token_id):
+def activation(request, token_id, template_name="Authentication/activation.html"):
     if token_id:
-        email_in_token = tokens_email(token_id)
+        try:
+            email_in_token = tokens_email(token_id)
+        except TypeError:
+            messages.error(request,
+                           (_('Hatali aktivasyon kodu')))
+            return render(request,
+                          template_name)
+
         result = User.objects.filter(email=email_in_token).exists()
 
         if result:
             expire_date_in_token = tokens_expire_date(token_id)
 
             if str(expire_date_in_token) > str(datetime.datetime.today()):
-                return HttpResponse(_("Basarili bir sekilde aktif ettiniz"))
+                messages.success(request,
+                                 (_('Hesabiniz aktif edilmistir. Lutfen giris yapiniz.')))
+                return render(request,
+                              template_name)
 
             else:
                 mail_sender(email_in_token)
-
-                return HttpResponse(_("Eski aktivasyon mailinin suresi bitmistir,"
-                                    "yeni bir email yolladik,"
-                                    "lutfen posta kutunuzu ziyaret ediniz."))
-
+                messages.success(request, (_('Eski aktivasyon mailinin suresi bitmistir,'
+                                             'yeni bir email yolladik,'
+                                             'lutfen posta kutunuzu ziyaret ediniz.')))
+                return render(request,
+                              template_name)
         else:
-            return HttpResponse(_("Eslesen email bulunamadi"))
+            messages.success(request, (_('Eslesen email bulunamadi.')))
+            return render(request,
+                          template_name)
     else:
-
-        return HttpResponse(_("Boyle bir token yoktur"))
+        messages.success(request, (_('Boyle bir token yoktur')))
+        return render(request,
+                      template_name)
 
 
 @login_required()
