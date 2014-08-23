@@ -48,20 +48,21 @@ def my_login(request):
     if form.is_valid():
         user = authenticate(username=form.cleaned_data['username'],
                             password=form.cleaned_data['password'])
-        if user.is_verified:
-            if user:
+
+        if user:
+            import ipdb
+            ipdb.set_trace()
+            if user.is_active:
                 auth.login(request, user)
 
                 return HttpResponseRedirect(reverse(index))  # Redirect to a success page
+
             else:
                 messages.error(request,
-                               'Boyle bir kullanici sistemde kayitli degil')
+                               'Lutfen Hesabinizi aktif ediniz.')
         else:
             messages.error(request,
-                           'Lutfen hesabinizi aktif ediniz')
-    else:
-        messages.error(request,
-                       'Hatali yerler var')
+                           'Boyle bir kullanici sistemde kayitli degil')
 
     return render(request, 'Authentication/login.html',
                   {'login_form': form})
@@ -95,8 +96,13 @@ def activation(request, token_id, template_name="Authentication/activation.html"
             expire_date_in_token = tokens_expire_date(token_id)
 
             if str(expire_date_in_token) > str(datetime.datetime.today()):
+                user = User.objects.get(email=email_in_token)
+                user.is_active = True
+                user.save()
+
                 messages.success(request,
                                  (_('Hesabiniz aktif edilmistir. Lutfen giris yapiniz.')))
+
                 return render(request,
                               template_name)
 
