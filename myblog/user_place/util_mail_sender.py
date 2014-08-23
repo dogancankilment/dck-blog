@@ -2,11 +2,11 @@ from django.core.mail import EmailMultiAlternatives
 from django.template.loader import get_template
 from django.template import Context
 from django.template.loader import render_to_string
-from user_place.util_token_generator import *
 from django.http import HttpResponse
 from django.utils.translation import ugettext as _
-from celery import shared_task, task
-from celery import Celery
+
+from user_place.util_token_generator import activation_key_generator
+from celery import shared_task
 
 
 @shared_task

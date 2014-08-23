@@ -1,4 +1,5 @@
 from PIL import Image, ImageEnhance
+from celery import shared_task
 
 
 def reduce_opacity(im, opacity):
@@ -14,6 +15,7 @@ def reduce_opacity(im, opacity):
     return im
 
 
+@shared_task
 def watermark(im, mark, position, opacity=1):
     """Adds a watermark to an image."""
     if opacity < 1:
