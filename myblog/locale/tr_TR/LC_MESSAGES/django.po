@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-14 00:34-0500\n"
+"POT-Creation-Date: 2014-08-23 22:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,32 +17,36 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: user_place/mail_sender.py:30
+#: user_place/util_mail_sender.py:33
 msgid "mailiniz gonderildi"
 msgstr ""
 
-#: user_place/mail_sender.py:33
+#: user_place/util_mail_sender.py:36
 msgid "Gondereceginiz kisininemail adresi belli olmalidir."
 msgstr ""
 
-#: user_place/views.py:21
+#: user_place/views.py:23
 msgid "Welcome to my site."
 msgstr ""
 
-#: user_place/views.py:80
-msgid "Basarili bir sekilde aktif ettiniz"
+#: user_place/views.py:88
+msgid "Hatali aktivasyon kodu"
 msgstr ""
 
-#: user_place/views.py:85
+#: user_place/views.py:99
+msgid "Hesabiniz aktif edilmistir. Lutfen giris yapiniz."
+msgstr ""
+
+#: user_place/views.py:105
 msgid ""
 "Eski aktivasyon mailinin suresi bitmistir,yeni bir email yolladik,lutfen "
 "posta kutunuzu ziyaret ediniz."
 msgstr ""
 
-#: user_place/views.py:90
-msgid "Eslesen email bulunamadi"
+#: user_place/views.py:111
+msgid "Eslesen email bulunamadi."
 msgstr ""
 
-#: user_place/views.py:93
+#: user_place/views.py:115
 msgid "Boyle bir token yoktur"
 msgstr ""
