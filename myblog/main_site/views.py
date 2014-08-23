@@ -70,6 +70,7 @@ def new_post(request):
 
         if form.is_valid():
             form.save(request.user)
+
             return HttpResponse("Success")
 
         else:
