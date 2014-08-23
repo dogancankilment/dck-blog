@@ -1,3 +1,5 @@
+import datetime
+
 from django.shortcuts import render, redirect, render_to_response
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
@@ -5,16 +7,15 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import auth
 from django.contrib import messages
 from django.utils.translation import ugettext as _
-from main_site.views import index
-from user_place.util_mail_sender import mail_sender
-from util_token_generator import tokens_email, tokens_expire_date
 from django.contrib.auth import authenticate
-from user_place.forms import LoginForm, UserCreateForm, UserProfileForm
 from django.template import RequestContext
+
+from main_site.views import index
+from .util_token_generator import tokens_email, tokens_expire_date
+from user_place.util_mail_sender import mail_sender
+from user_place.forms import LoginForm, UserCreateForm
 from .tasks import print_hello
 from .models import User
-
-import datetime
 
 
 @login_required()
@@ -36,7 +37,9 @@ def show_profile(request, template_name="user/user_profile.html"):
 
 @login_required()
 def edit_profile(request):
-    return render(request, 'user/edit_profile.html')
+    return render_to_response('user/edit_profile.html',
+                              {"request": request},
+                              context_instance=RequestContext(request))
 
 
 def my_login(request):
