@@ -1,5 +1,6 @@
 from django.forms import ModelForm
 from .models import Post
+from user_place.util_image_resizer import image_resizer
 
 
 class New_Post(ModelForm):
@@ -14,3 +15,4 @@ class New_Post(ModelForm):
         post.which_user = user
         post.image = self.cleaned_data.get('image')
         post.save()
+        image_resizer.delay(post.image.url)
