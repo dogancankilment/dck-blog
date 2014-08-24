@@ -14,15 +14,7 @@ from main_site.views import index
 from .util_token_generator import tokens_email, tokens_expire_date
 from user_place.util_mail_sender import mail_sender
 from user_place.forms import LoginForm, UserCreateForm
-from .tasks import print_hello
 from .models import User
-
-
-@login_required()
-def test_view(request):
-    output = _("Welcome to my site.")
-    print_hello.delay()  # trying tasks.py
-    return HttpResponse(output)
 
 
 @login_required()
