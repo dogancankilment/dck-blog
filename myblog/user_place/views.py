@@ -70,16 +70,11 @@ def signup(request, template_name="Authentication/signup.html"):
     form = UserCreateForm(request.POST or None)
 
     if form.is_valid():
-        if form.save():
-            return HttpResponseRedirect(reverse(my_login))
+        form.save()
+        return HttpResponseRedirect(reverse(my_login))
 
-        # like form validation error
-        # but it's more short
-        else:
-            messages.error(request,
-                           (_('Bu email adresi daha onceden alinmistir.')))
-
-    return render(request, template_name,
+    return render(request,
+                  template_name,
                   {'form': form})
 
 
