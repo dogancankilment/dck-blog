@@ -23,19 +23,18 @@
       
       <form method="POST" class="form-signin" role="form">
         <h2 class="form-signin-heading">Sign Up</h2>
-          {% for field in form %}
+        {% for field in form %}
             <input type="{{field.field.widget.input_type}}" name="{{field.html_name}}" class="form-control" placeholder="{{field.label}}" required autofocus>
         {% endfor %}
         <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}" />
         <button class="btn btn-lg btn-primary btn-block" type="submit">SignUp</button>
-        {% if form.non_field_errors %}
-            <ul class='form-errors'>
-                {% for error in form.non_field_errors %}
-                    <li>{{ error }}</li>
+        {% if messages %}
+            <ul>
+                {% for m in messages %}
+                    <li>{{ m }}</li>
                 {% endfor %}
             </ul>
         {% endif %}
-
       </form>
 
     </div> <!-- /container -->
