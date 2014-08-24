@@ -70,12 +70,17 @@ def signup(request, template_name="Authentication/signup.html"):
     form = UserCreateForm(request.POST or None)
 
     if form.is_valid():
-        form.save()
-        return HttpResponseRedirect(reverse(my_login))
+        if form.save():
+            return HttpResponseRedirect(reverse(my_login))
 
-    return render_to_response(template_name,
-                              {"form": form},
-                              context_instance=RequestContext(request))
+        # like form validation error
+        # but it's more short
+        else:
+            messages.error(request,
+                           (_('Bu email adresi daha onceden alinmistir.')))
+
+    return render(request, template_name,
+                  {'form': form})
 
 
 def activation(request, token_id, template_name="Authentication/activation.html"):
