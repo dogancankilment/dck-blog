@@ -24,6 +24,9 @@ class UserCreateForm(UserCreationForm):
     def save(self, commit=True):
         user = super(UserCreateForm, self).save(commit=False)
         user.email = self.cleaned_data["email"]
+        if User.objects.filter(email=user.email):
+            return False
+
         mail_sender.delay(user.email)
         user.is_active = False
 
