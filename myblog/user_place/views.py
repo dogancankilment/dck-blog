@@ -57,10 +57,10 @@ def my_login(request):
 
             else:
                 messages.error(request,
-                               'Lutfen Hesabinizi aktif ediniz.')
+                               (_('Lutfen Hesabinizi aktif ediniz.')))
         else:
             messages.error(request,
-                           'Boyle bir kullanici sistemde kayitli degil')
+                           (_('Boyle bir kullanici sistemde kayitli degil')))
 
     return render(request, 'Authentication/login.html',
                   {'login_form': form})
