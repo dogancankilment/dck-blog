@@ -22,7 +22,10 @@ class New_Post(ModelForm):
 class New_Comment(ModelForm):
     class Meta:
         model = Comments
-        exclude = ['created_at', 'which_user']
+        exclude = ['created_at',
+                   'which_user',
+                   'content_type',
+                   'object_id']
 
     def save(self, root, user):
         comment = Comments(content=self.cleaned_data["name"],
