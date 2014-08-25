@@ -14,12 +14,8 @@ urlpatterns = patterns('',
                            'main_site.views.edit_post',
                             name='edit_post'),
 
-                       url(r'^single_post/(?P<id>\w+)',
+                       url(r'^single_post/(?P<post_id>\w+)/(?P<comment_id>\w+)$',
                            'main_site.views.single_post',
-                            name='single_post'),
-
-                       url(r'^new_comment/(?P<post_id>\w+)/(?P<comment_id>\w+)$',
-                           'main_site.views.add_comment',
-                           name='add_comment'),
+                           name='single_post'),
 
 )
