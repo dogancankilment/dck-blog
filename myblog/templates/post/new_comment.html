@@ -1,12 +1,6 @@
-{% extends "base.html" %}
+{% include "post/single_post.html" with post=post comments=comment %}
 
 {% block post_content %}
-
-{% block show_comments %}
-
-{% endblock show_comments %}
-
-    {% block add_comment %}
     <div class="container">
         <form method="POST" action="" class="form-signin" role="form" style="width: 300px">
 
@@ -15,7 +9,7 @@
             <input type="{{field.field.widget.input_type}}" name="{{field.html_name}}" class="form-control" placeholder="{{field.label}}" required autofocus>
         {% endfor %}
         <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}" />
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Save</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" style="width: 50px">Save</button>
         {% if messages %}
             <ul>
                 {% for m in messages %}
@@ -24,8 +18,5 @@
             </ul>
         {% endif %}
         </form>
-
     </div> <!-- /container -->
-
-    {% endblock add_comment %}
 {% endblock post_content %}
