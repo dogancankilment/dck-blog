@@ -98,7 +98,7 @@ def new_comment(request, post_id, comment_id):
                 root_post = post_comments(request, post_id)
                 form.save(root_post, request.user)  # post object
             else:
-                current_comment = comments_comment(request, post_id)
+                current_comment = comments_comment(request, comment_id)
                 form.save(current_comment, request.user)  # comment object
 
     else:
