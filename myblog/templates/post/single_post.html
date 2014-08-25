@@ -2,30 +2,31 @@
 {% load staticfiles %}
 
 {% block post_content %}
-            <div class="well">
-                <p><image src="/{{ post.image }}"></image></p>
-                <p>{{ post.title }} <br>----------</p>
-                <p>{{ post.content }} </p>
-                <p>{{ post.which_user }} {{ post.created_at }} {{ post.id }}</p>
-            </div>
-
-             <!-- showing comments -->
-            {% block comment_content %}
-                {% if comments %}
-                    {% for c in comments %}
-                    <tr>
-                        <th>{{ c.id }}</th>
-                        <!--<th>{{ c.which_user.id }}</th>-->
-                        <th>{{ c.which_user }}</th>
-                        <th>{{ c.content }}</th>
-                        <th>{{ c.which_post.id }}.posta aittir</th>
-                    </tr>
-                {% endfor %}
-                {% else %}
-                    <h2>We couldn't find any comment</h2>
-                {% endif %}
-            {% endblock comment_content %}
     {% block edit %}
         <a href="{% url edit_post post.id %}"  class="btn btn-sm btn-success">Edit</a>
     {% endblock edit %}
+    <div class="well" id="show_posts">
+        <p><image src="/{{ post.image }}"></image></p>
+        <p>{{ post.title }} <br>----------</p>
+        <p>{{ post.content }} </p>
+        <p>{{ post.which_user }} {{ post.created_at }} {{ post.id }}</p>
+    </div>
+
+    <!-- showing comments -->
+    {% block comment_content %}
+        {% if comments %}
+            <div class="well">
+            esas Yorum : {{ comments.which_user }}
+            {{ comments.content }}<br><br>
+            {% for p in post.comments.all %}
+            sub yorum:{{ p.which_user }}
+            {{ p.content }}<br><br>
+            {% endfor %}
+            </div>
+        {% else %}
+                    <h2>We couldn't find any comment</h2>
+        {% endif %}
+
+    {% endblock comment_content %}
+
 {% endblock post_content %}
