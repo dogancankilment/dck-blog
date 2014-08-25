@@ -148,7 +148,8 @@ INSTALLED_APPS = (
 djcelery.setup_loader()
 CELERY_IMPORTS = ("user_place.util_mail_sender",
                   "user_place.tasks",
-                  "user_place.util_image_resizer")
+                  "user_place.util_image_resizer",
+                  "main_site.util_add_comment")
 
 # caching with redis
 CACHES = {
@@ -160,6 +161,7 @@ CACHES = {
         }
     }
 }
+
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
