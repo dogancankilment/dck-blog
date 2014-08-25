@@ -1,4 +1,3 @@
-from IPython.nbformat import current
 from django.shortcuts import redirect, render_to_response, get_object_or_404, render
 from django.template import RequestContext
 from django.core.urlresolvers import reverse
@@ -90,23 +89,28 @@ def new_post(request):
 
 
 def new_comment(request, post_id, comment_id):
-    d = [None, None]
+    root_comment,root_post = None, None
+
     if request.POST:
         form = New_Comment(request.POST)
         if form.is_valid():
             if comment_id == 0:
-                d = post_comments.delay(post_id)
-                form.save(d[0])  # post object
+                root_post = post_comments.delay(post_id)
+                form.save(root_post, request.user)  # post object
             else:
-                d = comments_comment.delay(post_id)
-                form.save(d[1])  # comment object
+                current_comment = get_object_or_404(
+                    Comments.objects.select_related(),
+                    pk=post_id)
+
+                root_comment = comments_comment.delay(post_id, current_comment)
+                form.save(root_comment, request.user)  # comment object
 
     else:
         form = New_Comment(request.POST)
 
     return render(request, 'post/new_comment.html',
-                  {'current_post': d[0],
-                   'current_comment': d[1],
+                  {'post': root_post,
+                   'comment': root_comment,
                    'form': form})
 
 
