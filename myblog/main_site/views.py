@@ -89,12 +89,12 @@ def new_post(request):
 
 
 def new_comment(request, post_id, comment_id):
-    root_comment,root_post = None, None
+    root_comment, root_post = None, None
 
     if request.POST:
         form = New_Comment(request.POST)
         if form.is_valid():
-            if comment_id == 0:
+            if comment_id == "1":
                 root_post = post_comments(request, post_id)
                 form.save(root_post, request.user)  # post object
             else:
