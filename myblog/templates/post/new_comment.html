@@ -1,15 +1,54 @@
-{% include "post/single_post.html" with post=post comments=comment %}
+{% extends "base.html" %}
 
 {% block post_content %}
-    <div class="container">
-        <form method="POST" action="" class="form-signin" role="form" style="width: 300px">
+    {% block edit %}
+        <a href="{% url edit_post post.id %}"  class="btn btn-sm btn-success">Edit</a>
+    {% endblock edit %}
+    <div class="well" id="show_posts">
+        <p><image src="/{{ post.image }}"></image></p>
+        <p>{{ post.title }} <br>----------</p>
+        <p>{{ post.content }} </p>
+        <p>{{ post.which_user }} {{ post.created_at }} {{ post.id }}</p>
+    </div>
+        {% if comment %}
+            {% for p in post.comments.all %}
+                <div class="well" id="show_comments">
+                <p>
+                    {{ p.which_user }} <br>
+                    {{ p.content }}
+                </p>
+                    <div class="panel-body">
+                    <form class="form form-vertical" method="POST" action=" ">
+                        <div class="control-group">
+                        <label>Comment</label>
+                           <div class="controls">
+                               {{form.content}}
+                           </div>
+                        </div>
+                    <br>
+                    {% csrf_token %}
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" style="width: 50px">Save</button>
+                    </form>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+                    <div class="panel-body">
+                    <form class="form form-vertical" method="POST" action=" ">
+                        <div class="control-group">
+                        <label>Comment</label>
+                           <div class="controls">
+                               {{form.content}}
+                           </div>
+                        </div>
+                    <br>
+                    {% csrf_token %}
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" style="width: 50px">Save</button>
+                    </form>
+        {% endif %}
+    {% block add_comment %}
 
-        <h2 class="form-signin-heading">Add Comment</h2>
-        {% for field in form %}
-            <input type="{{field.field.widget.input_type}}" name="{{field.html_name}}" class="form-control" placeholder="{{field.label}}" required autofocus>
-        {% endfor %}
-        <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}" />
-        <button class="btn btn-lg btn-primary btn-block" type="submit" style="width: 50px">Save</button>
+
         {% if messages %}
             <ul>
                 {% for m in messages %}
@@ -17,6 +56,8 @@
                 {% endfor %}
             </ul>
         {% endif %}
-        </form>
+
     </div> <!-- /container -->
+    {% endblock add_comment %}
+
 {% endblock post_content %}
