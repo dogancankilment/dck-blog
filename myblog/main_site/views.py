@@ -36,13 +36,6 @@ def index(request):  # blog_id
                                "read_more": 1})
 
 
-# def single_post(request, id):
-#     post = Post.objects.get(id=id)
-#     return render_to_response("post/single_post.html",
-#                               {"post": post,
-#                                "request": request})
-
-
 @login_required()
 def edit_post(request, id):
     post = Post.objects.get(id=id)
