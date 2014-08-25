@@ -30,5 +30,5 @@ class New_Comment(ModelForm):
     def save(self, root, user):
         comment = Comments(content=self.cleaned_data["content"],
                            which_user=user,
-                           content_object=root)
+                           parent_object=root)
         comment.save()
