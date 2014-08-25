@@ -32,14 +32,15 @@ def index(request):  # blog_id
                               {"blogs": blog_list,
                                "comments": comment_list,
                                "request": request,
-                               "post_count": post_count})
+                               "post_count": post_count,
+                               "read_more": 1})
 
 
-def single_post(request, id):
-    post = Post.objects.get(id=id)
-    return render_to_response("post/single_post.html",
-                              {"post": post,
-                               "request": request})
+# def single_post(request, id):
+#     post = Post.objects.get(id=id)
+#     return render_to_response("post/single_post.html",
+#                               {"post": post,
+#                                "request": request})
 
 
 @login_required()
@@ -89,7 +90,7 @@ def new_post(request):
 
 
 @login_required()
-def new_comment(request, post_id, comment_id):
+def single_post(request, post_id, comment_id):
     root_post = Post.objects.get(id=post_id)
     root_comment = root_post.comments.all()
 
@@ -103,15 +104,14 @@ def new_comment(request, post_id, comment_id):
                 current_comment = comments_comment(request, comment_id)
                 form.save(current_comment, request.user)  # comment object
 
+            return redirect(reverse(index))
     else:
         form = New_Comment(request.POST)
 
     return render(request, 'post/new_comment.html',
                   {'post': root_post,
                    'comment': root_comment,
-                   'form': form,
-                   'request': request})
-
+                   'form': form})
 
 
 def my_custom_404(request, template_name='404.html'):
