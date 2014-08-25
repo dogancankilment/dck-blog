@@ -18,4 +18,8 @@ urlpatterns = patterns('',
                            'main_site.views.edit_post',
                             name='edit_post'),
 
+                       url(r'^new_comment/(?P<post_id>\w+)/(?P<comment_id>\w+)$',
+                           'main_site.views.new_comment',
+                           name='new_comment'),
+
 )
