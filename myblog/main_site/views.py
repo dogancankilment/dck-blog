@@ -1,12 +1,15 @@
-from django.shortcuts import redirect, render_to_response
+from IPython.nbformat import current
+from django.shortcuts import redirect, render_to_response, get_object_or_404, render
 from django.template import RequestContext
-from .models import Post, Comments
-from .forms import New_Post
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.core.context_processors import csrf
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
+from .models import Post, Comments
+from .forms import New_Post, New_Comment
+from .util_add_comment import post_comments, comments_comment
 
 
 def index(request):  # blog_id
@@ -84,6 +87,28 @@ def new_post(request):
 
         return render_to_response("post/new_post.html",
                                   c)
+
+
+def new_comment(request, post_id, comment_id):
+    d = [None, None]
+    if request.POST:
+        form = New_Comment(request.POST)
+        if form.is_valid():
+            if comment_id == 0:
+                d = post_comments.delay(post_id)
+                form.save(d[0])  # post object
+            else:
+                d = comments_comment.delay(post_id)
+                form.save(d[1])  # comment object
+
+    else:
+        form = New_Comment(request.POST)
+
+    return render(request, 'post/new_comment.html',
+                  {'current_post': d[0],
+                   'current_comment': d[1],
+                   'form': form})
+
 
 
 def my_custom_404(request, template_name='404.html'):
