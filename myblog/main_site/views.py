@@ -95,15 +95,11 @@ def new_comment(request, post_id, comment_id):
         form = New_Comment(request.POST)
         if form.is_valid():
             if comment_id == 0:
-                root_post = post_comments.delay(post_id)
+                root_post = post_comments(request, post_id)
                 form.save(root_post, request.user)  # post object
             else:
-                current_comment = get_object_or_404(
-                    Comments.objects.select_related(),
-                    pk=post_id)
-
-                root_comment = comments_comment.delay(post_id, current_comment)
-                form.save(root_comment, request.user)  # comment object
+                current_comment = comments_comment(request, post_id)
+                form.save(current_comment, request.user)  # comment object
 
     else:
         form = New_Comment(request.POST)
