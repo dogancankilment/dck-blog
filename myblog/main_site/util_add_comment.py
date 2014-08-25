@@ -7,18 +7,15 @@ from celery import shared_task
 def post_comments(request, post_id):
     # this comment making to post
     current_post = get_object_or_404(Post.objects.select_related(), pk=post_id)
-    current_comment = None
 
-    d = [current_post, current_comment]
-    return d
+    return current_post
 
 
 @shared_task
-def comments_comment(request, post_id):
+def comments_comment(request, post_id, current_comment):
     # this comment making to comment
     count = 0
 
-    current_comment = get_object_or_404(Comments.objects.select_related(), pk=post_id)
     current_post = current_comment.content_object
 
     # end the while loop
@@ -30,5 +27,4 @@ def comments_comment(request, post_id):
 
     current_post = current_post.content_object  # this line find which_post
 
-    d = [current_post, current_comment, count]
-    return d
+    return current_post
