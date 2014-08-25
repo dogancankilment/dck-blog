@@ -51,7 +51,7 @@
                 {% endif %}
             </ul>
             <ul class="nav navbar-nav navbar-left">
-                <li><a href="#"><i class="glyphicon glyphicon-home"></i> Home</a></li>
+                <li><a href="{% url index %}"><i class="glyphicon glyphicon-home"></i> Home</a></li>
             </ul>
         </div>
     </div>
@@ -70,17 +70,18 @@
             <h5>Settings <i class="glyphicon glyphicon-chevron-down"></i></h5>
         </a>
             <ul class="list-unstyled collapse in" id="userMenu">
-                <li class="active"><a href="#"><i class="glyphicon glyphicon-home"></i> Home</a></li>
+                <li class="active"><a href="{% url index %}"><i class="glyphicon glyphicon-home"></i> Home</a></li>
                 <li><a href="#"><i class="glyphicon glyphicon-flag"></i> Transactions</a></li>
                 <li><a href="#"><i class="glyphicon glyphicon-exclamation-sign"></i> Rules</a></li>
+
                 {% if request.user.is_authenticated %}
-                <li><a href="{% url new_post %}"><i class="glyphicon glyphicon-comment"></i> New POST</a></li>
-                <li><a href="#"><i class="glyphicon glyphicon-envelope"></i> Messages <span
-                        class="badge badge-info">4</span></a></li>
-                <li><a href="#"><i class="glyphicon glyphicon-cog"></i> Options</a></li>
-                <li><a href="#"><i class="glyphicon glyphicon-comment"></i> Shoutbox</a></li>
-                <li><a href="#"><i class="glyphicon glyphicon-user"></i> Staff List</a></li>
-                <li><a href="#"><i class="glyphicon glyphicon-off"></i> Logout</a></li>
+                    <li><a href="{% url new_post %}"><i class="glyphicon glyphicon-comment"></i> New POST</a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-envelope"></i> Messages <span
+                            class="badge badge-info">4</span></a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-cog"></i> New_Post</a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-comment"></i> Shoutbox</a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-user"></i> Staff List</a></li>
+                    <li><a href="{% url logout %}"><i class="glyphicon glyphicon-off"></i> Logout</a></li>
                 {% endif %}
             </ul>
         </li>
@@ -125,7 +126,7 @@
 </div>
 </div>
 <!-- /Main -->
-
+{% block footer %}
 <footer class="text-center"><a href="http://www.dogancankilment.com"><strong>DCK</strong></a></footer>
 
 <div class="modal" id="addWidgetModal">
@@ -147,6 +148,7 @@
     </div>
     <!-- /.modal-dalog -->
 </div>
+{% endblock footer %}
 <!-- /.modal -->
 <!-- script references -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
