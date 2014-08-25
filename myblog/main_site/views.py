@@ -9,7 +9,6 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Post, Comments
 from .forms import New_Post, New_Comment
 from .util_add_comment import post_comments, comments_comment
-from .decorators import anonymous_or_real
 
 
 def index(request):  # blog_id
@@ -92,7 +91,7 @@ def new_post(request):
 @login_required()
 def new_comment(request, post_id, comment_id):
     root_post = Post.objects.get(id=post_id)
-    root_comment = Comments.objects.get(id=comment_id)
+    root_comment = root_post.comments.all()
 
     if request.POST:
         form = New_Comment(request.POST)
