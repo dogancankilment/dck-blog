@@ -140,15 +140,15 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'user_place',
     'main_site',
+    'utils',
     'django_extensions',
     'djcelery',
 )
 
 # celery
 djcelery.setup_loader()
-CELERY_IMPORTS = ("user_place.util_mail_sender",
-                  "user_place.tasks",
-                  "user_place.util_image_resizer")
+CELERY_IMPORTS = ("utils.util_mail_sender",
+                  "utils.util_image_resizer")
 
 # caching with redis
 CACHES = {
