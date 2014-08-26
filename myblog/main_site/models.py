@@ -22,6 +22,7 @@ class Post(models.Model):
 class Comments(models.Model):
     which_user = models.ForeignKey(User)
     content = models.TextField()
+    email = models.EmailField()
     created_at = models.DateTimeField(auto_now_add=True)
 
     content_type = models.ForeignKey(ContentType)
