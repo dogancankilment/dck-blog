@@ -2,6 +2,7 @@ from django.forms import ModelForm, forms
 from .models import Post, Comments
 from user_place.util_image_resizer import image_resizer
 from user_place.util_mail_sender import mail_sender
+from user_place.models import User
 
 import uuid
 
@@ -28,7 +29,8 @@ class New_Comment(ModelForm):
                    'which_user',
                    'content_type',
                    'object_id',
-                   'email']
+                   'email',
+                   'is_visible']
 
     def save(self, root, user):
         comment = Comments(content=self.cleaned_data["content"],
@@ -44,14 +46,15 @@ class New_Comment_Anonymous(ModelForm):
         exclude = ['creatad_at',
                    'which_user',
                    'content_type',
-                   'object_id']
+                   'object_id',
+                   'is_visible']
 
     def save(self, root):
         comment = Comments(content=self.cleaned_data["content"],
-                           which_user=uuid.uuid4(),
+                           which_user=User.objects.create_user(uuid.uuid4()),
                            parent_object=root,
                            email=self.cleaned_data["email"])
         comment.save()
-        mail_sender.delay(comment.email)
+        mail_sender.delay(comment.email, "comment_activation")
 
 
