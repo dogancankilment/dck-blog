@@ -9,6 +9,19 @@
         <p>{{ post.title }} <br>----------</p>
         <p>{{ post.content }} </p>
         <p>{{ post.which_user }} {{ post.created_at }} {{ post.id }}</p>
+        <div class="panel-body">
+            <form class="form form-vertical" method="POST" action=" ">
+                        <div class="control-group">
+                        <label>Comment</label>
+                           <div class="controls">
+                               {{form.content}}
+                           </div>
+                        </div>
+                    <br>
+                    {% csrf_token %}
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" style="width: 50px">Save</button>
+            </form>
+        </div>
     </div>
         {% if comment %}
             {% for p in post.comments.all %}
@@ -33,18 +46,6 @@
                 </div>
             {% endfor %}
         {% else %}
-                    <div class="panel-body">
-                    <form class="form form-vertical" method="POST" action=" ">
-                        <div class="control-group">
-                        <label>Comment</label>
-                           <div class="controls">
-                               {{form.content}}
-                           </div>
-                        </div>
-                    <br>
-                    {% csrf_token %}
-                    <button class="btn btn-lg btn-primary btn-block" type="submit" style="width: 50px">Save</button>
-                    </form>
         {% endif %}
     {% block add_comment %}
 
