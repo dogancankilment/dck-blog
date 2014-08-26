@@ -11,7 +11,7 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     image = models.ImageField(upload_to='static/images/blog_posts/',
-                              default='static/images/blog_posts/default_image.jpg')
+                              default='static/images/blog_posts/default.jpg')
 
     comments = GenericRelation('Comments')
 
