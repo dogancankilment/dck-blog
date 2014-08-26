@@ -170,11 +170,27 @@
         }
     }, 
     {
-        "pk": "f5490a5efa9adeb6d8034c15239206f0", 
+        "pk": "943c9dbeaec4db1cc9447cea5c4467e5", 
         "model": "sessions.session", 
         "fields": {
-            "expire_date": "2014-09-03T11:47:39.785Z", 
-            "session_data": "ZjY0MWFjZWMzYWQ4ZTIzNDE0YTgyMGZjOTZhNDY1NjQwZTNiMjg1ZjqAAn1xAShVEl9hdXRoX3Vz\nZXJfYmFja2VuZHECVS91c2VyX3BsYWNlLmJhY2tlbmRzLkVtYWlsT3JVc2VybmFtZU1vZGVsQmFj\na2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLA3Uu\n"
+            "expire_date": "2014-09-06T20:06:40.707Z", 
+            "session_data": "OTA1OWI0OTJkMTQ4NjQzZDRiZWRjYzUyODc2MmU1YjdiN2IxMmE5ZjqAAn1xAS4=\n"
+        }
+    }, 
+    {
+        "pk": "6f86b13427486881331636e3e2b0d0ae", 
+        "model": "sessions.session", 
+        "fields": {
+            "expire_date": "2014-09-06T20:12:05.825Z", 
+            "session_data": "NTgyYzMyMjVjMTMyMGRkYWQ1MmZkYWYzNWMyNGNiNTljMDE1M2JhZTqAAn1xAVUKdGVzdGNvb2tp\nZXECVQZ3b3JrZWRxA3Mu\n"
+        }
+    }, 
+    {
+        "pk": "464193b55f42436ea5f79db52b79fa25", 
+        "model": "sessions.session", 
+        "fields": {
+            "expire_date": "2014-09-08T07:02:04.669Z", 
+            "session_data": "N2MyNDc4YWQ5ZTc5ODQ3YjBhZjlmNTg2ZGQ5MWU5OWQwNTk0MjYxYjqAAn1xAShVDV9hdXRoX3Vz\nZXJfaWRLAlUSX2F1dGhfdXNlcl9iYWNrZW5kVS91c2VyX3BsYWNlLmJhY2tlbmRzLkVtYWlsT3JV\nc2VybmFtZU1vZGVsQmFja2VuZHECdS4=\n"
         }
     }, 
     {
@@ -681,7 +697,7 @@
             "is_active": true, 
             "is_superuser": true, 
             "is_staff": true, 
-            "last_login": "2014-08-19T19:47:01.719Z", 
+            "last_login": "2014-08-24T09:04:42.434Z", 
             "groups": [], 
             "user_permissions": [], 
             "password": "pbkdf2_sha256$10000$RnockmdrFy25$Q1M3dTgvDOa3uN8t7KZqyXszWdiZtiPz/HZWTXDKE3s=", 
@@ -699,7 +715,7 @@
             "is_active": true, 
             "is_superuser": false, 
             "is_staff": false, 
-            "last_login": "2014-08-20T11:47:06.151Z", 
+            "last_login": "2014-08-25T07:02:04.536Z", 
             "groups": [], 
             "user_permissions": [], 
             "password": "pbkdf2_sha256$10000$kFEZ5hkw3dx9$uNm0u94DxVDt9mHIQ/eeJuVd/XqKxNdGbAWMmoC1Jjk=", 
@@ -726,111 +742,518 @@
         }
     }, 
     {
-        "pk": 1, 
-        "model": "main_site.post", 
+        "pk": 4, 
+        "model": "auth.user", 
         "fields": {
-            "content": "\"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"", 
-            "image": "static/images/blog_posts/default_image.jpg",
-            "which_user": 1, 
-            "title": "Deneme Post",
-            "created_at": "2014-08-20T11:47:24.287Z",
-            "updated_at": "2014-08-20T11:47:24.287Z"
+            "username": "can", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": false, 
+            "is_staff": false, 
+            "last_login": "2014-08-24T09:05:24.360Z", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "pbkdf2_sha256$10000$wtHuy0NC68qd$bCCp15a+H+N8rrNTKd7VqXTMmkyWRBEQrWGFQHcgBeU=", 
+            "email": "cank1907@hotmail.com", 
+            "date_joined": "2014-08-24T09:05:04.981Z"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "admin.logentry", 
+        "fields": {
+            "action_flag": 3, 
+            "action_time": "2014-08-24T09:04:49.004Z", 
+            "object_repr": "can", 
+            "object_id": "4", 
+            "change_message": "", 
+            "user": 1, 
+            "content_type": 3
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "admin.logentry", 
+        "fields": {
+            "action_flag": 3, 
+            "action_time": "2014-08-24T09:00:08.218Z", 
+            "object_repr": "can", 
+            "object_id": "4", 
+            "change_message": "", 
+            "user": 1, 
+            "content_type": 3
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "admin.logentry", 
+        "fields": {
+            "action_flag": 3, 
+            "action_time": "2014-08-23T20:12:58.696Z", 
+            "object_repr": "can", 
+            "object_id": "4", 
+            "change_message": "", 
+            "user": 1, 
+            "content_type": 3
         }
     }, 
     {
         "pk": 2, 
-        "model": "main_site.post", 
+        "model": "admin.logentry", 
         "fields": {
-            "content": "\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\"", 
-            "image": "static/images/blog_posts/default_image.jpg",
-            "which_user": 1, 
-            "title": "Deneme Post 2",
-            "created_at": "2014-08-20T11:47:24.287Z",
-            "updated_at": "2014-08-20T11:47:24.287Z"
+            "action_flag": 3, 
+            "action_time": "2014-08-23T20:06:23.686Z", 
+            "object_repr": "can", 
+            "object_id": "4", 
+            "change_message": "", 
+            "user": 1, 
+            "content_type": 3
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "admin.logentry", 
+        "fields": {
+            "action_flag": 3, 
+            "action_time": "2014-08-23T20:00:27.592Z", 
+            "object_repr": "dck1907", 
+            "object_id": "4", 
+            "change_message": "", 
+            "user": 1, 
+            "content_type": 3
         }
     }, 
     {
         "pk": 3, 
         "model": "main_site.post", 
         "fields": {
-            "content": "\"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?\"", 
-            "image": "static/images/blog_posts/default_image.jpg",
+            "title": "deneme post 3 edited by me", 
+            "created_at": "2014-08-20T11:47:24.287Z", 
+            "updated_at": "2014-08-25T13:05:04.189Z", 
             "which_user": 2, 
-            "title": "deneme post 3",
-            "created_at": "2014-08-20T11:47:24.287Z",
-            "updated_at": "2014-08-20T11:47:24.287Z"
+            "content": "De\u011fi\u015ftirldi \"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?\"", 
+            "image": "static/images/blog_posts/default_image.jpg"
+        }
+    }, 
+    {
+        "pk": 36, 
+        "model": "main_site.post", 
+        "fields": {
+            "title": "Denemem En son", 
+            "created_at": "2014-08-22T12:25:46.777Z", 
+            "updated_at": "2014-08-22T12:25:46.777Z", 
+            "which_user": 2, 
+            "content": "\"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?\"", 
+            "image": "static/images/blog_posts/2946489_2.jpg"
+        }
+    }, 
+    {
+        "pk": 35, 
+        "model": "main_site.post", 
+        "fields": {
+            "title": "Deneme En son", 
+            "created_at": "2014-08-22T12:24:12.306Z", 
+            "updated_at": "2014-08-22T12:24:12.306Z", 
+            "which_user": 2, 
+            "content": "Deneme \u0130\u00e7erik", 
+            "image": "static/images/blog_posts/2946489_1.jpg"
+        }
+    }, 
+    {
+        "pk": 34, 
+        "model": "main_site.post", 
+        "fields": {
+            "title": "asdasd", 
+            "created_at": "2014-08-22T08:16:18.594Z", 
+            "updated_at": "2014-08-22T08:16:18.594Z", 
+            "which_user": 2, 
+            "content": "asdasdasdasd", 
+            "image": "static/images/blog_posts/1_20.jpg"
+        }
+    }, 
+    {
+        "pk": 33, 
+        "model": "main_site.post", 
+        "fields": {
+            "title": "asdasd", 
+            "created_at": "2014-08-22T08:15:57.436Z", 
+            "updated_at": "2014-08-22T08:15:57.436Z", 
+            "which_user": 2, 
+            "content": "asdasdasdasd", 
+            "image": "static/images/blog_posts/1_19.jpg"
+        }
+    }, 
+    {
+        "pk": 32, 
+        "model": "main_site.post", 
+        "fields": {
+            "title": "asdasd", 
+            "created_at": "2014-08-22T08:15:40.704Z", 
+            "updated_at": "2014-08-22T08:15:40.704Z", 
+            "which_user": 2, 
+            "content": "asdasdasdasd", 
+            "image": "static/images/blog_posts/1_18.jpg"
+        }
+    }, 
+    {
+        "pk": 31, 
+        "model": "main_site.post", 
+        "fields": {
+            "title": "asdasd", 
+            "created_at": "2014-08-22T08:14:33.342Z", 
+            "updated_at": "2014-08-22T08:14:33.342Z", 
+            "which_user": 2, 
+            "content": "asdasdasdasd", 
+            "image": "static/images/blog_posts/1_17.jpg"
+        }
+    }, 
+    {
+        "pk": 30, 
+        "model": "main_site.post", 
+        "fields": {
+            "title": "asdasd", 
+            "created_at": "2014-08-22T08:11:50.583Z", 
+            "updated_at": "2014-08-22T08:11:50.583Z", 
+            "which_user": 2, 
+            "content": "asdasdasd", 
+            "image": "static/images/blog_posts/1_16.jpg"
+        }
+    }, 
+    {
+        "pk": 29, 
+        "model": "main_site.post", 
+        "fields": {
+            "title": "asdasd", 
+            "created_at": "2014-08-22T08:05:19.463Z", 
+            "updated_at": "2014-08-22T08:05:19.463Z", 
+            "which_user": 2, 
+            "content": "asdasdasd", 
+            "image": "static/images/blog_posts/1_15.jpg"
+        }
+    }, 
+    {
+        "pk": 28, 
+        "model": "main_site.post", 
+        "fields": {
+            "title": "asdasd", 
+            "created_at": "2014-08-22T08:02:20.512Z", 
+            "updated_at": "2014-08-22T08:02:20.512Z", 
+            "which_user": 2, 
+            "content": "asdasdasd", 
+            "image": "static/images/blog_posts/1_14.jpg"
+        }
+    }, 
+    {
+        "pk": 27, 
+        "model": "main_site.post", 
+        "fields": {
+            "title": "asdasd", 
+            "created_at": "2014-08-22T08:00:37.374Z", 
+            "updated_at": "2014-08-22T08:00:37.374Z", 
+            "which_user": 2, 
+            "content": "asdasdasd", 
+            "image": "static/images/blog_posts/1_13.jpg"
+        }
+    }, 
+    {
+        "pk": 26, 
+        "model": "main_site.post", 
+        "fields": {
+            "title": "asdasd", 
+            "created_at": "2014-08-22T07:58:50.170Z", 
+            "updated_at": "2014-08-22T07:58:50.170Z", 
+            "which_user": 2, 
+            "content": "asdasdasd", 
+            "image": "static/images/blog_posts/1_12.jpg"
+        }
+    }, 
+    {
+        "pk": 25, 
+        "model": "main_site.post", 
+        "fields": {
+            "title": "asdasd", 
+            "created_at": "2014-08-22T07:57:59.870Z", 
+            "updated_at": "2014-08-22T07:57:59.870Z", 
+            "which_user": 2, 
+            "content": "asdasdasd", 
+            "image": "static/images/blog_posts/1_11.jpg"
+        }
+    }, 
+    {
+        "pk": 24, 
+        "model": "main_site.post", 
+        "fields": {
+            "title": "asdasd", 
+            "created_at": "2014-08-22T07:57:25.605Z", 
+            "updated_at": "2014-08-22T07:57:25.605Z", 
+            "which_user": 2, 
+            "content": "asdasdasd", 
+            "image": "static/images/blog_posts/1_10.jpg"
+        }
+    }, 
+    {
+        "pk": 23, 
+        "model": "main_site.post", 
+        "fields": {
+            "title": "asdasd", 
+            "created_at": "2014-08-22T07:57:03.354Z", 
+            "updated_at": "2014-08-22T07:57:03.354Z", 
+            "which_user": 2, 
+            "content": "asdasdasd", 
+            "image": "static/images/blog_posts/1_9.jpg"
+        }
+    }, 
+    {
+        "pk": 22, 
+        "model": "main_site.post", 
+        "fields": {
+            "title": "asdasd", 
+            "created_at": "2014-08-22T07:55:13.587Z", 
+            "updated_at": "2014-08-22T07:55:13.587Z", 
+            "which_user": 2, 
+            "content": "asdasdasd", 
+            "image": "static/images/blog_posts/1_8.jpg"
+        }
+    }, 
+    {
+        "pk": 21, 
+        "model": "main_site.post", 
+        "fields": {
+            "title": "asdasd", 
+            "created_at": "2014-08-22T07:55:10.883Z", 
+            "updated_at": "2014-08-22T07:55:10.883Z", 
+            "which_user": 2, 
+            "content": "asdasdasd", 
+            "image": "static/images/blog_posts/1_7.jpg"
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "main_site.post", 
+        "fields": {
+            "title": "asdasd", 
+            "created_at": "2014-08-22T07:54:19.553Z", 
+            "updated_at": "2014-08-22T07:54:19.553Z", 
+            "which_user": 2, 
+            "content": "asdasdasd", 
+            "image": "static/images/blog_posts/1_6.jpg"
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "main_site.post", 
+        "fields": {
+            "title": "asdasd", 
+            "created_at": "2014-08-22T07:50:48.020Z", 
+            "updated_at": "2014-08-22T07:50:48.020Z", 
+            "which_user": 2, 
+            "content": "asdasd", 
+            "image": "static/images/blog_posts/1_5.jpg"
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "main_site.post", 
+        "fields": {
+            "title": "asdasd", 
+            "created_at": "2014-08-22T07:50:37.266Z", 
+            "updated_at": "2014-08-22T07:50:37.266Z", 
+            "which_user": 2, 
+            "content": "asdasd", 
+            "image": "static/images/blog_posts/1_4.jpg"
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "main_site.post", 
+        "fields": {
+            "title": "asdasd", 
+            "created_at": "2014-08-22T07:49:36.702Z", 
+            "updated_at": "2014-08-22T07:49:36.702Z", 
+            "which_user": 2, 
+            "content": "asdasdasd", 
+            "image": "static/images/blog_posts/1_3.jpg"
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "main_site.post", 
+        "fields": {
+            "title": "Deneme", 
+            "created_at": "2014-08-22T07:47:41.541Z", 
+            "updated_at": "2014-08-22T07:47:41.541Z", 
+            "which_user": 2, 
+            "content": "denemeemeee", 
+            "image": "static/images/blog_posts/1_2.jpg"
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "main_site.post", 
+        "fields": {
+            "title": "asdasd", 
+            "created_at": "2014-08-22T07:42:37.272Z", 
+            "updated_at": "2014-08-22T07:42:37.272Z", 
+            "which_user": 2, 
+            "content": "asdasd", 
+            "image": "static/images/blog_posts/1_1.jpg"
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "main_site.post", 
+        "fields": {
+            "title": "asdasd", 
+            "created_at": "2014-08-22T07:39:32.364Z", 
+            "updated_at": "2014-08-22T07:39:32.364Z", 
+            "which_user": 2, 
+            "content": "asdasdasdasd", 
+            "image": "static/images/blog_posts/1.jpg"
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "main_site.post", 
+        "fields": {
+            "title": "Sonki POst", 
+            "created_at": "2014-08-22T01:40:27.937Z", 
+            "updated_at": "2014-08-22T01:40:27.937Z", 
+            "which_user": 2, 
+            "content": "Ovv Yea", 
+            "image": "static/images/blog_posts/500-1.png"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "main_site.post", 
+        "fields": {
+            "title": "Deneme Post 23", 
+            "created_at": "2014-08-20T11:47:24.287Z", 
+            "updated_at": "2014-08-22T01:34:21.867Z", 
+            "which_user": 1, 
+            "content": "\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\"", 
+            "image": "static/images/blog_posts/default_image.jpg"
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "main_site.post", 
+        "fields": {
+            "title": "En son ki Blog POst", 
+            "created_at": "2014-08-21T14:10:58.819Z", 
+            "updated_at": "2014-08-21T14:10:58.819Z", 
+            "which_user": 2, 
+            "content": "\u0130\u00e7erigi Kar\u0131\u015f\u0131k olabilir. resim eklemeyece\u011fim.", 
+            "image": "static/images/blog_posts/default_image.jpg"
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "main_site.post", 
+        "fields": {
+            "title": "asdasd en son son", 
+            "created_at": "2014-08-20T13:17:19.587Z", 
+            "updated_at": "2014-08-20T13:17:19.587Z", 
+            "which_user": 2, 
+            "content": "asdasdasdasd", 
+            "image": "static/images/blog_posts/404-sayfa.jpg"
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "main_site.post", 
+        "fields": {
+            "title": "asd", 
+            "created_at": "2014-08-20T13:16:45.817Z", 
+            "updated_at": "2014-08-20T13:16:45.817Z", 
+            "which_user": 2, 
+            "content": "asd", 
+            "image": "static/images/blog_posts/default_image.jpg"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "main_site.post", 
+        "fields": {
+            "title": "Deneme Post", 
+            "created_at": "2014-08-20T11:47:24.287Z", 
+            "updated_at": "2014-08-20T11:47:24.287Z", 
+            "which_user": 1, 
+            "content": "\"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"", 
+            "image": "static/images/blog_posts/default_image.jpg"
         }
     }, 
     {
         "pk": 4, 
         "model": "main_site.post", 
         "fields": {
-            "content": "\"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.\"", 
-            "image": "static/images/blog_posts/default_image.jpg",
+            "title": "Deneme Post 4", 
+            "created_at": "2014-08-20T11:47:24.287Z", 
+            "updated_at": "2014-08-20T11:47:24.287Z", 
             "which_user": 2, 
-            "title": "Deneme Post 4",
-            "created_at": "2014-08-20T11:47:24.287Z",
-            "updated_at": "2014-08-20T11:47:24.287Z"
+            "content": "\"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.\"", 
+            "image": "static/images/blog_posts/default_image.jpg"
         }
     }, 
     {
         "pk": 5, 
         "model": "main_site.post", 
         "fields": {
-            "content": "asdasd", 
-            "image": "images/blog_post/2946489.jpg", 
+            "title": "asdasd", 
+            "created_at": "2014-08-20T11:47:24.287Z", 
+            "updated_at": "2014-08-20T11:47:24.287Z", 
             "which_user": 2, 
-            "title": "asdasd",
-            "created_at": "2014-08-20T11:47:24.287Z",
-            "updated_at": "2014-08-20T11:47:24.287Z"
+            "content": "asdasd", 
+            "image": "images/blog_post/2946489.jpg"
         }
     }, 
     {
         "pk": 6, 
         "model": "main_site.post", 
         "fields": {
-            "content": "asdasd", 
-            "image": "images/blog_post/500-1.png", 
+            "title": "asdasd", 
+            "created_at": "2014-08-20T11:47:24.287Z", 
+            "updated_at": "2014-08-20T11:47:24.287Z", 
             "which_user": 2, 
-            "title": "asdasd",
-            "created_at": "2014-08-20T11:47:24.287Z",
-            "updated_at": "2014-08-20T11:47:24.287Z"
+            "content": "asdasd", 
+            "image": "images/blog_post/500-1.png"
         }
     }, 
     {
         "pk": 7, 
         "model": "main_site.post", 
         "fields": {
-            "content": "asdasdas", 
-            "image": "static/images/blog_post/500-1.png", 
+            "title": "asdasd", 
+            "created_at": "2014-08-20T11:47:24.287Z", 
+            "updated_at": "2014-08-20T11:47:24.287Z", 
             "which_user": 2, 
-            "title": "asdasd",
-            "created_at": "2014-08-20T11:47:24.287Z",
-            "updated_at": "2014-08-20T11:47:24.287Z"
+            "content": "asdasdas", 
+            "image": "static/images/blog_post/500-1.png"
         }
     }, 
     {
         "pk": 8, 
         "model": "main_site.post", 
         "fields": {
-            "content": "asdasdasd", 
-            "image": "static/images/blog_posts/2946489.jpg", 
+            "title": "en son", 
+            "created_at": "2014-08-20T11:47:24.287Z", 
+            "updated_at": "2014-08-20T11:47:24.287Z", 
             "which_user": 2, 
-            "title": "en son",
-            "created_at": "2014-08-20T11:47:24.287Z",
-            "updated_at": "2014-08-20T11:47:24.287Z"
+            "content": "asdasdasd", 
+            "image": "static/images/blog_posts/2946489.jpg"
         }
     }, 
     {
         "pk": 9, 
         "model": "main_site.post", 
         "fields": {
-            "content": "asdasd", 
-            "image": "static/images/blog_posts/default_image.jpg", 
+            "title": "asdasd", 
+            "created_at": "2014-08-20T11:47:24.287Z", 
+            "updated_at": "2014-08-20T11:47:24.287Z", 
             "which_user": 2, 
-            "title": "asdasd",
-            "created_at": "2014-08-20T11:47:24.287Z",
-            "updated_at": "2014-08-20T11:47:24.287Z"
+            "content": "asdasd", 
+            "image": "static/images/blog_posts/default_image.jpg"
         }
     }, 
     {
@@ -838,10 +1261,10 @@
         "model": "main_site.comments", 
         "fields": {
             "content": "deneme", 
+            "created_at": "2014-08-20T11:47:24.287Z", 
             "which_user": 1, 
             "content_type": 9, 
-            "object_id": 1,
-            "created_at": "2014-08-20T11:47:24.287Z"
+            "object_id": 1
         }
     }, 
     {
@@ -849,10 +1272,10 @@
         "model": "main_site.comments", 
         "fields": {
             "content": "2.deneme icerik", 
+            "created_at": "2014-08-20T11:47:24.287Z", 
             "which_user": 1, 
             "content_type": 9, 
-            "object_id": 1,
-            "created_at": "2014-08-20T11:47:24.287Z"
+            "object_id": 1
         }
     }, 
     {
@@ -860,10 +1283,10 @@
         "model": "main_site.comments", 
         "fields": {
             "content": "bu bir yorumdur", 
+            "created_at": "2014-08-20T11:47:24.287Z", 
             "which_user": 1, 
             "content_type": 9, 
-            "object_id": 1,
-            "created_at": "2014-08-20T11:47:24.287Z"
+            "object_id": 1
         }
     }, 
     {
@@ -871,10 +1294,10 @@
         "model": "main_site.comments", 
         "fields": {
             "content": "id1 sub comment", 
+            "created_at": "2014-08-20T11:47:24.287Z", 
             "which_user": 1, 
             "content_type": 10, 
-            "object_id": 1,
-            "created_at": "2014-08-20T11:47:24.287Z"
+            "object_id": 1
         }
     }, 
     {
@@ -882,10 +1305,120 @@
         "model": "main_site.comments", 
         "fields": {
             "content": "id1 sub comment2", 
+            "created_at": "2014-08-20T11:47:24.287Z", 
             "which_user": 1, 
             "content_type": 10, 
-            "object_id": 1,
-            "created_at": "2014-08-20T11:47:24.287Z"
+            "object_id": 1
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "main_site.comments", 
+        "fields": {
+            "content": "asdasd", 
+            "created_at": "2014-08-25T06:15:02.786Z", 
+            "which_user": 4, 
+            "content_type": 10, 
+            "object_id": 4
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "main_site.comments", 
+        "fields": {
+            "content": "asdasd", 
+            "created_at": "2014-08-25T06:22:10.889Z", 
+            "which_user": 4, 
+            "content_type": 10, 
+            "object_id": 5
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "main_site.comments", 
+        "fields": {
+            "content": "asdasd", 
+            "created_at": "2014-08-25T06:28:39.486Z", 
+            "which_user": 4, 
+            "content_type": 9, 
+            "object_id": 1
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "main_site.comments", 
+        "fields": {
+            "content": "asdasd", 
+            "created_at": "2014-08-25T06:46:44.729Z", 
+            "which_user": 4, 
+            "content_type": 9, 
+            "object_id": 1
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "main_site.comments", 
+        "fields": {
+            "content": "asdasd", 
+            "created_at": "2014-08-25T11:39:45.647Z", 
+            "which_user": 2, 
+            "content_type": 9, 
+            "object_id": 1
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "main_site.comments", 
+        "fields": {
+            "content": "deneme", 
+            "created_at": "2014-08-25T11:40:18.380Z", 
+            "which_user": 2, 
+            "content_type": 9, 
+            "object_id": 1
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "main_site.comments", 
+        "fields": {
+            "content": "yeni comment", 
+            "created_at": "2014-08-25T11:42:00.358Z", 
+            "which_user": 2, 
+            "content_type": 9, 
+            "object_id": 1
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "main_site.comments", 
+        "fields": {
+            "content": "yeni", 
+            "created_at": "2014-08-25T11:44:46.479Z", 
+            "which_user": 2, 
+            "content_type": 9, 
+            "object_id": 2
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "main_site.comments", 
+        "fields": {
+            "content": "a", 
+            "created_at": "2014-08-25T13:03:37.758Z", 
+            "which_user": 2, 
+            "content_type": 9, 
+            "object_id": 1
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "main_site.comments", 
+        "fields": {
+            "content": "Deneme son", 
+            "created_at": "2014-08-25T13:04:36.532Z", 
+            "which_user": 2, 
+            "content_type": 9, 
+            "object_id": 3
         }
     }
 ]
