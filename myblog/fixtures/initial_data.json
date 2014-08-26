@@ -194,6 +194,22 @@
         }
     }, 
     {
+        "pk": "b94731ef6531e70d868569efa802c7e3", 
+        "model": "sessions.session", 
+        "fields": {
+            "expire_date": "2014-09-09T10:26:10.246Z", 
+            "session_data": "OTA1OWI0OTJkMTQ4NjQzZDRiZWRjYzUyODc2MmU1YjdiN2IxMmE5ZjqAAn1xAS4=\n"
+        }
+    }, 
+    {
+        "pk": "e2d3583e73d9abd43dfc752244b3c2d2", 
+        "model": "sessions.session", 
+        "fields": {
+            "expire_date": "2014-09-09T11:04:50.604Z", 
+            "session_data": "ZTc4OTc3NTJkYjEyZjY2MzNhYWQ3ZWM5ODM0OTc1YTUzZjRiYTVkMzqAAn1xAShVEl9hdXRoX3Vz\nZXJfYmFja2VuZHECVS91c2VyX3BsYWNlLmJhY2tlbmRzLkVtYWlsT3JVc2VybmFtZU1vZGVsQmFj\na2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLAnUu\n"
+        }
+    }, 
+    {
         "pk": 1, 
         "model": "sites.site", 
         "fields": {
@@ -715,7 +731,7 @@
             "is_active": true, 
             "is_superuser": false, 
             "is_staff": false, 
-            "last_login": "2014-08-25T07:02:04.536Z", 
+            "last_login": "2014-08-26T11:04:50.479Z", 
             "groups": [], 
             "user_permissions": [], 
             "password": "pbkdf2_sha256$10000$kFEZ5hkw3dx9$uNm0u94DxVDt9mHIQ/eeJuVd/XqKxNdGbAWMmoC1Jjk=", 
@@ -857,7 +873,8 @@
             "updated_at": "2014-08-22T12:24:12.306Z", 
             "which_user": 2, 
             "content": "Deneme \u0130\u00e7erik", 
-            "image": "static/images/blog_posts/default.jpg"        }
+            "image": "static/images/blog_posts/default.jpg"
+        }
     }, 
     {
         "pk": 34, 
@@ -1096,7 +1113,8 @@
             "updated_at": "2014-08-22T07:42:37.272Z", 
             "which_user": 2, 
             "content": "asdasd", 
-            "image": "static/images/blog_posts/default.jpg"        }
+            "image": "static/images/blog_posts/default.jpg"
+        }
     }, 
     {
         "pk": 14, 
@@ -1107,7 +1125,8 @@
             "updated_at": "2014-08-22T07:39:32.364Z", 
             "which_user": 2, 
             "content": "asdasdasdasd", 
-            "image": "static/images/blog_posts/default.jpg"        }
+            "image": "static/images/blog_posts/default.jpg"
+        }
     }, 
     {
         "pk": 13, 
@@ -1118,7 +1137,8 @@
             "updated_at": "2014-08-22T01:40:27.937Z", 
             "which_user": 2, 
             "content": "Ovv Yea", 
-            "image": "static/images/blog_posts/default.jpg"        }
+            "image": "static/images/blog_posts/default.jpg"
+        }
     }, 
     {
         "pk": 2, 
@@ -1153,7 +1173,8 @@
             "updated_at": "2014-08-20T13:17:19.587Z", 
             "which_user": 2, 
             "content": "asdasdasdasd", 
-            "image": "static/images/blog_posts/default.jpg"        }
+            "image": "static/images/blog_posts/default.jpg"
+        }
     }, 
     {
         "pk": 10, 
@@ -1200,7 +1221,8 @@
             "updated_at": "2014-08-20T11:47:24.287Z", 
             "which_user": 2, 
             "content": "asdasd", 
-            "image": "static/images/blog_posts/default.jpg"        }
+            "image": "static/images/blog_posts/default.jpg"
+        }
     }, 
     {
         "pk": 6, 
@@ -1211,7 +1233,8 @@
             "updated_at": "2014-08-20T11:47:24.287Z", 
             "which_user": 2, 
             "content": "asdasd", 
-            "image": "static/images/blog_posts/default.jpg"        }
+            "image": "static/images/blog_posts/default.jpg"
+        }
     }, 
     {
         "pk": 7, 
@@ -1222,7 +1245,8 @@
             "updated_at": "2014-08-20T11:47:24.287Z", 
             "which_user": 2, 
             "content": "asdasdas", 
-            "image": "static/images/blog_posts/default.jpg"        }
+            "image": "static/images/blog_posts/default.jpg"
+        }
     }, 
     {
         "pk": 8, 
@@ -1233,7 +1257,8 @@
             "updated_at": "2014-08-20T11:47:24.287Z", 
             "which_user": 2, 
             "content": "asdasdasd", 
-            "image": "static/images/blog_posts/default.jpg"        }
+            "image": "static/images/blog_posts/default.jpg"
+        }
     }, 
     {
         "pk": 9, 
@@ -1248,168 +1273,198 @@
         }
     }, 
     {
-        "pk": 1, 
+        "pk": 15, 
         "model": "main_site.comments", 
         "fields": {
-            "content": "deneme", 
-            "created_at": "2014-08-20T11:47:24.287Z", 
-            "which_user": 1, 
+            "is_visible": false, 
+            "created_at": "2014-08-25T13:04:36.532Z", 
+            "object_id": 3, 
+            "email": "", 
+            "content": "Deneme son", 
             "content_type": 9, 
-            "object_id": 1
-        }
-    }, 
-    {
-        "pk": 2, 
-        "model": "main_site.comments", 
-        "fields": {
-            "content": "2.deneme icerik", 
-            "created_at": "2014-08-20T11:47:24.287Z", 
-            "which_user": 1, 
-            "content_type": 9, 
-            "object_id": 1
-        }
-    }, 
-    {
-        "pk": 3, 
-        "model": "main_site.comments", 
-        "fields": {
-            "content": "bu bir yorumdur", 
-            "created_at": "2014-08-20T11:47:24.287Z", 
-            "which_user": 1, 
-            "content_type": 9, 
-            "object_id": 1
-        }
-    }, 
-    {
-        "pk": 4, 
-        "model": "main_site.comments", 
-        "fields": {
-            "content": "id1 sub comment", 
-            "created_at": "2014-08-20T11:47:24.287Z", 
-            "which_user": 1, 
-            "content_type": 10, 
-            "object_id": 1
-        }
-    }, 
-    {
-        "pk": 5, 
-        "model": "main_site.comments", 
-        "fields": {
-            "content": "id1 sub comment2", 
-            "created_at": "2014-08-20T11:47:24.287Z", 
-            "which_user": 1, 
-            "content_type": 10, 
-            "object_id": 1
-        }
-    }, 
-    {
-        "pk": 6, 
-        "model": "main_site.comments", 
-        "fields": {
-            "content": "asdasd", 
-            "created_at": "2014-08-25T06:15:02.786Z", 
-            "which_user": 4, 
-            "content_type": 10, 
-            "object_id": 4
-        }
-    }, 
-    {
-        "pk": 7, 
-        "model": "main_site.comments", 
-        "fields": {
-            "content": "asdasd", 
-            "created_at": "2014-08-25T06:22:10.889Z", 
-            "which_user": 4, 
-            "content_type": 10, 
-            "object_id": 5
-        }
-    }, 
-    {
-        "pk": 8, 
-        "model": "main_site.comments", 
-        "fields": {
-            "content": "asdasd", 
-            "created_at": "2014-08-25T06:28:39.486Z", 
-            "which_user": 4, 
-            "content_type": 9, 
-            "object_id": 1
-        }
-    }, 
-    {
-        "pk": 9, 
-        "model": "main_site.comments", 
-        "fields": {
-            "content": "asdasd", 
-            "created_at": "2014-08-25T06:46:44.729Z", 
-            "which_user": 4, 
-            "content_type": 9, 
-            "object_id": 1
-        }
-    }, 
-    {
-        "pk": 10, 
-        "model": "main_site.comments", 
-        "fields": {
-            "content": "asdasd", 
-            "created_at": "2014-08-25T11:39:45.647Z", 
-            "which_user": 2, 
-            "content_type": 9, 
-            "object_id": 1
-        }
-    }, 
-    {
-        "pk": 11, 
-        "model": "main_site.comments", 
-        "fields": {
-            "content": "deneme", 
-            "created_at": "2014-08-25T11:40:18.380Z", 
-            "which_user": 2, 
-            "content_type": 9, 
-            "object_id": 1
-        }
-    }, 
-    {
-        "pk": 12, 
-        "model": "main_site.comments", 
-        "fields": {
-            "content": "yeni comment", 
-            "created_at": "2014-08-25T11:42:00.358Z", 
-            "which_user": 2, 
-            "content_type": 9, 
-            "object_id": 1
-        }
-    }, 
-    {
-        "pk": 13, 
-        "model": "main_site.comments", 
-        "fields": {
-            "content": "yeni", 
-            "created_at": "2014-08-25T11:44:46.479Z", 
-            "which_user": 2, 
-            "content_type": 9, 
-            "object_id": 2
+            "which_user": 2
         }
     }, 
     {
         "pk": 14, 
         "model": "main_site.comments", 
         "fields": {
-            "content": "a", 
+            "is_visible": false, 
             "created_at": "2014-08-25T13:03:37.758Z", 
-            "which_user": 2, 
+            "object_id": 1, 
+            "email": "", 
+            "content": "a", 
             "content_type": 9, 
-            "object_id": 1
+            "which_user": 2
         }
     }, 
     {
-        "pk": 15, 
+        "pk": 13, 
         "model": "main_site.comments", 
         "fields": {
-            "content": "Deneme son", 
-            "created_at": "2014-08-25T13:04:36.532Z", 
-            "which_user": 2, 
+            "is_visible": false, 
+            "created_at": "2014-08-25T11:44:46.479Z", 
+            "object_id": 2, 
+            "email": "", 
+            "content": "yeni", 
             "content_type": 9, 
-            "object_id": 3
+            "which_user": 2
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "main_site.comments", 
+        "fields": {
+            "is_visible": false, 
+            "created_at": "2014-08-25T11:42:00.358Z", 
+            "object_id": 1, 
+            "email": "", 
+            "content": "yeni comment", 
+            "content_type": 9, 
+            "which_user": 2
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "main_site.comments", 
+        "fields": {
+            "is_visible": false, 
+            "created_at": "2014-08-25T11:40:18.380Z", 
+            "object_id": 1, 
+            "email": "", 
+            "content": "deneme", 
+            "content_type": 9, 
+            "which_user": 2
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "main_site.comments", 
+        "fields": {
+            "is_visible": false, 
+            "created_at": "2014-08-25T11:39:45.647Z", 
+            "object_id": 1, 
+            "email": "", 
+            "content": "asdasd", 
+            "content_type": 9, 
+            "which_user": 2
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "main_site.comments", 
+        "fields": {
+            "is_visible": false, 
+            "created_at": "2014-08-25T06:46:44.729Z", 
+            "object_id": 1, 
+            "email": "", 
+            "content": "asdasd", 
+            "content_type": 9, 
+            "which_user": 4
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "main_site.comments", 
+        "fields": {
+            "is_visible": false, 
+            "created_at": "2014-08-25T06:28:39.486Z", 
+            "object_id": 1, 
+            "email": "", 
+            "content": "asdasd", 
+            "content_type": 9, 
+            "which_user": 4
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "main_site.comments", 
+        "fields": {
+            "is_visible": false, 
+            "created_at": "2014-08-25T06:22:10.889Z", 
+            "object_id": 5, 
+            "email": "", 
+            "content": "asdasd", 
+            "content_type": 10, 
+            "which_user": 4
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "main_site.comments", 
+        "fields": {
+            "is_visible": false, 
+            "created_at": "2014-08-25T06:15:02.786Z", 
+            "object_id": 4, 
+            "email": "", 
+            "content": "asdasd", 
+            "content_type": 10, 
+            "which_user": 4
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "main_site.comments", 
+        "fields": {
+            "is_visible": false, 
+            "created_at": "2014-08-20T11:47:24.287Z", 
+            "object_id": 1, 
+            "email": "", 
+            "content": "deneme", 
+            "content_type": 9, 
+            "which_user": 1
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "main_site.comments", 
+        "fields": {
+            "is_visible": false, 
+            "created_at": "2014-08-20T11:47:24.287Z", 
+            "object_id": 1, 
+            "email": "", 
+            "content": "2.deneme icerik", 
+            "content_type": 9, 
+            "which_user": 1
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "main_site.comments", 
+        "fields": {
+            "is_visible": false, 
+            "created_at": "2014-08-20T11:47:24.287Z", 
+            "object_id": 1, 
+            "email": "", 
+            "content": "bu bir yorumdur", 
+            "content_type": 9, 
+            "which_user": 1
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "main_site.comments", 
+        "fields": {
+            "is_visible": false, 
+            "created_at": "2014-08-20T11:47:24.287Z", 
+            "object_id": 1, 
+            "email": "", 
+            "content": "id1 sub comment", 
+            "content_type": 10, 
+            "which_user": 1
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "main_site.comments", 
+        "fields": {
+            "is_visible": false, 
+            "created_at": "2014-08-20T11:47:24.287Z", 
+            "object_id": 1, 
+            "email": "", 
+            "content": "id1 sub comment2", 
+            "content_type": 10, 
+            "which_user": 1
         }
     }
 ]
