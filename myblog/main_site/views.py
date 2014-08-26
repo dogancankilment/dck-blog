@@ -5,10 +5,13 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.core.context_processors import csrf
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.contrib import messages
+from django.utils.translation import ugettext as _
 
 from .models import Post, Comments
 from .forms import New_Post, New_Comment, New_Comment_Anonymous
 from .util_add_comment import post_comments, comments_comment
+from user_place.util_token_generator import tokens_email
 
 
 def index(request):  # blog_id
@@ -119,6 +122,29 @@ def single_post(request, post_id, comment_id):
                    'comment': root_comment,
                    'form': form,
                    'request': request})
+
+
+def comment_activation(request, token_id,
+                       template_name="post/comment_activation.html"):
+    if token_id:
+        try:
+            email_in_token = tokens_email(token_id)
+        except TypeError:
+            messages.error(request,
+                           (_('Hatali aktivasyon kodu')))
+
+        comment = Comments.objects.filter(email=email_in_token)
+        comment.is_visible = True
+
+        messages.success(request,
+                         (_('Yorumunuz yayinlanmistir.')))
+
+    else:
+        messages.error(request,
+                       (_('Boyle bir aktivasyon kodu bulunmamaktadir')))
+
+    return render(request,
+                  template_name)
 
 
 def my_custom_404(request, template_name='404.html'):
