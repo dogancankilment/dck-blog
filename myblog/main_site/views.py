@@ -10,8 +10,8 @@ from django.utils.translation import ugettext as _
 
 from .models import Post, Comments
 from .forms import New_Post, New_Comment, New_Comment_Anonymous
-from .util_add_comment import post_comments, comments_comment
-from user_place.util_token_generator import tokens_email
+from utils.util_add_comment import post_comments, comments_comment
+from utils.util_token_generator import tokens_email
 
 
 def index(request):  # blog_id

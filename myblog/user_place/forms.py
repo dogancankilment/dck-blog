@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.forms.models import ModelForm
 
-from .util_mail_sender import mail_sender
+from utils.util_mail_sender import mail_sender
 
 
 class LoginForm(forms.Form):
@@ -16,10 +16,11 @@ class LoginForm(forms.Form):
 
 class UserCreateForm(UserCreationForm):
     email = forms.EmailField(required=True)
+    image = forms.ImageField()
 
     class Meta:
         model = User
-        fields = ("username", "email", "password1", "password2")
+        fields = ("username", "email", "password1", "password2", "image")
 
     def clean_email(self):
         email = self.cleaned_data.get('email')

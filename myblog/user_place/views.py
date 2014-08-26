@@ -11,9 +11,9 @@ from django.contrib.auth import authenticate
 from django.template import RequestContext
 
 from main_site.views import index
-from .util_token_generator import tokens_email, tokens_expire_date
-from user_place.util_mail_sender import mail_sender
 from user_place.forms import LoginForm, UserCreateForm
+from utils.util_token_generator import tokens_email,tokens_expire_date
+from utils.util_mail_sender import mail_sender
 from .models import User
 
 
@@ -29,8 +29,10 @@ def show_profile(request, template_name="user/user_profile.html"):
 
 @login_required()
 def edit_profile(request):
+    user_profile = User.objects.get(id=request.user.id)
     return render_to_response('user/edit_profile.html',
-                              {"request": request},
+                              {"request": request,
+                               "user": user_profile},
                               context_instance=RequestContext(request))
 
 
