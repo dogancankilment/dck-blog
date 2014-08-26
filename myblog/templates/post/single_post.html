@@ -17,6 +17,14 @@
                                {{form.content}}
                            </div>
                         </div>
+                        {% if not request.user.is_authenticated %}
+                        <div class="control-group">
+                            <label>Email</label>
+                               <div class="controls">
+                                   {{form.email}}
+                               </div>
+                        </div>
+                        {% endif %}
                     <br>
                     {% csrf_token %}
                     <button class="btn btn-lg btn-primary btn-block" type="submit" style="width: 50px">Save</button>
@@ -38,6 +46,14 @@
                                {{form.content}}
                            </div>
                         </div>
+                        {% if not request.user.is_authenticated %}
+                        <div class="control-group">
+                            <label>Email</label>
+                               <div class="controls">
+                                   {{form.email}}
+                               </div>
+                        </div>
+                        {% endif %}
                     <br>
                     {% csrf_token %}
                     <button class="btn btn-lg btn-primary btn-block" type="submit" style="width: 50px">Save</button>
