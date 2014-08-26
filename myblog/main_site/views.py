@@ -7,7 +7,7 @@ from django.core.context_processors import csrf
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from .models import Post, Comments
-from .forms import New_Post, New_Comment
+from .forms import New_Post, New_Comment, New_Comment_Anonymous
 from .util_add_comment import post_comments, comments_comment
 
 
@@ -82,29 +82,43 @@ def new_post(request):
                                   c)
 
 
-@login_required()
+# new_comment form view
 def single_post(request, post_id, comment_id):
+    is_anonymous = False
     root_post = Post.objects.get(id=post_id)
     root_comment = root_post.comments.all()
 
-    if request.POST:
+    if request.user.is_authenticated():
         form = New_Comment(request.POST)
+    else:
+        form = New_Comment_Anonymous(request.POST)
+        is_anonymous = True
+
+    if request.POST:
         if form.is_valid():
             if comment_id == "1":
                 root_post = post_comments(request, post_id)
-                form.save(root_post, request.user)  # post object
+
+                if is_anonymous:
+                    form.save(root_post)
+                else:
+                    form.save(root_post, request.user)  # post object
+
             else:
                 current_comment = comments_comment(request, comment_id)
-                form.save(current_comment, request.user)  # comment object
+
+                if is_anonymous:
+                    form.save(current_comment)
+                else:
+                    form.save(current_comment, request.user)  # comment object
 
             return redirect(reverse(index))
-    else:
-        form = New_Comment(request.POST)
 
     return render(request, 'post/single_post.html',
                   {'post': root_post,
                    'comment': root_comment,
-                   'form': form})
+                   'form': form,
+                   'request': request})
 
 
 def my_custom_404(request, template_name='404.html'):
