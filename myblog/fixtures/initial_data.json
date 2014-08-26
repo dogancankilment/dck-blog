@@ -833,7 +833,7 @@
             "updated_at": "2014-08-25T13:05:04.189Z", 
             "which_user": 2, 
             "content": "De\u011fi\u015ftirldi \"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?\"", 
-            "image": "static/images/blog_posts/default_image.jpg"
+            "image": "static/images/blog_posts/default.jpg"
         }
     }, 
     {
@@ -845,7 +845,7 @@
             "updated_at": "2014-08-22T12:25:46.777Z", 
             "which_user": 2, 
             "content": "\"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?\"", 
-            "image": "static/images/blog_posts/2946489_2.jpg"
+            "image": "static/images/blog_posts/default.jpg"
         }
     }, 
     {
@@ -857,8 +857,7 @@
             "updated_at": "2014-08-22T12:24:12.306Z", 
             "which_user": 2, 
             "content": "Deneme \u0130\u00e7erik", 
-            "image": "static/images/blog_posts/2946489_1.jpg"
-        }
+            "image": "static/images/blog_posts/default.jpg"        }
     }, 
     {
         "pk": 34, 
@@ -869,7 +868,7 @@
             "updated_at": "2014-08-22T08:16:18.594Z", 
             "which_user": 2, 
             "content": "asdasdasdasd", 
-            "image": "static/images/blog_posts/1_20.jpg"
+            "image": "static/images/blog_posts/default.jpg"
         }
     }, 
     {
@@ -881,7 +880,7 @@
             "updated_at": "2014-08-22T08:15:57.436Z", 
             "which_user": 2, 
             "content": "asdasdasdasd", 
-            "image": "static/images/blog_posts/1_19.jpg"
+            "image": "static/images/blog_posts/default.jpg"
         }
     }, 
     {
@@ -893,7 +892,7 @@
             "updated_at": "2014-08-22T08:15:40.704Z", 
             "which_user": 2, 
             "content": "asdasdasdasd", 
-            "image": "static/images/blog_posts/1_18.jpg"
+            "image": "static/images/blog_posts/default.jpg"
         }
     }, 
     {
@@ -905,7 +904,7 @@
             "updated_at": "2014-08-22T08:14:33.342Z", 
             "which_user": 2, 
             "content": "asdasdasdasd", 
-            "image": "static/images/blog_posts/1_17.jpg"
+            "image": "static/images/blog_posts/default.jpg"
         }
     }, 
     {
@@ -917,7 +916,7 @@
             "updated_at": "2014-08-22T08:11:50.583Z", 
             "which_user": 2, 
             "content": "asdasdasd", 
-            "image": "static/images/blog_posts/1_16.jpg"
+            "image": "static/images/blog_posts/default.jpg"
         }
     }, 
     {
@@ -929,7 +928,7 @@
             "updated_at": "2014-08-22T08:05:19.463Z", 
             "which_user": 2, 
             "content": "asdasdasd", 
-            "image": "static/images/blog_posts/1_15.jpg"
+            "image": "static/images/blog_posts/default.jpg"
         }
     }, 
     {
@@ -941,7 +940,7 @@
             "updated_at": "2014-08-22T08:02:20.512Z", 
             "which_user": 2, 
             "content": "asdasdasd", 
-            "image": "static/images/blog_posts/1_14.jpg"
+            "image": "static/images/blog_posts/default.jpg"
         }
     }, 
     {
@@ -953,7 +952,7 @@
             "updated_at": "2014-08-22T08:00:37.374Z", 
             "which_user": 2, 
             "content": "asdasdasd", 
-            "image": "static/images/blog_posts/1_13.jpg"
+            "image": "static/images/blog_posts/default.jpg"
         }
     }, 
     {
@@ -965,7 +964,7 @@
             "updated_at": "2014-08-22T07:58:50.170Z", 
             "which_user": 2, 
             "content": "asdasdasd", 
-            "image": "static/images/blog_posts/1_12.jpg"
+            "image": "static/images/blog_posts/default.jpg"
         }
     }, 
     {
@@ -977,7 +976,7 @@
             "updated_at": "2014-08-22T07:57:59.870Z", 
             "which_user": 2, 
             "content": "asdasdasd", 
-            "image": "static/images/blog_posts/1_11.jpg"
+            "image": "static/images/blog_posts/default.jpg"
         }
     }, 
     {
@@ -989,7 +988,7 @@
             "updated_at": "2014-08-22T07:57:25.605Z", 
             "which_user": 2, 
             "content": "asdasdasd", 
-            "image": "static/images/blog_posts/1_10.jpg"
+            "image": "static/images/blog_posts/default.jpg"
         }
     }, 
     {
@@ -1001,7 +1000,7 @@
             "updated_at": "2014-08-22T07:57:03.354Z", 
             "which_user": 2, 
             "content": "asdasdasd", 
-            "image": "static/images/blog_posts/1_9.jpg"
+            "image": "static/images/blog_posts/default.jpg"
         }
     }, 
     {
@@ -1013,7 +1012,7 @@
             "updated_at": "2014-08-22T07:55:13.587Z", 
             "which_user": 2, 
             "content": "asdasdasd", 
-            "image": "static/images/blog_posts/1_8.jpg"
+            "image": "static/images/blog_posts/default.jpg"
         }
     }, 
     {
@@ -1025,7 +1024,7 @@
             "updated_at": "2014-08-22T07:55:10.883Z", 
             "which_user": 2, 
             "content": "asdasdasd", 
-            "image": "static/images/blog_posts/1_7.jpg"
+            "image": "static/images/blog_posts/default.jpg"
         }
     }, 
     {
@@ -1037,7 +1036,7 @@
             "updated_at": "2014-08-22T07:54:19.553Z", 
             "which_user": 2, 
             "content": "asdasdasd", 
-            "image": "static/images/blog_posts/1_6.jpg"
+            "image": "static/images/blog_posts/default.jpg"
         }
     }, 
     {
@@ -1049,7 +1048,7 @@
             "updated_at": "2014-08-22T07:50:48.020Z", 
             "which_user": 2, 
             "content": "asdasd", 
-            "image": "static/images/blog_posts/1_5.jpg"
+            "image": "static/images/blog_posts/default.jpg"
         }
     }, 
     {
@@ -1061,7 +1060,7 @@
             "updated_at": "2014-08-22T07:50:37.266Z", 
             "which_user": 2, 
             "content": "asdasd", 
-            "image": "static/images/blog_posts/1_4.jpg"
+            "image": "static/images/blog_posts/default.jpg"
         }
     }, 
     {
@@ -1073,7 +1072,7 @@
             "updated_at": "2014-08-22T07:49:36.702Z", 
             "which_user": 2, 
             "content": "asdasdasd", 
-            "image": "static/images/blog_posts/1_3.jpg"
+            "image": "static/images/blog_posts/default.jpg"
         }
     }, 
     {
@@ -1085,7 +1084,7 @@
             "updated_at": "2014-08-22T07:47:41.541Z", 
             "which_user": 2, 
             "content": "denemeemeee", 
-            "image": "static/images/blog_posts/1_2.jpg"
+            "image": "static/images/blog_posts/default.jpg"
         }
     }, 
     {
@@ -1097,8 +1096,7 @@
             "updated_at": "2014-08-22T07:42:37.272Z", 
             "which_user": 2, 
             "content": "asdasd", 
-            "image": "static/images/blog_posts/1_1.jpg"
-        }
+            "image": "static/images/blog_posts/default.jpg"        }
     }, 
     {
         "pk": 14, 
@@ -1109,8 +1107,7 @@
             "updated_at": "2014-08-22T07:39:32.364Z", 
             "which_user": 2, 
             "content": "asdasdasdasd", 
-            "image": "static/images/blog_posts/1.jpg"
-        }
+            "image": "static/images/blog_posts/default.jpg"        }
     }, 
     {
         "pk": 13, 
@@ -1121,8 +1118,7 @@
             "updated_at": "2014-08-22T01:40:27.937Z", 
             "which_user": 2, 
             "content": "Ovv Yea", 
-            "image": "static/images/blog_posts/500-1.png"
-        }
+            "image": "static/images/blog_posts/default.jpg"        }
     }, 
     {
         "pk": 2, 
@@ -1133,7 +1129,7 @@
             "updated_at": "2014-08-22T01:34:21.867Z", 
             "which_user": 1, 
             "content": "\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\"", 
-            "image": "static/images/blog_posts/default_image.jpg"
+            "image": "static/images/blog_posts/default.jpg"
         }
     }, 
     {
@@ -1145,7 +1141,7 @@
             "updated_at": "2014-08-21T14:10:58.819Z", 
             "which_user": 2, 
             "content": "\u0130\u00e7erigi Kar\u0131\u015f\u0131k olabilir. resim eklemeyece\u011fim.", 
-            "image": "static/images/blog_posts/default_image.jpg"
+            "image": "static/images/blog_posts/default.jpg"
         }
     }, 
     {
@@ -1157,8 +1153,7 @@
             "updated_at": "2014-08-20T13:17:19.587Z", 
             "which_user": 2, 
             "content": "asdasdasdasd", 
-            "image": "static/images/blog_posts/404-sayfa.jpg"
-        }
+            "image": "static/images/blog_posts/default.jpg"        }
     }, 
     {
         "pk": 10, 
@@ -1169,7 +1164,7 @@
             "updated_at": "2014-08-20T13:16:45.817Z", 
             "which_user": 2, 
             "content": "asd", 
-            "image": "static/images/blog_posts/default_image.jpg"
+            "image": "static/images/blog_posts/default.jpg"
         }
     }, 
     {
@@ -1181,7 +1176,7 @@
             "updated_at": "2014-08-20T11:47:24.287Z", 
             "which_user": 1, 
             "content": "\"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"", 
-            "image": "static/images/blog_posts/default_image.jpg"
+            "image": "static/images/blog_posts/default.jpg"
         }
     }, 
     {
@@ -1193,7 +1188,7 @@
             "updated_at": "2014-08-20T11:47:24.287Z", 
             "which_user": 2, 
             "content": "\"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.\"", 
-            "image": "static/images/blog_posts/default_image.jpg"
+            "image": "static/images/blog_posts/default.jpg"
         }
     }, 
     {
@@ -1205,8 +1200,7 @@
             "updated_at": "2014-08-20T11:47:24.287Z", 
             "which_user": 2, 
             "content": "asdasd", 
-            "image": "images/blog_post/2946489.jpg"
-        }
+            "image": "static/images/blog_posts/default.jpg"        }
     }, 
     {
         "pk": 6, 
@@ -1217,8 +1211,7 @@
             "updated_at": "2014-08-20T11:47:24.287Z", 
             "which_user": 2, 
             "content": "asdasd", 
-            "image": "images/blog_post/500-1.png"
-        }
+            "image": "static/images/blog_posts/default.jpg"        }
     }, 
     {
         "pk": 7, 
@@ -1229,8 +1222,7 @@
             "updated_at": "2014-08-20T11:47:24.287Z", 
             "which_user": 2, 
             "content": "asdasdas", 
-            "image": "static/images/blog_post/500-1.png"
-        }
+            "image": "static/images/blog_posts/default.jpg"        }
     }, 
     {
         "pk": 8, 
@@ -1241,8 +1233,7 @@
             "updated_at": "2014-08-20T11:47:24.287Z", 
             "which_user": 2, 
             "content": "asdasdasd", 
-            "image": "static/images/blog_posts/2946489.jpg"
-        }
+            "image": "static/images/blog_posts/default.jpg"        }
     }, 
     {
         "pk": 9, 
@@ -1253,7 +1244,7 @@
             "updated_at": "2014-08-20T11:47:24.287Z", 
             "which_user": 2, 
             "content": "asdasd", 
-            "image": "static/images/blog_posts/default_image.jpg"
+            "image": "static/images/blog_posts/default.jpg"
         }
     }, 
     {
