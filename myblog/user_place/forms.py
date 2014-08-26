@@ -32,7 +32,7 @@ class UserCreateForm(UserCreationForm):
         user = super(UserCreateForm, self).save(commit=False)
         user.email = self.cleaned_data["email"]
 
-        mail_sender.delay(user.email)
+        mail_sender.delay(user.email, "account_activation")
         user.is_active = False
 
         if commit:
