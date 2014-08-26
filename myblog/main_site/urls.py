@@ -18,4 +18,8 @@ urlpatterns = patterns('',
                            'main_site.views.single_post',
                            name='single_post'),
 
+                       url(r'^activation/(?P<token_id>.*)',
+                           'main_site.views.comment_activation',
+                           name='comment_activation'),
+
 )
