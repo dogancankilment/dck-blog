@@ -101,7 +101,7 @@ def single_post(request, post_id, comment_id):
     else:
         form = New_Comment(request.POST)
 
-    return render(request, 'post/new_comment.html',
+    return render(request, 'post/single_post.html',
                   {'post': root_post,
                    'comment': root_comment,
                    'form': form})
