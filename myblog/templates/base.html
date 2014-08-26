@@ -38,7 +38,7 @@
                             <tr>Welcome {{request.user}}</tr>
                         <span class="caret"></span></a>
                     <ul id="g-account-menu" class="dropdown-menu" role="menu">
-                        <li><a href="#">My Profile</a></li>
+                        <li><a href="{% url show_profile %}">My Profile</a></li>
                     </ul>
                 </li>
                 {% endif %}
