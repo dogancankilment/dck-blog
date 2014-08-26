@@ -1,14 +1,19 @@
 {% extends "base.html" %}
 
 {% block post_content %}
-    {% block edit %}
-        <a href="{% url edit_post post.id %}"  class="btn btn-sm btn-success">Edit</a>
-    {% endblock edit %}
+
     <div class="well" id="show_posts">
         <p><image src="/{{ post.image }}"></image></p>
         <p>{{ post.title }} <br>----------</p>
         <p>{{ post.content }} </p>
         <p>{{ post.which_user }} {{ post.created_at }} {{ post.id }}</p>
+        <br>
+        {% block edit %}
+            {% ifequal post.which_user request.user %}
+            <a href="{% url edit_post post.id %}"  class="btn btn-sm btn-success">Edit Post</a>
+            {% endifequal %}
+        {% endblock edit %}
+        <br><br>
         <div class="panel-body">
             <form class="form form-vertical" method="POST" action=" ">
                         <div class="control-group">
