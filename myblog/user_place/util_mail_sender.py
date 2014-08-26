@@ -10,8 +10,8 @@ from celery import shared_task
 
 
 @shared_task
-def mail_sender(email):
-        plaintext = get_template('email/email_content.html')
+def mail_sender(email, controll):
+        # plaintext = get_template('email/email_content.html')
         subject, from_email = 'hello',\
                               'surveydck@gmail.com'
         if email:
@@ -22,9 +22,12 @@ def mail_sender(email):
                 {'hash_key': hash_key_example})
 
             # text_content = plaintext.render(d)
-            text_content = render_to_string('email/email_content.html',
-                                            transmitted_key)
-
+            if controll == "comment_activation":
+                text_content = render_to_string('email/comment_content.html',
+                                                transmitted_key)
+            else:
+                text_content = render_to_string('email/email_content.html',
+                                                transmitted_key)
             msg = EmailMultiAlternatives(subject,
                                          text_content,
                                          from_email,
