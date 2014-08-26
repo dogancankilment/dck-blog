@@ -24,6 +24,7 @@ class Comments(models.Model):
     content = models.TextField()
     email = models.EmailField()
     created_at = models.DateTimeField(auto_now_add=True)
+    is_visible = models.BooleanField(default=False)
 
     content_type = models.ForeignKey(ContentType)
     object_id = models.PositiveIntegerField()
@@ -31,3 +32,6 @@ class Comments(models.Model):
 
     # comment's comment's comment's comment..
     comments = GenericRelation('Comments')
+
+    class Meta:
+        ordering = ['-created_at']
