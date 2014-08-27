@@ -37,6 +37,7 @@ class New_Comment(ModelForm):
                            which_user=user,
                            parent_object=root,
                            email=user.email)
+        comment.is_visible = True
         comment.save()
 
 
@@ -46,14 +47,22 @@ class New_Comment_Anonymous(ModelForm):
         exclude = ['creatad_at',
                    'which_user',
                    'content_type',
-                   'object_id',
-                   'is_visible']
+                   'object_id']
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if email and User.objects.filter(email=email).count():
+            raise forms.ValidationError(u'Email addresses must be unique.')
+        return email
 
     def save(self, root):
         comment = Comments(content=self.cleaned_data["content"],
-                           which_user=User.objects.create_user(uuid.uuid4()),
                            parent_object=root,
                            email=self.cleaned_data["email"])
+
+        comment.which_user = User.objects.create_user(uuid.uuid4(),
+                                                      comment.email),
+        comment.is_visible = True
         comment.save()
         mail_sender.delay(comment.email, "comment_activation")
 
