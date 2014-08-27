@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-24 12:12+0300\n"
+"POT-Creation-Date: 2014-08-27 03:55-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,48 +17,52 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: user_place/util_mail_sender.py:33
-msgid "mailiniz gonderildi"
+#: main_site/views.py:80
+msgid "Hatali form"
 msgstr ""
 
-#: user_place/util_mail_sender.py:36
-msgid "Gondereceginiz kisininemail adresi belli olmalidir."
-msgstr ""
-
-#: user_place/views.py:23
-msgid "Welcome to my site."
-msgstr ""
-
-#: user_place/views.py:60
-msgid "Lutfen Hesabinizi aktif ediniz."
-msgstr ""
-
-#: user_place/views.py:63
-msgid "Boyle bir kullanici sistemde kayitli degil"
-msgstr ""
-
-#: user_place/views.py:80
-msgid "Bu email adresi daha onceden alinmistir."
-msgstr ""
-
-#: user_place/views.py:92
+#: main_site/views.py:150 user_place/views.py:83
 msgid "Hatali aktivasyon kodu"
 msgstr ""
 
-#: user_place/views.py:107
+#: main_site/views.py:156
+msgid "Yorumunuz yayinlanmistir."
+msgstr ""
+
+#: main_site/views.py:160
+msgid "Boyle bir aktivasyon kodu bulunmamaktadir"
+msgstr ""
+
+#: user_place/views.py:36
+msgid "Lutfen Hesabinizi aktif ediniz."
+msgstr ""
+
+#: user_place/views.py:40
+msgid "Boyle bir kullanici sistemde kayitli degil"
+msgstr ""
+
+#: user_place/views.py:98
 msgid "Hesabiniz aktif edilmistir. Lutfen giris yapiniz."
 msgstr ""
 
-#: user_place/views.py:114
+#: user_place/views.py:105
 msgid ""
 "Eski aktivasyon mailinin suresi bitmistir,yeni bir email yolladik,lutfen "
 "posta kutunuzu ziyaret ediniz."
 msgstr ""
 
-#: user_place/views.py:120
+#: user_place/views.py:111
 msgid "Eslesen email bulunamadi."
 msgstr ""
 
-#: user_place/views.py:124
+#: user_place/views.py:115
 msgid "Boyle bir token yoktur"
+msgstr ""
+
+#: utils/util_mail_sender.py:34
+msgid "mailiniz gonderildi"
+msgstr ""
+
+#: utils/util_mail_sender.py:37
+msgid "Gondereceginiz kisininemail adresi belli olmalidir."
 msgstr ""
