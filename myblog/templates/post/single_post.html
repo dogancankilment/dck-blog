@@ -2,84 +2,130 @@
 
 {% block post_content %}
 
-    <div class="well" id="show_posts">
-        <p><image src="/{{ post.image }}"></image></p>
-        <p>{{ post.title }} <br>----------</p>
-        <p>{{ post.content }} </p>
-        <p>{{ post.which_user }} {{ post.created_at }} {{ post.id }}</p>
-        <br>
-        {% block edit %}
-            {% ifequal post.which_user request.user %}
-            <a href="{% url edit_post post.id %}"  class="btn btn-sm btn-success">Edit Post</a>
-            {% endifequal %}
-        {% endblock edit %}
-        <br><br>
-        <div class="panel-body">
-            <form class="form form-vertical" method="POST" action=" ">
-                        <div class="control-group">
-                        <label>Comment</label>
-                           <div class="controls">
-                               {{form.content}}
-                           </div>
-                        </div>
-                        {% if not request.user.is_authenticated %}
-                        <div class="control-group">
-                            <label>Email</label>
-                               <div class="controls">
-                                   {{form.email}}
-                               </div>
-                        </div>
-                        {% endif %}
-                    <br>
-                    {% csrf_token %}
-                    <button class="btn btn-lg btn-primary btn-block" type="submit" style="width: 50px">Save</button>
-            </form>
-        </div>
-    </div>
-        {% if comment %}
-            {% for p in post.comments.all %}
-                <div class="well" id="show_comments">
-                <p>
-                    {{ p.which_user }} <br>
-                    {{ p.content }}
-                </p>
-                    <div class="panel-body">
-                    <form class="form form-vertical" method="POST" action=" ">
-                        <div class="control-group">
-                        <label>Comment</label>
-                           <div class="controls">
-                               {{form.content}}
-                           </div>
-                        </div>
-                        {% if not request.user.is_authenticated %}
-                        <div class="control-group">
-                            <label>Email</label>
-                               <div class="controls">
-                                   {{form.email}}
-                               </div>
-                        </div>
-                        {% endif %}
-                    <br>
-                    {% csrf_token %}
-                    <button class="btn btn-lg btn-primary btn-block" type="submit" style="width: 50px">Save</button>
-                    </form>
-                    </div>
+<div class="well" id="show_posts">
+    <p>
+        <image src="/{{ post.image }}"></image>
+    </p>
+    <p>{{ post.title }} <br>----------</p>
+
+    <p>{{ post.content }} </p>
+
+    <p>{{ post.which_user }} {{ post.created_at }} {{ post.id }}</p>
+    <br>
+    {% block edit %}
+    {% ifequal post.which_user request.user %}
+    <a href="{% url edit_post post.id %}" class="btn btn-sm btn-success">Edit Post</a>
+    {% endifequal %}
+    {% endblock edit %}
+    <br><br>
+
+    <div class="panel-body">
+        <form class="form form-vertical" method="POST" action=" ">
+            <div class="control-group">
+                <label>Comment</label>
+
+                <div class="controls">
+                    {{form.content}}
                 </div>
+            </div>
+            {% if not request.user.is_authenticated %}
+            <div class="control-group">
+                <label>Email</label>
+
+                <div class="controls">
+                    {{form.email}}
+                </div>
+            </div>
+            {% endif %}
+            <br>
+            {% csrf_token %}
+            <button class="btn btn-lg btn-primary btn-block" type="submit" style="width: 50px">Save</button>
+            {% if form.errors %}
+            {% for field in form %}
+            {% for error in field.errors %}
+            <div class="alert alert-error">
+                <strong>{{ error|escape }}</strong>
+            </div>
             {% endfor %}
-        {% else %}
-        {% endif %}
-    {% block add_comment %}
+            {% endfor %}
+
+            <!--diffrent version-->
+
+            {% for error in form.non_field_errors %}
+            <div class="alert alert-error">
+                <strong>{{ error|escape }}</strong>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </form>
+    </div>
+</div>
+{% if comment %}
+{% for p in post.comments.all %}
+<div class="well" id="show_comments">
+    {% if p.is_visible %}
+    <p>
+        {{ p.which_user }} <br>
+        {{ p.content }}
+    </p>
+
+    <div class="panel-body">
+        <form class="form form-vertical" method="POST" action=" ">
+            <div class="control-group">
+                <label>Comment</label>
+
+                <div class="controls">
+                    {{form.content}}
+                </div>
+            </div>
+            {% if not request.user.is_authenticated %}
+            <div class="control-group">
+                <label>Email</label>
+
+                <div class="controls">
+                    {{form.email}}
+                </div>
+            </div>
+            {% endif %}
+            <br>
+            {% csrf_token %}
+            <button class="btn btn-lg btn-primary btn-block" type="submit" style="width: 50px">Save</button>
+            {% if form.errors %}
+            {% for field in form %}
+            {% for error in field.errors %}
+            <div class="alert alert-error">
+                <strong>{{ error|escape }}</strong>
+            </div>
+            {% endfor %}
+            {% endfor %}
+
+            <!--diffrent version-->
+
+            {% for error in form.non_field_errors %}
+            <div class="alert alert-error">
+                <strong>{{ error|escape }}</strong>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </form>
+    </div>
+    {% endif %}
+</div>
+{% endfor %}
+{% else %}
+{% endif %}
+{% block add_comment %}
 
 
-        {% if messages %}
-            <ul>
-                {% for m in messages %}
-                    <li>{{ m }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
+{% if messages %}
+<ul>
+    {% for m in messages %}
+    <li>{{ m }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
 
-    </div> <!-- /container -->
-    {% endblock add_comment %}
+</div> <!-- /container -->
+{% endblock add_comment %}
 
 {% endblock post_content %}
