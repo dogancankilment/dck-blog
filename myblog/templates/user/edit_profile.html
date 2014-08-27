@@ -23,19 +23,33 @@
     <hr>
     <div class="well" style="width: 240px">My Photo
         <span class="badge pull-right">3</span>
+
         <form class="form form-vertical" method="POST" action=" " enctype="multipart/form-data">
-          <div class="control-group">
-            <br>
-            <label>Username</label>
-            <div class="controls">
-            {{user.username}}
+            <div class="control-group">
+                <br>
+                <label>Username</label>
+
+                <div class="controls">
+                    {{form.username}}
+                </div>
+                <br>
+                <label>Email</label>
+
+                <div class="controls">
+                    {{form.email}}
+                </div>
             </div>
+            {% csrf_token %}
             <br>
-            <label>Email</label>
-            <div class="controls">
-            {{user.email}}
-            </div>
-          </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit" style="width: 100px">Save</button>
+            {% if messages %}
+            <ul>
+                {% for m in messages %}
+                <li>{{ m }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </form>
     </div>
 
     <div class="container">
