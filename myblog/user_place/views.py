@@ -10,7 +10,7 @@ from django.template import RequestContext
 
 from main_site.views import index
 from user_place.forms import LoginForm, UserCreateForm, UserProfileForm
-from utils.util_token_generator import tokens_email,tokens_expire_date
+from utils.util_token_generator import tokens_email, tokens_expire_date
 from utils.util_mail_sender import mail_sender
 from .models import User
 
@@ -28,12 +28,12 @@ def my_login(request):
             if user.is_active:
                 auth.login(request, user)
 
-                return HttpResponseRedirect(reverse(index))  # Redirect to a success page
+                # Redirect to a success page
+                return HttpResponseRedirect(reverse(index))
 
             else:
                 messages.error(request,
                                (_('Lutfen Hesabinizi aktif ediniz.')))
-                return render(request, 'Authentication/send_me_again.html')
 
         else:
             messages.error(request,
