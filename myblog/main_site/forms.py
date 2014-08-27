@@ -29,8 +29,7 @@ class New_Comment(ModelForm):
                    'which_user',
                    'content_type',
                    'object_id',
-                   'email',
-                   'is_visible']
+                   'email']
 
     def save(self, root, user):
         comment = Comments(content=self.cleaned_data["content"],
@@ -58,10 +57,10 @@ class New_Comment_Anonymous(ModelForm):
     def save(self, root):
         comment = Comments(content=self.cleaned_data["content"],
                            parent_object=root,
+                           which_user=User.objects.create_user(uuid.uuid4(),
+                                                               self.cleaned_data["email"]),
                            email=self.cleaned_data["email"])
 
-        comment.which_user = User.objects.create_user(uuid.uuid4(),
-                                                      comment.email),
         comment.is_visible = True
         comment.save()
         mail_sender.delay(comment.email, "comment_activation")
