@@ -1,5 +1,3 @@
-import datetime
-
 from django.shortcuts import render, redirect, render_to_response
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
@@ -16,24 +14,7 @@ from utils.util_token_generator import tokens_email,tokens_expire_date
 from utils.util_mail_sender import mail_sender
 from .models import User
 
-
-@login_required()
-def show_profile(request, template_name="user/user_profile.html"):
-    user_profile = User.objects.get(id=request.user.id)
-
-    return render_to_response(template_name,
-                              {"user_profile": user_profile,
-                               "request": request},
-                              context_instance=RequestContext(request))
-
-
-@login_required()
-def edit_profile(request):
-    user_profile = User.objects.get(id=request.user.id)
-    return render_to_response('user/edit_profile.html',
-                              {"request": request,
-                               "user": user_profile},
-                              context_instance=RequestContext(request))
+import datetime
 
 
 def my_login(request):
@@ -63,13 +44,21 @@ def my_login(request):
 def signup(request, template_name="Authentication/signup.html"):
     form = UserCreateForm(request.POST or None)
 
-    if form.is_valid():
-        form.save()
-        return HttpResponseRedirect(reverse(my_login))
+    if request.POST:
+        if form.is_valid():
+
+            form.save()
+            return HttpResponseRedirect(reverse(my_login))
 
     return render(request,
                   template_name,
                   {'form': form})
+
+
+@login_required()
+def logout(request):
+    auth.logout(request)
+    return redirect(reverse(index))
 
 
 def activation(request, token_id, template_name="Authentication/activation.html"):
@@ -116,6 +105,19 @@ def activation(request, token_id, template_name="Authentication/activation.html"
 
 
 @login_required()
-def logout(request):
-    auth.logout(request)
-    return redirect(reverse(my_login))
+def show_profile(request, template_name="user/user_profile.html"):
+    user_profile = User.objects.get(id=request.user.id)
+
+    return render_to_response(template_name,
+                              {"user_profile": user_profile,
+                               "request": request},
+                              context_instance=RequestContext(request))
+
+
+@login_required()
+def edit_profile(request):
+    user_profile = User.objects.get(id=request.user.id)
+    return render_to_response('user/edit_profile.html',
+                              {"request": request,
+                               "user": user_profile},
+                              context_instance=RequestContext(request))

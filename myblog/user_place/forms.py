@@ -4,6 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.forms.models import ModelForm
 
 from utils.util_mail_sender import mail_sender
+from utils.util_image_resizer import image_resizer
 
 
 class LoginForm(forms.Form):
@@ -16,11 +17,10 @@ class LoginForm(forms.Form):
 
 class UserCreateForm(UserCreationForm):
     email = forms.EmailField(required=True)
-    image = forms.ImageField()
 
     class Meta:
         model = User
-        fields = ("username", "email", "password1", "password2", "image")
+        fields = ("username", "email", "password1", "password2")
 
     def clean_email(self):
         email = self.cleaned_data.get('email')
@@ -33,11 +33,11 @@ class UserCreateForm(UserCreationForm):
         user = super(UserCreateForm, self).save(commit=False)
         user.email = self.cleaned_data["email"]
 
-        mail_sender.delay(user.email, "account_activation")
         user.is_active = False
 
         if commit:
             user.save()
+            mail_sender.delay(user.email, "account_activation")
         return user
 
 
