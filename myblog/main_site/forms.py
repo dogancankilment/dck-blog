@@ -61,7 +61,7 @@ class New_Comment_Anonymous(ModelForm):
                                                                self.cleaned_data["email"]),
                            email=self.cleaned_data["email"])
 
-        comment.is_visible = True
+        comment.is_visible = False
         comment.save()
         mail_sender.delay(comment.email, "comment_activation")
 
