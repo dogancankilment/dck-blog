@@ -4,7 +4,6 @@ from django.contrib.auth.forms import UserCreationForm
 from django.forms.models import ModelForm
 
 from utils.util_mail_sender import mail_sender
-from utils.util_image_resizer import image_resizer
 
 
 class LoginForm(forms.Form):
