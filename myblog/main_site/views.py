@@ -149,7 +149,7 @@ def comment_activation(request, token_id,
             messages.error(request,
                            (_('Hatali aktivasyon kodu')))
 
-        comment = Comments.objects.filter(email=email_in_token)
+        comment = Comments.objects.get(email=email_in_token)
         comment.is_visible = True
 
         messages.success(request,
