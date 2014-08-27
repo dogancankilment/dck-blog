@@ -14,7 +14,7 @@
     <br>
     {% block edit %}
     {% ifequal post.which_user request.user %}
-    <a href="{% url edit_post post.id %}" class="btn btn-sm btn-success">Edit Post</a>
+        <a href="{% url edit_post post.id %}" class="btn btn-sm btn-success">Edit Post</a>
     {% endifequal %}
     {% endblock edit %}
     <br><br>
@@ -43,7 +43,7 @@
         </form>
     </div>
 </div>
-{% if comment %}
+
 {% for p in post.comments.all %}
 <div class="well" id="show_comments">
     {% if p.is_visible %}
@@ -78,8 +78,6 @@
     {% endif %}
 </div>
 {% endfor %}
-{% else %}
-{% endif %}
 {% block add_comment %}
 
 
