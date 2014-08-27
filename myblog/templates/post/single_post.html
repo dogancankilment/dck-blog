@@ -40,23 +40,6 @@
             <br>
             {% csrf_token %}
             <button class="btn btn-lg btn-primary btn-block" type="submit" style="width: 50px">Save</button>
-            {% if form.errors %}
-            {% for field in form %}
-            {% for error in field.errors %}
-            <div class="alert alert-error">
-                <strong>{{ error|escape }}</strong>
-            </div>
-            {% endfor %}
-            {% endfor %}
-
-            <!--diffrent version-->
-
-            {% for error in form.non_field_errors %}
-            <div class="alert alert-error">
-                <strong>{{ error|escape }}</strong>
-            </div>
-            {% endfor %}
-            {% endif %}
         </form>
     </div>
 </div>
@@ -90,23 +73,6 @@
             <br>
             {% csrf_token %}
             <button class="btn btn-lg btn-primary btn-block" type="submit" style="width: 50px">Save</button>
-            {% if form.errors %}
-            {% for field in form %}
-            {% for error in field.errors %}
-            <div class="alert alert-error">
-                <strong>{{ error|escape }}</strong>
-            </div>
-            {% endfor %}
-            {% endfor %}
-
-            <!--diffrent version-->
-
-            {% for error in form.non_field_errors %}
-            <div class="alert alert-error">
-                <strong>{{ error|escape }}</strong>
-            </div>
-            {% endfor %}
-            {% endif %}
         </form>
     </div>
     {% endif %}
