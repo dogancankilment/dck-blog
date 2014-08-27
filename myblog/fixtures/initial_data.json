@@ -202,11 +202,19 @@
         }
     }, 
     {
-        "pk": "e2d3583e73d9abd43dfc752244b3c2d2", 
+        "pk": "ce503346334a51dcab7a42b9c094377e", 
         "model": "sessions.session", 
         "fields": {
-            "expire_date": "2014-09-09T11:04:50.604Z", 
-            "session_data": "ZTc4OTc3NTJkYjEyZjY2MzNhYWQ3ZWM5ODM0OTc1YTUzZjRiYTVkMzqAAn1xAShVEl9hdXRoX3Vz\nZXJfYmFja2VuZHECVS91c2VyX3BsYWNlLmJhY2tlbmRzLkVtYWlsT3JVc2VybmFtZU1vZGVsQmFj\na2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLAnUu\n"
+            "expire_date": "2014-09-09T15:57:59.757Z", 
+            "session_data": "OTA1OWI0OTJkMTQ4NjQzZDRiZWRjYzUyODc2MmU1YjdiN2IxMmE5ZjqAAn1xAS4=\n"
+        }
+    }, 
+    {
+        "pk": "5e34a2c486cfe02d8b3743c768370181", 
+        "model": "sessions.session", 
+        "fields": {
+            "expire_date": "2014-09-10T00:49:24.779Z", 
+            "session_data": "OTA1OWI0OTJkMTQ4NjQzZDRiZWRjYzUyODc2MmU1YjdiN2IxMmE5ZjqAAn1xAS4=\n"
         }
     }, 
     {
@@ -713,7 +721,7 @@
             "is_active": true, 
             "is_superuser": true, 
             "is_staff": true, 
-            "last_login": "2014-08-24T09:04:42.434Z", 
+            "last_login": "2014-08-27T00:47:35.229Z", 
             "groups": [], 
             "user_permissions": [], 
             "password": "pbkdf2_sha256$10000$RnockmdrFy25$Q1M3dTgvDOa3uN8t7KZqyXszWdiZtiPz/HZWTXDKE3s=", 
@@ -731,7 +739,7 @@
             "is_active": true, 
             "is_superuser": false, 
             "is_staff": false, 
-            "last_login": "2014-08-26T11:04:50.479Z", 
+            "last_login": "2014-08-27T00:49:22.288Z", 
             "groups": [], 
             "user_permissions": [], 
             "password": "pbkdf2_sha256$10000$kFEZ5hkw3dx9$uNm0u94DxVDt9mHIQ/eeJuVd/XqKxNdGbAWMmoC1Jjk=", 
@@ -758,7 +766,25 @@
         }
     }, 
     {
-        "pk": 4, 
+        "pk": 5, 
+        "model": "auth.user", 
+        "fields": {
+            "username": "dcc63f05-e24b-4239-9189-b83a5f885a39", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": false, 
+            "is_staff": false, 
+            "last_login": "2014-08-26T15:58:14.515Z", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "!", 
+            "email": "", 
+            "date_joined": "2014-08-26T15:58:14.515Z"
+        }
+    }, 
+    {
+        "pk": 6, 
         "model": "auth.user", 
         "fields": {
             "username": "can", 
@@ -767,12 +793,25 @@
             "is_active": true, 
             "is_superuser": false, 
             "is_staff": false, 
-            "last_login": "2014-08-24T09:05:24.360Z", 
+            "last_login": "2014-08-27T00:48:37.521Z", 
             "groups": [], 
             "user_permissions": [], 
-            "password": "pbkdf2_sha256$10000$wtHuy0NC68qd$bCCp15a+H+N8rrNTKd7VqXTMmkyWRBEQrWGFQHcgBeU=", 
+            "password": "pbkdf2_sha256$10000$XN2nAzk92JlK$76mTel4eHjB3WY09y7sKsmMSUCjq1acL8E1y+itNarY=", 
             "email": "cank1907@hotmail.com", 
-            "date_joined": "2014-08-24T09:05:04.981Z"
+            "date_joined": "2014-08-27T00:47:56.437Z"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "admin.logentry", 
+        "fields": {
+            "action_flag": 3, 
+            "action_time": "2014-08-27T00:47:42.918Z", 
+            "object_repr": "can", 
+            "object_id": "4", 
+            "change_message": "", 
+            "user": 1, 
+            "content_type": 3
         }
     }, 
     {
@@ -838,6 +877,18 @@
             "change_message": "", 
             "user": 1, 
             "content_type": 3
+        }
+    }, 
+    {
+        "pk": 37, 
+        "model": "main_site.post", 
+        "fields": {
+            "title": "Deneme ", 
+            "created_at": "2014-08-26T15:41:14.164Z", 
+            "updated_at": "2014-08-26T15:41:14.164Z", 
+            "which_user": 2, 
+            "content": "\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\"", 
+            "image": "static/images/blog_posts/default.jpg"
         }
     }, 
     {
@@ -1273,6 +1324,45 @@
         }
     }, 
     {
+        "pk": 18, 
+        "model": "main_site.comments", 
+        "fields": {
+            "is_visible": false, 
+            "created_at": "2014-08-26T15:58:14.869Z", 
+            "object_id": 37, 
+            "email": "dogancankilment@gmail.com", 
+            "content": "asdasdasd", 
+            "content_type": 9, 
+            "which_user": 5
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "main_site.comments", 
+        "fields": {
+            "is_visible": false, 
+            "created_at": "2014-08-26T15:57:46.427Z", 
+            "object_id": 3, 
+            "email": "dogancankilment@gmail.com", 
+            "content": "asdasd", 
+            "content_type": 9, 
+            "which_user": 2
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "main_site.comments", 
+        "fields": {
+            "is_visible": false, 
+            "created_at": "2014-08-26T15:57:39.153Z", 
+            "object_id": 37, 
+            "email": "dogancankilment@gmail.com", 
+            "content": "asdasd", 
+            "content_type": 9, 
+            "which_user": 2
+        }
+    }, 
+    {
         "pk": 15, 
         "model": "main_site.comments", 
         "fields": {
@@ -1348,58 +1438,6 @@
             "content": "asdasd", 
             "content_type": 9, 
             "which_user": 2
-        }
-    }, 
-    {
-        "pk": 9, 
-        "model": "main_site.comments", 
-        "fields": {
-            "is_visible": false, 
-            "created_at": "2014-08-25T06:46:44.729Z", 
-            "object_id": 1, 
-            "email": "", 
-            "content": "asdasd", 
-            "content_type": 9, 
-            "which_user": 4
-        }
-    }, 
-    {
-        "pk": 8, 
-        "model": "main_site.comments", 
-        "fields": {
-            "is_visible": false, 
-            "created_at": "2014-08-25T06:28:39.486Z", 
-            "object_id": 1, 
-            "email": "", 
-            "content": "asdasd", 
-            "content_type": 9, 
-            "which_user": 4
-        }
-    }, 
-    {
-        "pk": 7, 
-        "model": "main_site.comments", 
-        "fields": {
-            "is_visible": false, 
-            "created_at": "2014-08-25T06:22:10.889Z", 
-            "object_id": 5, 
-            "email": "", 
-            "content": "asdasd", 
-            "content_type": 10, 
-            "which_user": 4
-        }
-    }, 
-    {
-        "pk": 6, 
-        "model": "main_site.comments", 
-        "fields": {
-            "is_visible": false, 
-            "created_at": "2014-08-25T06:15:02.786Z", 
-            "object_id": 4, 
-            "email": "", 
-            "content": "asdasd", 
-            "content_type": 10, 
-            "which_user": 4
         }
     }, 
     {
