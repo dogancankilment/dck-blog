@@ -194,14 +194,6 @@
         }
     }, 
     {
-        "pk": "b94731ef6531e70d868569efa802c7e3", 
-        "model": "sessions.session", 
-        "fields": {
-            "expire_date": "2014-09-09T10:26:10.246Z", 
-            "session_data": "OTA1OWI0OTJkMTQ4NjQzZDRiZWRjYzUyODc2MmU1YjdiN2IxMmE5ZjqAAn1xAS4=\n"
-        }
-    }, 
-    {
         "pk": "ce503346334a51dcab7a42b9c094377e", 
         "model": "sessions.session", 
         "fields": {
@@ -215,6 +207,22 @@
         "fields": {
             "expire_date": "2014-09-10T00:49:24.779Z", 
             "session_data": "OTA1OWI0OTJkMTQ4NjQzZDRiZWRjYzUyODc2MmU1YjdiN2IxMmE5ZjqAAn1xAS4=\n"
+        }
+    }, 
+    {
+        "pk": "eeee773678698c94ab0b8dde083dca21", 
+        "model": "sessions.session", 
+        "fields": {
+            "expire_date": "2014-09-10T03:49:40.978Z", 
+            "session_data": "Y2JhNzY2MWY3NTY2ZGQ1ZWNlOWU5NDg4OWYxNzM4ZTFjM2E5Njk4MzqAAn1xAShVEl9hdXRoX3Vz\nZXJfYmFja2VuZHECVS91c2VyX3BsYWNlLmJhY2tlbmRzLkVtYWlsT3JVc2VybmFtZU1vZGVsQmFj\na2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLBnUu\n"
+        }
+    }, 
+    {
+        "pk": "a444c5b9e99969a39c9aae05505a69f5", 
+        "model": "sessions.session", 
+        "fields": {
+            "expire_date": "2014-09-10T03:50:10.139Z", 
+            "session_data": "ZTc4OTc3NTJkYjEyZjY2MzNhYWQ3ZWM5ODM0OTc1YTUzZjRiYTVkMzqAAn1xAShVEl9hdXRoX3Vz\nZXJfYmFja2VuZHECVS91c2VyX3BsYWNlLmJhY2tlbmRzLkVtYWlsT3JVc2VybmFtZU1vZGVsQmFj\na2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLAnUu\n"
         }
     }, 
     {
@@ -721,7 +729,7 @@
             "is_active": true, 
             "is_superuser": true, 
             "is_staff": true, 
-            "last_login": "2014-08-27T00:47:35.229Z", 
+            "last_login": "2014-08-27T03:49:20.344Z", 
             "groups": [], 
             "user_permissions": [], 
             "password": "pbkdf2_sha256$10000$RnockmdrFy25$Q1M3dTgvDOa3uN8t7KZqyXszWdiZtiPz/HZWTXDKE3s=", 
@@ -739,7 +747,7 @@
             "is_active": true, 
             "is_superuser": false, 
             "is_staff": false, 
-            "last_login": "2014-08-27T00:49:22.288Z", 
+            "last_login": "2014-08-27T03:50:09.998Z", 
             "groups": [], 
             "user_permissions": [], 
             "password": "pbkdf2_sha256$10000$kFEZ5hkw3dx9$uNm0u94DxVDt9mHIQ/eeJuVd/XqKxNdGbAWMmoC1Jjk=", 
@@ -766,24 +774,6 @@
         }
     }, 
     {
-        "pk": 5, 
-        "model": "auth.user", 
-        "fields": {
-            "username": "dcc63f05-e24b-4239-9189-b83a5f885a39", 
-            "first_name": "", 
-            "last_name": "", 
-            "is_active": true, 
-            "is_superuser": false, 
-            "is_staff": false, 
-            "last_login": "2014-08-26T15:58:14.515Z", 
-            "groups": [], 
-            "user_permissions": [], 
-            "password": "!", 
-            "email": "", 
-            "date_joined": "2014-08-26T15:58:14.515Z"
-        }
-    }, 
-    {
         "pk": 6, 
         "model": "auth.user", 
         "fields": {
@@ -793,12 +783,38 @@
             "is_active": true, 
             "is_superuser": false, 
             "is_staff": false, 
-            "last_login": "2014-08-27T00:48:37.521Z", 
+            "last_login": "2014-08-27T03:49:40.820Z", 
             "groups": [], 
             "user_permissions": [], 
             "password": "pbkdf2_sha256$10000$XN2nAzk92JlK$76mTel4eHjB3WY09y7sKsmMSUCjq1acL8E1y+itNarY=", 
             "email": "cank1907@hotmail.com", 
-            "date_joined": "2014-08-27T00:47:56.437Z"
+            "date_joined": "2014-08-27T00:47:56Z"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "admin.logentry", 
+        "fields": {
+            "action_flag": 2, 
+            "action_time": "2014-08-27T03:49:27.785Z", 
+            "object_repr": "can", 
+            "object_id": "6", 
+            "change_message": "Changed password and is_active.", 
+            "user": 1, 
+            "content_type": 3
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "admin.logentry", 
+        "fields": {
+            "action_flag": 3, 
+            "action_time": "2014-08-27T03:47:34.290Z", 
+            "object_repr": "dcc63f05-e24b-4239-9189-b83a5f885a39", 
+            "object_id": "5", 
+            "change_message": "", 
+            "user": 1, 
+            "content_type": 3
         }
     }, 
     {
@@ -877,6 +893,18 @@
             "change_message": "", 
             "user": 1, 
             "content_type": 3
+        }
+    }, 
+    {
+        "pk": 38, 
+        "model": "main_site.post", 
+        "fields": {
+            "title": "Ne_post_ama", 
+            "created_at": "2014-08-27T03:50:45.008Z", 
+            "updated_at": "2014-08-27T03:50:45.008Z", 
+            "which_user": 2, 
+            "content": "sabah \u00fcst\u00fcme \u00fcst\u00fcme geliyor. Ko\u015fun \u00e7ocuklar ko\u015fun", 
+            "image": "static/images/blog_posts/1_1.jpg"
         }
     }, 
     {
@@ -1324,127 +1352,10 @@
         }
     }, 
     {
-        "pk": 18, 
-        "model": "main_site.comments", 
-        "fields": {
-            "is_visible": false, 
-            "created_at": "2014-08-26T15:58:14.869Z", 
-            "object_id": 37, 
-            "email": "dogancankilment@gmail.com", 
-            "content": "asdasdasd", 
-            "content_type": 9, 
-            "which_user": 5
-        }
-    }, 
-    {
-        "pk": 17, 
-        "model": "main_site.comments", 
-        "fields": {
-            "is_visible": false, 
-            "created_at": "2014-08-26T15:57:46.427Z", 
-            "object_id": 3, 
-            "email": "dogancankilment@gmail.com", 
-            "content": "asdasd", 
-            "content_type": 9, 
-            "which_user": 2
-        }
-    }, 
-    {
-        "pk": 16, 
-        "model": "main_site.comments", 
-        "fields": {
-            "is_visible": false, 
-            "created_at": "2014-08-26T15:57:39.153Z", 
-            "object_id": 37, 
-            "email": "dogancankilment@gmail.com", 
-            "content": "asdasd", 
-            "content_type": 9, 
-            "which_user": 2
-        }
-    }, 
-    {
-        "pk": 15, 
-        "model": "main_site.comments", 
-        "fields": {
-            "is_visible": false, 
-            "created_at": "2014-08-25T13:04:36.532Z", 
-            "object_id": 3, 
-            "email": "", 
-            "content": "Deneme son", 
-            "content_type": 9, 
-            "which_user": 2
-        }
-    }, 
-    {
-        "pk": 14, 
-        "model": "main_site.comments", 
-        "fields": {
-            "is_visible": false, 
-            "created_at": "2014-08-25T13:03:37.758Z", 
-            "object_id": 1, 
-            "email": "", 
-            "content": "a", 
-            "content_type": 9, 
-            "which_user": 2
-        }
-    }, 
-    {
-        "pk": 13, 
-        "model": "main_site.comments", 
-        "fields": {
-            "is_visible": false, 
-            "created_at": "2014-08-25T11:44:46.479Z", 
-            "object_id": 2, 
-            "email": "", 
-            "content": "yeni", 
-            "content_type": 9, 
-            "which_user": 2
-        }
-    }, 
-    {
-        "pk": 12, 
-        "model": "main_site.comments", 
-        "fields": {
-            "is_visible": false, 
-            "created_at": "2014-08-25T11:42:00.358Z", 
-            "object_id": 1, 
-            "email": "", 
-            "content": "yeni comment", 
-            "content_type": 9, 
-            "which_user": 2
-        }
-    }, 
-    {
-        "pk": 11, 
-        "model": "main_site.comments", 
-        "fields": {
-            "is_visible": false, 
-            "created_at": "2014-08-25T11:40:18.380Z", 
-            "object_id": 1, 
-            "email": "", 
-            "content": "deneme", 
-            "content_type": 9, 
-            "which_user": 2
-        }
-    }, 
-    {
-        "pk": 10, 
-        "model": "main_site.comments", 
-        "fields": {
-            "is_visible": false, 
-            "created_at": "2014-08-25T11:39:45.647Z", 
-            "object_id": 1, 
-            "email": "", 
-            "content": "asdasd", 
-            "content_type": 9, 
-            "which_user": 2
-        }
-    }, 
-    {
         "pk": 1, 
         "model": "main_site.comments", 
         "fields": {
-            "is_visible": false, 
+            "is_visible": true, 
             "created_at": "2014-08-20T11:47:24.287Z", 
             "object_id": 1, 
             "email": "", 
@@ -1457,7 +1368,7 @@
         "pk": 2, 
         "model": "main_site.comments", 
         "fields": {
-            "is_visible": false, 
+            "is_visible": true, 
             "created_at": "2014-08-20T11:47:24.287Z", 
             "object_id": 1, 
             "email": "", 
@@ -1470,7 +1381,7 @@
         "pk": 3, 
         "model": "main_site.comments", 
         "fields": {
-            "is_visible": false, 
+            "is_visible": true, 
             "created_at": "2014-08-20T11:47:24.287Z", 
             "object_id": 1, 
             "email": "", 
@@ -1483,7 +1394,7 @@
         "pk": 4, 
         "model": "main_site.comments", 
         "fields": {
-            "is_visible": false, 
+            "is_visible": true, 
             "created_at": "2014-08-20T11:47:24.287Z", 
             "object_id": 1, 
             "email": "", 
@@ -1496,13 +1407,117 @@
         "pk": 5, 
         "model": "main_site.comments", 
         "fields": {
-            "is_visible": false, 
+            "is_visible": true, 
             "created_at": "2014-08-20T11:47:24.287Z", 
             "object_id": 1, 
             "email": "", 
             "content": "id1 sub comment2", 
             "content_type": 10, 
             "which_user": 1
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "main_site.comments", 
+        "fields": {
+            "is_visible": true, 
+            "created_at": "2014-08-25T11:39:45.647Z", 
+            "object_id": 1, 
+            "email": "", 
+            "content": "asdasd", 
+            "content_type": 9, 
+            "which_user": 2
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "main_site.comments", 
+        "fields": {
+            "is_visible": true, 
+            "created_at": "2014-08-25T11:40:18.380Z", 
+            "object_id": 1, 
+            "email": "", 
+            "content": "deneme", 
+            "content_type": 9, 
+            "which_user": 2
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "main_site.comments", 
+        "fields": {
+            "is_visible": true, 
+            "created_at": "2014-08-25T11:42:00.358Z", 
+            "object_id": 1, 
+            "email": "", 
+            "content": "yeni comment", 
+            "content_type": 9, 
+            "which_user": 2
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "main_site.comments", 
+        "fields": {
+            "is_visible": true, 
+            "created_at": "2014-08-25T11:44:46.479Z", 
+            "object_id": 2, 
+            "email": "", 
+            "content": "yeni", 
+            "content_type": 9, 
+            "which_user": 2
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "main_site.comments", 
+        "fields": {
+            "is_visible": true, 
+            "created_at": "2014-08-25T13:03:37.758Z", 
+            "object_id": 1, 
+            "email": "", 
+            "content": "a", 
+            "content_type": 9, 
+            "which_user": 2
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "main_site.comments", 
+        "fields": {
+            "is_visible": true, 
+            "created_at": "2014-08-25T13:04:36.532Z", 
+            "object_id": 3, 
+            "email": "", 
+            "content": "Deneme son", 
+            "content_type": 9, 
+            "which_user": 2
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "main_site.comments", 
+        "fields": {
+            "is_visible": true, 
+            "created_at": "2014-08-26T15:57:39.153Z", 
+            "object_id": 37, 
+            "email": "dogancankilment@gmail.com", 
+            "content": "asdasd", 
+            "content_type": 9, 
+            "which_user": 2
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "main_site.comments", 
+        "fields": {
+            "is_visible": true, 
+            "created_at": "2014-08-26T15:57:46.427Z", 
+            "object_id": 3, 
+            "email": "dogancankilment@gmail.com", 
+            "content": "asdasd", 
+            "content_type": 9, 
+            "which_user": 2
         }
     }
 ]
