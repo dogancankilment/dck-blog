@@ -93,33 +93,41 @@ def single_post(request, post_id, comment_id):
 
     if cache_post:
         root_post = cache_post
+
     else:
         root_post = Post.objects.get(id=post_id)
         cache.set(post_id, root_post, timeout=None)
+
     root_comment = root_post.comments.all()
     is_anonymous = False
 
     if request.user.is_authenticated():
         form = New_Comment(request.POST)
+
     else:
         form = New_Comment_Anonymous(request.POST)
         is_anonymous = True
 
     if request.POST:
         if form.is_valid():
+            # parent_object is post
             if comment_id == "1":
                 root_post = post_comments(request, post_id)
 
                 if is_anonymous:
                     form.save(root_post)
+
                 else:
                     form.save(root_post, request.user)  # post object
 
+            # comment id != 1
+            # parent_object is comment
             else:
                 current_comment = comments_comment(request, comment_id)
 
                 if is_anonymous:
                     form.save(current_comment)
+
                 else:
                     form.save(current_comment, request.user)  # comment object
 
