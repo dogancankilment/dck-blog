@@ -46,6 +46,7 @@
 
                 {% if request.user.is_authenticated %}
                     <li><a href="{% url logout %}"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>
+                    <li><a href="{% url freeze_account %}"><i class="glyphicon glyphicon-remove-circle"></i> Freeze Me</a></li>
                 {% else %}
                     <li><a href="{% url my_login %}"  class="glyphicon glyphicon-lock">Login</a></li>
                 {% endif %}
