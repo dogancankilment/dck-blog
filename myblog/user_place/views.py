@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, render_to_response
+from django.shortcuts import render, redirect, render_to_response, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
@@ -33,6 +33,8 @@ def my_login(request):
             else:
                 messages.error(request,
                                (_('Lutfen Hesabinizi aktif ediniz.')))
+                return render(request, 'Authentication/send_me_again.html')
+
         else:
             messages.error(request,
                            (_('Boyle bir kullanici sistemde kayitli degil')))
@@ -58,6 +60,17 @@ def signup(request, template_name="Authentication/signup.html"):
 @login_required()
 def logout(request):
     auth.logout(request)
+    return redirect(reverse(index))
+
+
+# or delete account same function
+@login_required
+def freeze_account(request):
+    user_profile = User.objects.get(id=request.user.id)
+    user_profile.is_active = False
+    user_profile.save()
+    logout(request)
+
     return redirect(reverse(index))
 
 
