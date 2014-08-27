@@ -1,75 +1,99 @@
 {% extends "base.html" %}
-{% load staticfiles %}
-
-{% block post_content %}
-  <div>
-      <div>
-          <div>
-          <h2 class="sub-header">My Profile</h2>
-          <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1,001</td>
-                  <td>Lorem</td>
-                  <td>ipsum</td>
-                  <td>dolor</td>
-                  <td>sit</td>
-                </tr>
-                <tr>
-                  <td>1,002</td>
-                  <td>amet</td>
-                  <td>consectetur</td>
-                  <td>adipiscing</td>
-                  <td>elit</td>
-                </tr>
-                <tr>
-                    <td>{{ user_profile.username }}</td>
-                    <td>{{ user_profile.email }}</td>
-                </tr>
-              </tbody>
-            </table>
-
-            <!--tree structure for comment. Example try-->
-            <div class="bs-example">
-              <ul class="media-list">
-
-                  <li class="media">
-                    <a class="pull-left" href="#">
-                      <img class="media-object" data-src="" alt="image">
-                    </a>
-
-                    <div class="media-body">
-                      <h4 class="media-heading">Media heading</h4>
-                      <p>Cras sit amet nibh libero, in gravida nulla. </p>
-                      <!-- Nested media object -->
-
-                      <div class="media">
-                        <a class="pull-left" href="#">
-                          <img class="media-object" data-src="holder.js/64x64" alt="image">
-                        </a>
-
-                        <div class="media-body">
-                          <h4 class="media-heading">Nested media heading</h4>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-              </ul>
+{% block profile_content %}
+<!-- center left-->
+<div class="col-md-6">
+    <div class="btn-group btn-group-justified">
+        <a href="#" class="btn btn-primary col-sm-3">
+            <i class="glyphicon glyphicon-plus"></i><br>
+            Service
+        </a>
+        <a href="#" class="btn btn-primary col-sm-3">
+            <i class="glyphicon glyphicon-cloud"></i><br>
+            Cloud
+        </a>
+        <a href="#" class="btn btn-primary col-sm-3">
+            <i class="glyphicon glyphicon-cog"></i><br>
+            Tools
+        </a>
+        <a href="#" class="btn btn-primary col-sm-3">
+            <i class="glyphicon glyphicon-question-sign"></i><br>
+            Help
+        </a>
+    </div>
+    <hr>
+    <div class="well" style="width: 240px">My Photo
+        <span class="badge pull-right">3</span>
+        <form class="form form-vertical" method="POST" action=" " enctype="multipart/form-data">
+          <div class="control-group">
+            <br>
+            <label>Username</label>
+            <div class="controls">
+            {{user.username}}
+            </div>
+            <br>
+            <label>Email</label>
+            <div class="controls">
+            {{user.email}}
             </div>
           </div>
-        </div>
-      </div>
     </div>
 
+    <div class="container">
+
+    </div>
+
+</div>
+<!--/col-->
+<div class="col-md-6">
+    <ul class="nav nav-tabs" id="myTab">
+        <li class="active"><a href="#profile" data-toggle="tab">Profile</a></li>
+        <li><a href="#messages" data-toggle="tab">Messages</a></li>
+        <li><a href="#settings" data-toggle="tab">Settings</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="profile">
+            <h4><i class="glyphicon glyphicon-user"></i></h4>
+            Lorem profile dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit
+            amet vulputate.
+            <p>Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit
+                amet felis
+                dolor, in sagittis nisi.</p>
+        </div>
+        <div class="tab-pane" id="messages">
+            <h4><i class="glyphicon glyphicon-comment"></i></h4>
+            Message ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit
+            amet vulputate.
+            <p>Quisque mauris augu.</p>
+        </div>
+        <div class="tab-pane" id="settings">
+            <h4><i class="glyphicon glyphicon-cog"></i></h4>
+            Lorem settings dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit
+            amet vulputate.
+            <p>Quisque mauris augue, molestie.</p>
+        </div>
+    </div>
+
+<div class="col-md-4">
+    <div class="panel panel-default" style="width: 340px">
+        <div class="panel-heading"><h4>Notices</h4></div>
+        <div class="panel-body">
+
+            <div class="alert alert-info">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                This is a dismissable alert.. just sayin'.
+            </div>
+
+            This is a dashboard-style layout that uses Bootstrap 3. You can use this template as a starting
+            point to create something more unique.
+            <br><br>
+            Visit the Bootstrap Playground at <a href="http://bootply.com">Bootply</a> to tweak this layout or
+            discover more useful code snippets.
+        </div>
+    </div>
+</div>
+</div>
+{% endblock profile_content %}
+{% block post_content %}
 
 {% endblock post_content %}
