@@ -30,14 +30,6 @@
                         </div><br>
                         {% csrf_token %}
                         <button class="btn btn-lg btn-primary btn-block" type="submit" style="width: 100px">Save</button>
-
-                        {% if messages %}
-                        <ul>
-                            {% for m in messages %}
-                            <li>{{ m }}</li>
-                            {% endfor %}
-                        </ul>
-                        {% endif %}
                     </form>
                 </div>
          </div>
