@@ -26,4 +26,8 @@ urlpatterns = patterns('',
                            'user_place.views.activation',
                            name='activation'),
 
+                       url(r'^freeze_success',
+                           'user_place.views.freeze_account',
+                           name='freeze_account'),
+
                        )
