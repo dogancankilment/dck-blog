@@ -1,3 +1,4 @@
+from _socket import timeout
 from django.shortcuts import redirect, render_to_response, get_object_or_404, render
 from django.template import RequestContext
 from django.core.urlresolvers import reverse
@@ -7,6 +8,7 @@ from django.core.context_processors import csrf
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib import messages
 from django.utils.translation import ugettext as _
+from django.core.cache import cache
 
 from .models import Post, Comments
 from .forms import New_Post, New_Comment, New_Comment_Anonymous
@@ -87,9 +89,15 @@ def new_post(request):
 
 # new_comment form view
 def single_post(request, post_id, comment_id):
-    is_anonymous = False
-    root_post = Post.objects.get(id=post_id)
+    cache_post = cache.get(post_id)
+
+    if cache_post:
+        root_post = cache_post
+    else:
+        root_post = Post.objects.get(id=post_id)
+        cache.set(post_id, root_post, timeout=None)
     root_comment = root_post.comments.all()
+    is_anonymous = False
 
     if request.user.is_authenticated():
         form = New_Comment(request.POST)
