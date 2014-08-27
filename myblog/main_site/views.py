@@ -71,18 +71,18 @@ def new_post(request):
         if form.is_valid():
             form.save(request.user)
 
-            return HttpResponse("Success")
+            return redirect(reverse(index))
 
         else:
-            return HttpResponse("form is not valid")
+            messages.error(request,
+                           (_('Hatali form')))
 
-    else:
-        form = New_Post()
-        c = {"form": form, "request": request}
-        c.update(csrf(request))
 
-        return render_to_response("post/new_post.html",
-                                  c)
+    form = New_Post()
+    c = {"form": form, "request": request}
+    c.update(csrf(request))
+
+    return render_to_response("post/new_post.html",c)
 
 
 # new_comment form view
