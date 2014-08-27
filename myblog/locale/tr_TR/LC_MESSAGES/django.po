@@ -19,50 +19,51 @@ msgstr ""
 
 #: main_site/views.py:80
 msgid "Hatali form"
-msgstr ""
+msgstr "Invalid Form"
 
 #: main_site/views.py:150 user_place/views.py:83
 msgid "Hatali aktivasyon kodu"
-msgstr ""
+msgstr "Invalid Activation Code"
 
 #: main_site/views.py:156
 msgid "Yorumunuz yayinlanmistir."
-msgstr ""
+msgstr "Your comment published"
 
 #: main_site/views.py:160
 msgid "Boyle bir aktivasyon kodu bulunmamaktadir"
-msgstr ""
+msgstr "Invalid activation key"
 
 #: user_place/views.py:36
 msgid "Lutfen Hesabinizi aktif ediniz."
-msgstr ""
+msgstr "Please activate your account"
 
 #: user_place/views.py:40
 msgid "Boyle bir kullanici sistemde kayitli degil"
-msgstr ""
+msgstr "This user cannot exists in system"
 
 #: user_place/views.py:98
 msgid "Hesabiniz aktif edilmistir. Lutfen giris yapiniz."
-msgstr ""
+msgstr "Your account has been activated. Please login"
 
 #: user_place/views.py:105
 msgid ""
 "Eski aktivasyon mailinin suresi bitmistir,yeni bir email yolladik,lutfen "
 "posta kutunuzu ziyaret ediniz."
-msgstr ""
+msgstr "Old activation key expire date is finish. We send new email to you,"
+"please check your email-box"
 
 #: user_place/views.py:111
 msgid "Eslesen email bulunamadi."
-msgstr ""
+msgstr "Email does not exists"
 
 #: user_place/views.py:115
 msgid "Boyle bir token yoktur"
-msgstr ""
+msgstr "Invalid token id"
 
 #: utils/util_mail_sender.py:34
 msgid "mailiniz gonderildi"
-msgstr ""
+msgstr "Your mail sended"
 
 #: utils/util_mail_sender.py:37
 msgid "Gondereceginiz kisininemail adresi belli olmalidir."
-msgstr ""
+msgstr "You must"
