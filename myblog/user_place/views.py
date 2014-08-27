@@ -9,7 +9,7 @@ from django.contrib.auth import authenticate
 from django.template import RequestContext
 
 from main_site.views import index
-from user_place.forms import LoginForm, UserCreateForm
+from user_place.forms import LoginForm, UserCreateForm, UserProfileForm
 from utils.util_token_generator import tokens_email,tokens_expire_date
 from utils.util_mail_sender import mail_sender
 from .models import User
@@ -107,7 +107,6 @@ def activation(request, token_id, template_name="Authentication/activation.html"
 @login_required()
 def show_profile(request, template_name="user/user_profile.html"):
     user_profile = User.objects.get(id=request.user.id)
-
     return render_to_response(template_name,
                               {"user_profile": user_profile,
                                "request": request},
@@ -117,7 +116,22 @@ def show_profile(request, template_name="user/user_profile.html"):
 @login_required()
 def edit_profile(request):
     user_profile = User.objects.get(id=request.user.id)
+    if request.POST:
+        form = UserProfileForm(request.POST)
+        if form.is_valid():
+            user_profile.username = form.cleaned_data.get('username')
+            user_profile.email = form.cleaned_data.get('email')
+
+            user_profile.save()
+
+            return redirect(reverse(index))
+    else:
+        form = UserProfileForm(initial={'username': user_profile.username,
+                                        'email': user_profile.email})
+
     return render_to_response('user/edit_profile.html',
                               {"request": request,
+                               "form": form,
                                "user": user_profile},
                               context_instance=RequestContext(request))
+
