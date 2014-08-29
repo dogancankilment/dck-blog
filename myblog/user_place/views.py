@@ -128,13 +128,12 @@ def show_profile(request, template_name="user/user_profile.html"):
 
 @login_required()
 def edit_profile(request):
-    user_profile = User.objects.get(id=request.user.id)
+    user_profile = request.user
     if request.POST:
         form = UserProfileForm(request.POST)
         if form.is_valid():
             user_profile.username = form.cleaned_data.get('username')
             user_profile.email = form.cleaned_data.get('email')
-
             user_profile.save()
 
             return redirect(reverse(index))
