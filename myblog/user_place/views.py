@@ -105,16 +105,15 @@ def activation(request, token_id, template_name="Authentication/activation.html"
                 messages.success(request, (_('Eski aktivasyon mailinin suresi bitmistir,'
                                              'yeni bir email yolladik,'
                                              'lutfen posta kutunuzu ziyaret ediniz.')))
-                return render(request,
-                              template_name)
+
         else:
             messages.success(request, (_('Eslesen email bulunamadi.')))
-            return render(request,
-                          template_name)
+
     else:
         messages.success(request, (_('Boyle bir token yoktur')))
-        return render(request,
-                      template_name)
+
+    return render(request,
+                  template_name)
 
 
 @login_required()
