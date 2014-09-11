@@ -131,9 +131,7 @@ def edit_profile(request):
     if request.POST:
         form = UserProfileForm(request.POST)
         if form.is_valid():
-            user_profile.username = form.cleaned_data.get('username')
-            user_profile.email = form.cleaned_data.get('email')
-            user_profile.save()
+            form.save()
 
             return redirect(reverse(index))
     else:
