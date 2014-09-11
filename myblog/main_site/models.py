@@ -32,6 +32,3 @@ class Comments(models.Model):
 
     # comment's comment's comment's comment..
     comments = GenericRelation('Comments')
-
-    class Meta:
-        ordering = ['-created_at']
