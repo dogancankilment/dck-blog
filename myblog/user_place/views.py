@@ -118,7 +118,7 @@ def activation(request, token_id, template_name="Authentication/activation.html"
 
 @login_required()
 def show_profile(request, template_name="user/user_profile.html"):
-    user_profile = User.objects.get(id=request.user.id)
+    user_profile = request.user
     return render_to_response(template_name,
                               {"user_profile": user_profile,
                                "request": request},
