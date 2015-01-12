@@ -89,14 +89,7 @@ def new_post(request):
 
 # new_comment form view
 def single_post(request, post_id, comment_id):
-    cache_post = cache.get(post_id)
-
-    if cache_post:
-        root_post = cache_post
-
-    else:
-        root_post = Post.objects.get(id=post_id)
-        cache.set(post_id, root_post, timeout=None)
+    root_post = Post.objects.get(id=post_id)
 
     root_comment = root_post.comments.all()
     is_anonymous = False
