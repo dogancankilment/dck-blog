@@ -4,7 +4,7 @@ from django.template.loader import render_to_string
 from django.http import HttpResponse
 from django.utils.translation import ugettext as _
 
-from utils.util_token_generator import activation_key_generator
+from .util_token_generator import activation_key_generator
 from celery import shared_task
 
 

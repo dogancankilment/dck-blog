@@ -31,7 +31,7 @@ DATABASES = {
     }
 }
 
-MAIL_PASSWD = os.getenv("MAIL_PASS")
+MAIL_PASSWD = "10121993CAN"
 
 # Email setup
 EMAIL_USE_TLS = True
