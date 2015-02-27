@@ -3,7 +3,7 @@ dck-blog
 
 New Commer Request Django Blog
 
->Application Requirements
+>Used in the project.
 
 * *PEP8 Rules*
 * *GenericForeignkey*
